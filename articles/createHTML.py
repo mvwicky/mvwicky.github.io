@@ -48,6 +48,8 @@ def main():
 	html.write('<link rel="stylesheet" type="text/css" href="../css/style.css">\n')
 	html.write('<script type="text/javascript" src="../js/jquery.js"></script>\n')
 	html.write('<script type="text/javascript" src="../js/dogOnHiatus.js"></script>\n')
+	html.write('<script type="text/javascript" src="../js/subPages.js"></script>\n')
+
 	#html.write('<script type="text/javascript" src="' + jsName + '"></script>\n')
 
 	html.write('</head>\n')
