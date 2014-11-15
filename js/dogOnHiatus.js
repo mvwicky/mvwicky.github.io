@@ -43,7 +43,7 @@ $(document).ready(function(){
 					"Stories",
 					"About"];
 
-	var sectionURLs = ["../index.html",
+	var sectionURLs = ["index.html",
 					   "baseball.html",
 					   "stories.html",
 					   "about.html"];
