@@ -1,0 +1,6 @@
+title:"New Article Title"
+link:"articleTemplate"
+date:"Day Month Year"
+category:"Category"
+content:"Article Words"
+preview:"Article Preview"

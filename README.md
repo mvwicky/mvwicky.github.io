@@ -1,4 +1,4 @@
-mvwicky.github.io
-=================
+DogOnHiatus
+===========
 
-Dog on Hiatus
+Contains files for Dog on Hiatus, a blog.
