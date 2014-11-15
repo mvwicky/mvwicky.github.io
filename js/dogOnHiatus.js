@@ -5,7 +5,7 @@ function addPreview(json){
 	$("#content .article").last().after().append("<div id='articlePreview'></div>");
 	$("#content .article").last().after().append("<div id='articleContent'></div>");
 	$("#content .article #articleTitle a").last().append(json.title);
-	$("#content .article #articleTitle a").last().attr("href", json.link + ".html");
+	$("#content .article #articleTitle a").last().attr("href", "html/" + json.link + ".html");
 	$("#content .article #articleDate").last().append(json.date);
 	$("#content .article #articleCategory").last().append(json.category);
 	$("#content .article #articlePreview").last().append(json.preview)
@@ -43,7 +43,7 @@ $(document).ready(function(){
 					"Stories",
 					"About"];
 
-	var sectionURLs = ["index.html",
+	var sectionURLs = ["../index.html",
 					   "baseball.html",
 					   "stories.html",
 					   "about.html"];

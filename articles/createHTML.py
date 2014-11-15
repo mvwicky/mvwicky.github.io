@@ -68,7 +68,7 @@ def main():
 	html.write('\t</div>\n\n')
 
 	html.write('\t<div id="content">\n')
-	html.write('\t<div id="header">Butts</div>\n')
+	#html.write('\t<div id="header">Butts</div>\n')
 	html.write('\t<div class="article">\n')
 	html.write('\t\t<div id="articleTitle"><a>' + title + '</a></div>\n')
 	html.write('\t\t<div id="articleDate">' + date + '</div>\n')
