@@ -3,6 +3,11 @@
 
 *.sublime-workspace
 
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
 # Logs
 logs
 *.log
