@@ -13,11 +13,14 @@ Why did I decide to make the only city (so far) that I stay in for two days a ra
 Look no further than the beautiful movie [`Columbus`](https://www.imdb.com/title/tt5990474/), directed by Kogonada, starring [John Cho](https://www.imdb.com/name/nm0158626/) and [Haley Lu Richardson](https://www.imdb.com/name/nm4726634/).
 It's wonderful, beautifully shot, the word `elegant` is most apt, a minimum of moving shots, the most notable being a long dolly shot framing a conversation between the leads.
 (That shot is, to me, such a good example of motivated camera movement, it's just great and must have been a huge pain to film.)
+
 I think I've said, on a bevy of occasions that it is the movie which contains the most shots which I would like to have framed as pictures.
 
 Tempering expectations is a good way to avoid disappointment, so I went in with fairly low expectations.
 So far, my expectations have been exceeded.
 I don't really know how to describe it, but I really like this place.
+
+Sad for the last day here, but excited for a baseball game, hopefully in Milwaukee.
 
 Now for a pretty hard detour...
 
