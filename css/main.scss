@@ -124,9 +124,8 @@ a:visited {
 nav, .container {
     @include border-radius(10px);
     margin: 0 auto;
-    @media (min-width: 640px) {max-width: 50%;}
+    @media (min-width: 640px) {max-width: 40%;}
     @media (max-width: 640px) {max-width: 90%;}
-    // max-width: 50%;
     width: 94%;
 }
 
@@ -171,7 +170,7 @@ nav {
     }
     div {
         font-family: $body-font;
-        font-size: 10pt;
+        font-size: 12pt;
         font-weight: 500;
     }
 
