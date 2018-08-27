@@ -124,8 +124,8 @@ a:visited {
 nav, .container {
     @include border-radius(10px);
     margin: 0 auto;
-    @media (min-width: 640px) {max-width: 40%;}
-    @media (max-width: 640px) {max-width: 90%;}
+    @media (min-width: 768px) {max-width: 768px;}
+    @media (max-width: 768px) {max-width: 90%;}
     width: 94%;
 }
 
