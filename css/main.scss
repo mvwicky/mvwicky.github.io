@@ -17,7 +17,7 @@ html {
     background-color: #fff;
     color: #222;
     font-size: 1em;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 /*
@@ -99,16 +99,18 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-// * {font-family: 'IBM Plex Sans', sans-serif;}
-
 nav {
     font-family: 'Trirong', serif;
     background: #ddf;
     min-height: 50px;
     margin: 0 20%;
+    ul {
+        margin-left: 0;
+        padding-left: 0;
+    }
     li {
         display: inline-block;
-        margin: 25px 25px;
+        margin: 1.5em 1em;
 
         a {
             border: 1px solid black;
@@ -118,13 +120,26 @@ nav {
     }
 }
 
+.some-links {
+    line-height: 1.7;
+    ul {
+        font-size: 12pt;
+        margin-left: 0;
+        padding-left: 2em;
+        ul {
+            list-style: none inside;
+            font-size: 10pt;
+        }
+    }
+}
+
 .container {
     background: #eef;
-    width: 40%;
-    margin: 1em 25%;
+    width: 50%;
+    margin: 1em 20%;
     padding: 1em 3em 3em 2em;
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'Trirong', serif;
+        font-family: 'Trirong', Garamond, serif;
     }
     h1 {
         font-size: 20pt;
@@ -139,7 +154,7 @@ nav {
         font-size: 14pt;
     }
     div {
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Rubik', Helvetica, sans-serif;
         font-size: 10pt;
         font-weight: 500;
     }

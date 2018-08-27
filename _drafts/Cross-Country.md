@@ -55,3 +55,29 @@ Having recovered sufficiently, I looked up mechanics in Burlington and found one
 In an attempt to wrap this part up, I'll just say that I walked a lot over the next twelve to eighteen hours.
 
 ## May 17: Burlington to Ithaca
+
+## May 18: Ithaca to Detroit
+
+## May 19: Detroit to Columbus
+
+## May 20: Columbus
+
+## May 21: Columbus to Milwaukee
+
+## May 22: Milwaukee to Minneapolis
+
+## May 23: Minneapolis to Fargo
+
+## May 24: Fargo to Teddy Roosevelt Nat'l Park
+
+## May 25: Teddy Roosevelt Nat'l Park to Yellowstone
+
+## May 26: Yellowstone to Salt Lake City
+
+## May 27: Salt Lake City to Grand-Staircase Escalante
+
+## May 28: Grand-Staircase Escalante to Great Basin Nat'l Park
+
+## May 29: Great Basin Nat'l Park to Death Valley
+
+## May 30: Death Valley to Santa Barbara
