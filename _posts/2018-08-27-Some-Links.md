@@ -24,7 +24,7 @@ Nor should he be ashamed.
 ## [Twitter is wrong: facts are not enough to combat Alex Jones](https://www.theverge.com/platform/amp/2018/8/10/17675232/twitter-alex-jones-jack-dorsey-free-speech) 
 #### Laura Hudson
 This article is weirdly technical on a couple of levels.
-Careful parsing of Twitter's rules...
+Careful parsing of Twitter's rules is not a subject which entices most nor is it a matter for the faint of heart.
 
 ## [Trump is no longer the worst person in government](https://www.washingtonpost.com/opinions/trump-is-no-longer-the-worst-person-in-government/2018/05/09/10e59eba-52f1-11e8-a551-5b648abe29ef_story.html?utm_term=.91d64acd2727)
 #### George Will
