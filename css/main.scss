@@ -129,6 +129,15 @@ nav, .container {
     width: 94%;
 }
 
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 1em auto;
+    text-align: center;
+    width: 100%;
+}
+
 nav {
     font-family: $header-font;
     background: #ddf;
@@ -152,6 +161,7 @@ nav {
 .container {
     background: #eef;
     padding: 1em;
+    overflow: hidden;
     h1, h2, h3, h4, h5, h6 {
         font-family: $header-font;
         margin: 0;
