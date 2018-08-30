@@ -51,6 +51,12 @@ hr {
     padding: 0;
 }
 
+.footsep {
+    border-bottom: 1px solid #ccc;
+    margin: 3em 0 1.5em;
+    padding-top: 0.5em;
+}
+
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
@@ -107,21 +113,21 @@ $body-font: 'Rubik', Helvetica, sans-serif;
     border-radius: $radius;
 }
 
-html {
+html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
-    box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    min-height: 100%;
+html {
+    box-sizing: border-box;
 }
 
 a:visited {
     color: blue;
 }
 
-nav, .container {
+nav, #content {
     @include border-radius(10px);
     margin: 0 auto;
     @media (min-width: 768px) {max-width: 768px;}
@@ -129,20 +135,11 @@ nav, .container {
     width: 94%;
 }
 
-footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    margin: 1em auto;
-    text-align: center;
-    width: 100%;
-}
-
 nav {
     font-family: $header-font;
     background: #ddf;
     min-height: 50px;
-    padding: 0 1em;
+    padding: 1em;
     ul {
         margin-left: 0;
         padding-left: 0;
@@ -158,12 +155,17 @@ nav {
     }
 }
 
-.container {
-    background: #eef;
-    padding: 1em;
+$footer-height: 2em;
+
+#container {
+    min-height: 100%;
+    position: relative;
+
+    padding: 0;
     overflow: hidden;
     h1, h2, h3, h4, h5, h6 {
         font-family: $header-font;
+        font-weight: 700;
         margin: 0;
     }
     h1 {
@@ -182,11 +184,30 @@ nav {
         font-family: $body-font;
         font-size: 12pt;
         font-weight: 500;
+        .footnotes {
+            font-size: 85%;
+        }
     }
 
 }
 
-.some-links {
+footer {
+    bottom: 0;
+    height: $footer-height;
+    margin: 1em auto 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+#content {
+    background: #eef;
+    margin: 1em auto;
+    padding: 1em;
+    padding-bottom: $footer-height;
+}
+
+/* .some-links {
     line-height: 1.7;
     ul {
         font-size: 12pt;
@@ -197,7 +218,7 @@ nav {
             font-size: 10pt;
         }
     }
-}
+} */
 
 
 /* ==========================================================================

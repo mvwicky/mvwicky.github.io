@@ -1,14 +1,21 @@
 JEKYLL=jekyll
-SERVEOPTS=--incremental --verbose
+JEKYLLSERVE=$(JEKYLL) serve
+SERVEOPTS=--incremental --verbose --livereload
+
+all: SERVEOPTS := $(SERVEOPTS) --drafts --future --unpublished
+all: serve
 
 clean:
 	$(JEKYLL) clean
 
 serve:
-	$(JEKYLL) serve $(SERVEOPTS)
+	$(JEKYLLSERVE) $(SERVEOPTS)
 
-drafts:
-	$(JEKYLL) serve $(SERVEOPTS) --drafts
+drafts: SERVEOPTS := $(SERVEOPTS) --drafts
+drafts: serve
 
-future:
-	$(JEKYLL) serve $(SERVEOPTS) --drafts --future
+future: SERVEOPTS := $(SERVEOPTS) --future
+future: serve
+
+unpub: SERVEOPTS := $(SERVEOPTS) --unpublished
+unpub: serve
