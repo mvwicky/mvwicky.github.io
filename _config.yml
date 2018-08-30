@@ -1,6 +1,9 @@
 name: Michael Van Wickle
 markdown: kramdown
+url: "http://mvwicky.github.io"
 permalink: /blog/:year/:month/:day/:title
+plugins:
+  - jekyll-sitemap
 
 sass:
   style: compressed
