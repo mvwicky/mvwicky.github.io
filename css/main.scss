@@ -107,6 +107,8 @@ textarea {
 
 $header-font: 'Trirong', Garamond, serif;
 $body-font: 'Rubik', Helvetica, sans-serif;
+$resp-width: 768px;
+
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
@@ -130,9 +132,9 @@ a:visited {
 nav, #content {
     @include border-radius(10px);
     margin: 0 auto;
-    @media (min-width: 768px) {max-width: 768px;}
-    @media (max-width: 768px) {max-width: 90%;}
-    width: 94%;
+    @media (min-width: $resp-width) {max-width: $resp-width * 0.9;}
+    @media (max-width: $resp-width) {max-width: 90%;}
+    width: 90%;
 }
 
 nav {
@@ -172,7 +174,8 @@ $footer-height: 2em;
         font-size: 20pt;
     }
     h2 {
-        font-size: 16pt;
+        @media (min-width: $resp-width) {font-size: 16pt;}
+        @media (max-width: $resp-width) {font-size: 14pt;}
     }
     h3 {
         font-size: 14pt;
@@ -182,7 +185,8 @@ $footer-height: 2em;
     }
     div {
         font-family: $body-font;
-        font-size: 12pt;
+        @media (min-width: $resp-width) {font-size: 12pt;}
+        @media (max-width: $resp-width) {font-size: 10pt;}
         font-weight: 500;
         .footnotes {
             font-size: 85%;
