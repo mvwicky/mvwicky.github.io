@@ -3,6 +3,9 @@
 
 *.sublime-workspace
 
+# report folder generatred by webhint
+hint-report/
+
 _site/
 .sass-cache/
 .jekyll-cache/
