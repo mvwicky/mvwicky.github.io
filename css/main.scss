@@ -115,6 +115,21 @@ $resp-width: 768px;
     border-radius: $radius;
 }
 
+/* Change an attribute based the screen width
+    $break-width: the screen width at which we change an attribute
+    $attr: the attribute (property) to change
+    $gt: the value if the screen is larger than $break-width
+    $lt: the value if the screen is smaller than $break-width
+*/
+@mixin respond-to-width($break-width, $attr, $gt, $lt) {
+    @media (min-width: $break-width) {#{$attr}: $gt;}
+    @media (max-width: $break-width) {#{$attr}: $lt;}
+}
+
+@mixin responsive-width {
+    @include respond-to-width($resp-width, "max-width", $resp-width * 0.9, 90%);
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -132,8 +147,7 @@ a:visited {
 nav, #content {
     @include border-radius(10px);
     margin: 0 auto;
-    @media (min-width: $resp-width) {max-width: $resp-width * 0.9;}
-    @media (max-width: $resp-width) {max-width: 90%;}
+    @include responsive-width;
     width: 90%;
 }
 
@@ -159,23 +173,31 @@ nav {
 
 $footer-height: 2em;
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font;
+}
+
 #container {
     min-height: 100%;
     position: relative;
 
     padding: 0;
     overflow: hidden;
+    #title {
+        margin: 1em auto;
+        @include responsive-width;
+
+        width: 90%;
+}
     h1, h2, h3, h4, h5, h6 {
-        font-family: $header-font;
         font-weight: 700;
         margin: 0;
     }
     h1 {
-        font-size: 20pt;
+        @include respond-to-width($resp-width, "font-size", 20pt, 18pt);
     }
     h2 {
-        @media (min-width: $resp-width) {font-size: 16pt;}
-        @media (max-width: $resp-width) {font-size: 14pt;}
+        @include respond-to-width($resp-width, "font-size", 16pt, 14pt);
     }
     h3 {
         font-size: 14pt;
@@ -185,14 +207,21 @@ $footer-height: 2em;
     }
     div {
         font-family: $body-font;
-        @media (min-width: $resp-width) {font-size: 12pt;}
-        @media (max-width: $resp-width) {font-size: 10pt;}
+        @include respond-to-width($resp-width, "font-size", 12pt, 10pt);
         font-weight: 500;
         .footnotes {
             font-size: 85%;
         }
     }
 
+}
+
+#content {
+    background: #eef;
+    margin: 1em auto;
+    padding: 1em;
+    line-height: 1.7;
+    padding-bottom: $footer-height;
 }
 
 footer {
@@ -203,27 +232,6 @@ footer {
     text-align: center;
     width: 100%;
 }
-
-#content {
-    background: #eef;
-    margin: 1em auto;
-    padding: 1em;
-    padding-bottom: $footer-height;
-}
-
-/* .some-links {
-    line-height: 1.7;
-    ul {
-        font-size: 12pt;
-        margin-left: 0;
-        padding-left: 2em;
-        ul {
-            list-style: none inside;
-            font-size: 10pt;
-        }
-    }
-} */
-
 
 /* ==========================================================================
    Helper classes
