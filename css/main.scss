@@ -110,7 +110,7 @@ textarea {
 $header-font: 'Trirong', Garamond, serif;
 $body-font: 'Rubik', Helvetica, sans-serif;
 $footer-height: 2em;
-$resp-width: 768px;
+$resp-width: 800px;
 
 html, body {
     margin: 0;
@@ -127,8 +127,9 @@ a:visited {
 }
 
 nav, #content {
-    @include border-radius(10px);
+    @include border-radius(1em);
     margin: 0 auto;
+    padding: 0.75em;
     @include responsive-width($resp-width);
     width: 90%;
 }
@@ -137,7 +138,6 @@ nav {
     font-family: $header-font;
     background: #ddf;
     min-height: 50px;
-    padding: 1em;
     ul {
         margin-left: 0;
         padding-left: 0;
@@ -146,7 +146,7 @@ nav {
         display: inline-block;
         margin: 1.5em 2%;
         a {
-            @include border-radius(10px);
+            @include border-radius(0.25em);
             border: 1px solid black;
             font-size: 14pt;
             padding: 0.5em;
@@ -194,6 +194,7 @@ h1, h2, h3, h4, h5, h6 {
         /* font-size: calc(10px + 0.33vw); */
         @include resp-font(320px, 1200px, 12px, 16px);
         font-weight: 500;
+        margin: 0.5em auto;
         .footnotes {
             font-size: 85%;
         }
@@ -203,8 +204,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #content {
     background: #eef;
-    margin: 1em auto;
-    padding: 1em;
     line-height: 1.7;
     padding-bottom: $footer-height;
 }

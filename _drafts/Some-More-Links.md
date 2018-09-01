@@ -15,3 +15,6 @@ Leaning towards the Shea option b/c I did a Beto one last week.
 
 ## [Black Panther's Right Thing](https://filmcrithulk.blog/2018/02/17/black-panthers-right-thing/)
 #### Film Crit Hulk
+
+## [The Unwavering Resolve of an Undocumented Activist in the Age of Trump](https://www.theringer.com/2017/8/24/16194748/cesar-espinosa-immigration-interview)
+#### Shea Serrano
