@@ -1,6 +1,6 @@
 name: Michael Van Wickle
 markdown: kramdown
-url: "http://wherewasigoing.com"
+url: "https://wherewasigoing.com"
 permalink: /blog/:year/:month/:day/:title
 plugins:
   - jekyll-sitemap
