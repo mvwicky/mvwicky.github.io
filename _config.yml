@@ -1,6 +1,8 @@
 name: Michael Van Wickle
 markdown: kramdown
 url: "https://wherewasigoing.com"
+repository: mvwicky/mvwicky.github.io
+title: "Where Was I Going With That?"
 permalink: /blog/:year/:month/:day/:title
 future: false
 plugins:

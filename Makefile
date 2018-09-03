@@ -10,6 +10,9 @@ all: serve
 clean:
 	$(JEKYLL) clean
 
+build:
+	$(JEKYLL) build
+
 update:
 	$(BUNDLE) update
 
