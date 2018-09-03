@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-<h1 class="post-title" id="{{page.title | slugify }}">{{ page.title }}</h1>
+<h1 class="post-title" id="{{ page.title | slugify }}"><a class="title-link" href="#{{ page.title | slugify }}">{{ page.title }}</a></h1>
+<h3 class="post-date">{{ page.date | date_to_string: "ordinal", "US" }}</h2>
 <hr>
 
 {{ content }}

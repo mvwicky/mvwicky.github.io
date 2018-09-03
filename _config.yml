@@ -2,8 +2,10 @@ name: Michael Van Wickle
 markdown: kramdown
 url: "https://wherewasigoing.com"
 permalink: /blog/:year/:month/:day/:title
+future: false
 plugins:
   - jekyll-sitemap
+  - jekyll-include-cache
 
 sass:
   style: compressed
