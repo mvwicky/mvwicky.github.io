@@ -1,126 +1,111 @@
 ---
 ---
 
-@import "boilerplate.scss";
-@import "util.scss";
+/*! HTML5 Boilerplate v5.0.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    background-color: #fff;
+    color: #222;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.footsep {
+    border-bottom: 1px solid #ccc;
+    margin: 3em 0 1.5em;
+    padding-top: 0.5em;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-$header-font: 'Trirong', Garamond, serif;
-$body-font: 'Rubik', Helvetica, sans-serif;
-$footer-height: 2em;
-$resp-width: 800px;
-
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-html {
-    box-sizing: border-box;
-}
-
-a:visited {
-    color: blue;
-}
-
-nav, #content {
-    @include border-radius(1em);
-    margin: 0 auto;
-    padding: 0.75em;
-    @include responsive-width($resp-width);
-    width: 90%;
-}
-
-nav {
-    font-family: $header-font;
-    background: #ddf;
-    min-height: 50px;
-    ul {
-        margin-left: 0;
-        padding-left: 0;
-    }
-    li {
-        display: inline-block;
-        margin: 1.5em 2%;
-        a {
-            @include border-radius(0.25em);
-            border: 1px solid black;
-            font-size: 14pt;
-            padding: 0.5em;
-        }
-    }
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: $header-font;
-}
-
-#container {
-    min-height: 100%;
-    position: relative;
-    padding: 0;
-    overflow: hidden;
-    #title {
-        margin: 0.5em auto;
-        @include responsive-width($resp-width);
-        /* font-size: calc(20px + 1.2vw); */
-        @include resp-font(320px, 1200px, 20px, 36px);
-        /* width: 90%; */
-}
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: 700;
-        margin: 0;
-    }
-    h1 {
-        /* @include respond-to-width($resp-width, "font-size", 20pt, 18pt); */
-        /* font-size: calc(18px + 0.5vw); */
-        @include resp-font(320px, 1200px, 16px, 24px);
-        .title-link {
-            text-decoration: none;
-            color: black;
-        }
-    }
-    h2 {
-        @include respond-to-width($resp-width, "font-size", 16pt, 14pt);
-    }
-    h3 {
-        font-size: 14pt;
-    }
-    h4 {
-        font-size: 14pt;
-    }
-    div {
-        font-family: $body-font;
-        /* @include respond-to-width($resp-width, "font-size", 12pt, 10pt); */
-        /* font-size: calc(10px + 0.33vw); */
-        @include resp-font(320px, 1200px, 12px, 16px);
-        font-weight: 500;
-        margin: 0.5em auto;
-        .footnotes {
-            font-size: 85%;
-        }
-    }
-
-}
-
-#content {
-    background: #eef;
-    line-height: 1.7;
-    padding-bottom: $footer-height;
-}
-
-footer {
-    bottom: 0;
-    height: $footer-height;
-    margin: 1em auto 0;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-}
+@import "style";
 
 /* ==========================================================================
    Helper classes

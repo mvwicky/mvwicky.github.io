@@ -7,6 +7,9 @@ SERVEOPTS=--verbose --livereload
 all: SERVEOPTS := $(SERVEOPTS) --drafts --future --unpublished
 all: serve
 
+fresh: clean
+fresh: all
+
 clean:
 	$(JEKYLL) clean
 

@@ -16,7 +16,7 @@ I've undoubtedly talked many ears off regarding the Film Crit Hulk.
 
 ## [The Male Glance](https://www.vqronline.org/essays-articles/2018/03/male-glance)
 #### Lili Loofbourow
-<p></p>
+This is an article that was linked to in a Film Crit Hulk article with the title ["What We Talk About When We Talk About Female Filmmaking."](https://filmcrithulk.blog/2018/03/16/what-we-talk-about-when-we-talk-about-female-filmmaking/)
 
 ## [The Unwavering Resolve of an Undocumented Activist in the Age of Trump](https://www.theringer.com/2017/8/24/16194748/cesar-espinosa-immigration-interview)
 #### Shea Serrano

@@ -1,8 +1,11 @@
 ---
 layout: default
 ---
-<h1 class="post-title" id="{{ page.title | slugify }}"><a class="title-link" href="#{{ page.title | slugify }}">{{ page.title }}</a></h1>
-{% comment %}<h3 class="post-date">{{ page.date | date_to_string: "ordinal", "US" }}</h2>{% endcomment %}
+<h1 class="post-title" id="{{ page.title | slugify }}"><a class="link-title" href="#{{ page.title | slugify }}">{{ page.title }}</a></h1>
+{% comment %}
+<!-- This part doesnt work with the github-pages gem version of Jekyll -->
+<h3 class="post-date">{{ page.date | date_to_string: "ordinal", "US" }}</h3>
+{% endcomment %}
 <h3 class="post-date">{{ page.date | date_to_string }}</h3>
 <hr>
 
