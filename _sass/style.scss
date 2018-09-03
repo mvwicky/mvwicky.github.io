@@ -3,7 +3,7 @@
 $header-font: 'Trirong', Garamond, serif;
 $body-font: 'Rubik', Helvetica, sans-serif;
 $footer-height: 2em;
-$resp-width: 800px;
+$resp-width: 768px;
 
 html, body {
     margin: 0;
@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
             text-decoration: none;
             color: black;
             &:hover {
-                background-color: gray;
+                background-color: lightgray;
             }
         }
     }
@@ -86,8 +86,6 @@ h1, h2, h3, h4, h5, h6 {
     }
     div {
         font-family: $body-font;
-        /* @include respond-to-width($resp-width, "font-size", 12pt, 10pt); */
-        /* font-size: calc(10px + 0.33vw); */
         @include resp-font(320px, 1200px, 12px, 16px);
         font-weight: 500;
         margin: 0.5em auto;
@@ -102,6 +100,12 @@ h1, h2, h3, h4, h5, h6 {
     background: #eef;
     line-height: 1.7;
     padding-bottom: $footer-height;
+    h2 > a {
+        text-decoration: none;
+        &:hover {
+            background-color: gainsboro;
+        }
+    }
 }
 
 footer {
