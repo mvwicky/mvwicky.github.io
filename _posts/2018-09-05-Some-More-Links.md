@@ -19,6 +19,15 @@ The now infamous Google memo[^4] is shown as illustrative of how a relatively lo
 This article articulates a unfortunate (also, unjust) phenomenon that I think I probably knew instinctively, but never put into words.
 Loofbourow cites a comment from Mark Twain on __Pride and Prejudice__ where he completely misses the point (and artistry) of the book and he seems to dismiss, out of hand, the possibility of some deeper meaning or intent by Jane Austen.
 
+This article, and those like it, strike a certain kind of fear into me.
+It's not the fear of "losing power," I'm perfectly happy to cede my ill-gotten power, though I'm sure that I show some level of subconscious desire to hold onto it.
+No, the fear is that I'm Mark Twain, that I'm those professors who didn't get the joke, or at just as ignorant; I fear this mindless oppression so insidious as to be unknown even to the oppressor.
+One might respond that the simple fact of this fear is evidence enough that I'm not them, but then, should my fear escape me?
+Leaving me open to the fact that I am them?
+And the fear returns.
+
+I have no satisfactory or real resolution to this...
+
 {%include link.html title="The Unwavering Resolve of an Undocumented Activist in the Age of Trump" link="https://www.theringer.com/2017/8/24/16194748/cesar-espinosa-immigration-interview" author="Shea Serrano" %}
 Shea[^5] is one of my favorite writers; he is hilarious and unorthodox, and normally writes about subjects which are, to put it charitably, less than vital.
 But within many of his articles, as can be seen with all great writers,[^6] a glimpse of their insight to humanity and their feelings on the human condition as a whole.
