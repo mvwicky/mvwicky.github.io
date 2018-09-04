@@ -7,6 +7,7 @@ date: 2018-09-05
 {% include link.html title="LeBron James' greatest weapon is his brain" link="http://www.espn.com/nba/story/_/id/11067098/lebron-james-greatest-weapon-brain" author="Brian Windhorst" %}
 LeBron James is awesome.
 I mean that not only in the common, modern sense of the word,[^1] but also in the more literal sense, I am filled with awe.
+Awe at the sheer level of athletic ability, but also his ability to parlay his success into help for the community in which he grew up.
 
 {%include link.html title="Black Panther's Right Thing" link="https://filmcrithulk.blog/2018/02/17/black-panthers-right-thing/" author = "Film Crit Hulk" %}
 I've undoubtedly talked many ears off regarding the Film Crit Hulk.
