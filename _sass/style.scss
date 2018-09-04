@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
         font-weight: 500;
         margin: 0.5em auto;
         .footnotes {
-            font-size: 85%;
+            font-size: 80%;
         }
     }
 
@@ -115,4 +115,10 @@ footer {
     position: absolute;
     text-align: center;
     width: 100%;
+}
+
+.footsep {
+    border-bottom: 1px solid #ccc;
+    margin: 5.5em 0 1em;
+    padding-top: 0.75em;
 }

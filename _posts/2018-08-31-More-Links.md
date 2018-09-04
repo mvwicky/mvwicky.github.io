@@ -6,7 +6,7 @@ date: 2018-08-31
 
 Isn't Kate McKinnon just a national treasure?
 
-<!--
+{% comment %}
 I had a shower thought recently.
 I realized that I'm the an exceptionally efficient hipster.
 
@@ -17,7 +17,7 @@ But back to the efficiency thing.
 Hipsters as a group dismiss the most recent or most popular thing and prefer the old or unknown thing.[^a]
 I do this, but I also make a mental bookmark of the thing and then go back to it when everybody stops talking about it.
 Thus, my acquisition of
--->
+{% endcomment %}
 
 {% include link.html title="The un-celebrity president" link="https://www.washingtonpost.com/news/national/wp/2018/08/17/feature/the-un-celebrity-president-jimmy-carter-shuns-riches-lives-modestly-in-his-georgia-hometown/?utm_term=.71b3c215e349" author="Kevin Sullivan and Mary Jordan" %}
 Michael Baumann tweeted[^1] that there may have been better presidents than Jimmy Carter, but we probably have not had a better man as president than Jimmy Carter.
@@ -55,6 +55,6 @@ Anyways, great article, good read on the pretty long history of American conserv
 
 <hr class="footsep">
 
-[^a]: "Thing" can literally be anything, but most often its some sort of cultural artifact.
+{% comment %} [^a]: "Thing" can literally be anything, but most often its some sort of cultural artifact. {% endcomment %}
 [^1]: At least, I'm pretty sure it was him, I wasn't able to actually find it and I'm not particularly interested in probing further.
 [^2]: I mean, they would say that, but in reality the ideology a lot of those people espouse is this bizarre hybrid of Blue Dog Democrat and Ayn Rand level libertarianism. It's a frustrating confluence of general naiveté and social blinders.
