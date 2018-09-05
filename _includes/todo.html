@@ -1,0 +1,3 @@
+{% if page.published != true %}
+<div class="notice-todo">{{ include.msg | default: "Task to do"}}</div>
+{% endif %}
