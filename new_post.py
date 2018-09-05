@@ -10,9 +10,8 @@ DT_FMT = '%Y-%m-%d'
 NOW = datetime.now().strftime(DT_FMT)
 
 
-def writeln(file: TextIO, line: Text):
-    file.write(line)
-    file.write('\n')
+def writeln(file: TextIO, line: Text) -> int:
+    return file.write(line + '\n')
 
 
 def validate_pubdate(ctx, param, value):
@@ -24,8 +23,31 @@ def validate_pubdate(ctx, param, value):
         return value
 
 
+def write_front_matter(
+    file: Path,
+    layout: Text,
+    title: Text = 'PLACEHOLDER TITLE',
+    date: Text = NOW,
+) -> int:
+    ret = 0
+    with file.open('wt', encoding='utf-8') as f:
+        ret += writeln(f, '---')
+        ret += writeln(f, 'layout: {0}'.format(layout))
+        ret += writeln(f, 'title: "{0}"'.format(title))
+        ret += writeln(f, 'date: {0}'.format(date))
+        ret += writeln(f, '---')
+    return ret
+
+
 @click.group()
 def cli():
+    pass
+
+
+@cli.command()
+@click.option('--title', default='placeholder')
+@click.option('--pub-date', callback=validate_pubdate, default=NOW)
+def post(title: Text, pub_date: Text):
     pass
 
 
@@ -42,13 +64,8 @@ def links(title: Text, pub_date: Text):
             'file already exists ({0})'.format(file_path)
         )
 
-    with file_path.open('wt', encoding='utf-8') as f:
-        writeln(f, '---')
-        writeln(f, 'layout: somelinks')
-        writeln(f, 'title: "PLACEHOLDER TITLE"')
-        writeln(f, 'date: {0}'.format(pub_date))
-        writeln(f, '---')
-    click.secho('Created new file: {0}'.format(file_path), fg='green')
+    b = write_front_matter(file_path, 'somelinks', date=pub_date)
+    click.secho('Created new file: {0} ({1})'.format(file_path, b), fg='green')
 
 
 if __name__ == '__main__':

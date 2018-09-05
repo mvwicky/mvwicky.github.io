@@ -10,6 +10,8 @@ A bit old, but I never tire of a little Elon bashing.
 {% include link.html title="Power to the party" link="https://www.yahoo.com/news/power-party-political-reforms-can-bad-democracy-090049295.html" author="Jon Ward" %}
 I'm obviously not supportive of heavy-handed meddling in primaries,[^1] like what the DNC did to Bernie,[^2] and I'm skeptical of the thesis this article puts forth, i.e., that parties should be strong in order to shield the uninformed masses from potential Donald Trumps,[^3] but I still found this interesting.
 
+{% include link.html title="Title" link="Link" author="Author" %}
+
 <hr class="footsep">
 
 [^1]: And I'm sure the majority of Democrats would agree.

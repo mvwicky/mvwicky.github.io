@@ -4,6 +4,9 @@ title: "Movies and Immigrants and Engineers"
 date: 2018-09-05
 ---
 
+I meant to rewrite some of the synopses below,[^a] but I didn't quite have the time/will power to do so.
+So some of the paragraphs below contain half-baked thoughts and/or trains of thought that kinda just go nowhere.
+
 {% include link.html title="LeBron James' greatest weapon is his brain" link="http://www.espn.com/nba/story/_/id/11067098/lebron-james-greatest-weapon-brain" author="Brian Windhorst" %}
 LeBron James is awesome.
 I mean that not only in the common, modern sense of the word,[^1] but also in the more literal sense, I am filled with awe.
@@ -49,6 +52,7 @@ Sometimes working in tech is just a real downer.
 
 <hr class="footsep">
 
+[^a]: And in some instances expand them.
 [^1]: As in "__Avengers: Infinity War__ was awesome!"
 [^2]: Here I go, talking your ear off again.
 [^3]: An article which, incidentally, contains some great points about "left brain" filmmaking which really resonated with my general antipathy towards the "scourge" of rationality.
