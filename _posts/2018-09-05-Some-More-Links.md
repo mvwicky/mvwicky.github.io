@@ -10,7 +10,12 @@ I mean that not only in the common, modern sense of the word,[^1] but also in th
 Awe at the sheer level of athletic ability, but also his ability to parlay his success into help for the community in which he grew up.
 
 {% include link.html title="Black Panther's Right Thing" link="https://filmcrithulk.blog/2018/02/17/black-panthers-right-thing/" author = "Film Crit Hulk" %}
-I've undoubtedly talked many ears off regarding the Film Crit Hulk.
+I've undoubtedly talked many ears off regarding the Film Crit Hulk; he's my favorite film/media commentator, and he just happens to have co-oped the Incredible Hulk as a _nom de plume_.
+I feel like he's become a bit more accessible since he stopped writing in all caps, a practice which set a pretty high bar in terms of buy in.
+
+Anyways, because of Hulk (at least partially), I watched __Speed Racer__ for the first time after he wrote something about how it is a legit masterpiece.
+He has a lot to say about movies and pop culture generally, he's a huge fan of sincerity in media; sometimes cheesiness is what we need and embracing emotions can do a lot of good.
+I could really go on and on about the ways that this author has changed the way I watch movies, think about the world, and live my life generally, but then I wouldn't really have anything to write about in future posts.
 
 {% include link.html title="The Male Glance" link="https://www.vqronline.org/essays-articles/2018/03/male-glance" author = "Lili Loofbourow" %}
 This is an article that was linked to in a Film Crit Hulk[^2] article[^3] with the title ["What We Talk About When We Talk About Female Filmmaking."](https://filmcrithulk.blog/2018/03/16/what-we-talk-about-when-we-talk-about-female-filmmaking/)
@@ -39,6 +44,8 @@ See [Dwight vs. Everything](https://theringer.com/tv/2018/8/3/17639830/conferenc
 {% include link.html title="Reflecting On One Very, Very Strange Year At Uber" link="https://www.susanjfowler.com/blog/2017/2/19/reflecting-on-one-very-strange-year-at-uber" author="Susan Fowler" %}
 Pretty much just a real downer throughout.[^7]
 Gaslighting is real.
+
+Sometimes working in tech is just a real downer.
 
 <hr class="footsep">
 
