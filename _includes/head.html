@@ -1,29 +1,25 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ page.title }}</title>
-    <meta name="description" content="">
+    <meta name="author" content="Michael Van Wickle">
+    <meta name="description" content="A blog, which generally consists of posts that are lists of links">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <meta name="theme-color" content="#00f">
 
+    <title>{{ page.title }}</title>
+
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    {% comment %} TODO: Replace this with an actual icon for this site. Also come up with a logo design. {% endcomment %}
+    {% comment %} <!-- Place favicon.ico in the root directory --> {% endcomment %}
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+
     {% comment %}
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rubik|Trirong">
     <script type="text/javascript" src="/js/vendor/webfont-1.6.26.js"></script>
     {% endcomment %}
-    <style type="text/css">
-        .wf-loading {visibility: hidden;}
-        .wf-active, .wf-inactive {visibility: visible;}
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script type="text/javascript">
-        WebFont.load({
-            google: {
-                families: ['Rubik', 'Trirong']
-            }
-        });
-    </script>
+
+    {% include fonts.html %}
+
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>

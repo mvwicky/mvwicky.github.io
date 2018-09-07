@@ -1,0 +1,14 @@
+{% comment %} Use Google Web Font Loader to prevent FOUT {% endcomment %}
+    <style type="text/css">
+        {% comment %} Make everything invisible when loading {% endcomment %}
+        .wf-loading {visibility: hidden;}
+        .wf-active, .wf-inactive {visibility: visible;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ['Rubik', 'Trirong']
+            }
+        });
+    </script>

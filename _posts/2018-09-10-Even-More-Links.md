@@ -4,6 +4,8 @@ title: "PLACEHOLDER TITLE"
 date: 2018-09-10
 ---
 
+{% include todo.html msg="Find some more links, finish up comments." %}
+
 {% include link.html title="Elon Musk's Fall From Grace" link="http://bostonreview.net/class-inequality/andrew-elrod-rooting-elon" author="Andrew Elrod" %}
 A bit old, but I never tire of a little Elon bashing.
 
@@ -19,7 +21,7 @@ I'm obviously not supportive of heavy-handed meddling in primaries,[^1] like wha
 I feel like Ellie Kemper might be a bit problematic, but I thought this was funny.
 
 {% include link.html title="The Pentagon Finally Details its Weapons-for-Cops Giveaway" link="https://www.themarshallproject.org/2014/12/03/the-pentagon-finally-details-its-weapons-for-cops-giveaway" author="Shawn Musgrave, Tom Meagher, & Gabriel Dance" %}
-{% include todo.html %}
+Scary.
 
 <hr class="footsep">
 

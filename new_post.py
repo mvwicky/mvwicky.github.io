@@ -7,6 +7,7 @@ import click
 
 
 DT_FMT = '%Y-%m-%d'
+DT_HELP = 'YYYY-MM-DD'
 NOW = datetime.now().strftime(DT_FMT)
 
 
@@ -46,17 +47,27 @@ def cli():
 
 @cli.command()
 @click.option('--title', default='placeholder')
-@click.option('--pub-date', callback=validate_pubdate, default=NOW)
-def post(title: Text, pub_date: Text):
+@click.option(
+    '--date',
+    callback=validate_pubdate,
+    default=NOW,
+    help='date formatted as {0}'.format(DT_HELP),
+)
+def post(title: Text, date: Text):
     pass
 
 
 @cli.command()
 @click.option('--title', default='placeholder')
-@click.option('--pub-date', callback=validate_pubdate, default=NOW)
-def links(title: Text, pub_date: Text):
+@click.option(
+    '--date',
+    callback=validate_pubdate,
+    default=NOW,
+    help='date formatted as {0}'.format(DT_HELP),
+)
+def links(title: Text, date: Text):
     title = title.title()
-    file_name = '{0}-{1}.md'.format(pub_date, title.replace(' ', '-'))
+    file_name = '{0}-{1}.md'.format(date, title.replace(' ', '-'))
     file_path = Path('_posts') / file_name
 
     if file_path.is_file():
@@ -64,7 +75,7 @@ def links(title: Text, pub_date: Text):
             'file already exists ({0})'.format(file_path)
         )
 
-    b = write_front_matter(file_path, 'somelinks', date=pub_date)
+    b = write_front_matter(file_path, 'somelinks', date=date)
     click.secho('Created new file: {0} ({1})'.format(file_path, b), fg='green')
 
 

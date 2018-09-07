@@ -93,9 +93,8 @@ h1, h2, h3, h4, h5, h6 {
             &::before {
                 content: "TODO: ";
             }
-            margin: 0;
             color: red;
-            font-size: 120%;
+            font-size: 16pt;
             font-weight: bold;
             text-decoration: underline;
         }
