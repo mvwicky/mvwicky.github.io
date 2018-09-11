@@ -12,6 +12,7 @@ fresh: all
 
 clean:
 	$(JEKYLL) clean
+	$(BUNDLE) clean
 
 build:
 	$(JEKYLL) build

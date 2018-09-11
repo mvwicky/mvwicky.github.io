@@ -1,7 +1,7 @@
 ---
 layout: somelinks
 title: "The Film Crit Hulk Post."
-date: 2018-09-17
+date: 2018-09-19
 ---
 
 There are so many articles that I could[^1] link here.
