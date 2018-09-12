@@ -3,16 +3,17 @@ EXEC=$(BUNDLE) exec
 JEKYLL=$(EXEC) jekyll
 JEKYLLSERVE=$(JEKYLL) serve
 SERVEOPTS=--verbose --livereload
+ALLOPTS=--drafts --unpublished --future
 
-all: SERVEOPTS := $(SERVEOPTS) --drafts --future --unpublished
+all: SERVEOPTS := $(SERVEOPTS) $(ALLOPTS)
 all: serve
 
 fresh: clean
 fresh: all
 
 clean:
-	$(JEKYLL) clean
 	$(BUNDLE) clean
+	$(JEKYLL) clean
 
 build:
 	$(JEKYLL) build

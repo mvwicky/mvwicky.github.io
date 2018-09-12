@@ -8,6 +8,7 @@ date: 2018-09-12
 {% include link.html title="Elon Musk's Fall From Grace" link=elonlink author="Andrew Elrod" %}
 A bit old, but I never tire of a little Elon bashing.
 I almost can't believe that he is still in charge of Tesla; what does the board know that we don't?
+And so many people, people like me, revere him, as an almost messianic figure...
 
 {% assign partylink = "https://www.yahoo.com/news/power-party-political-reforms-can-bad-democracy-090049295.html" %}
 {% include link.html title="Power to the party" link=partylink author="Jon Ward" %}
