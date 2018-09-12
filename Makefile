@@ -2,7 +2,7 @@ BUNDLE=bundle
 EXEC=$(BUNDLE) exec
 JEKYLL=$(EXEC) jekyll
 JEKYLLSERVE=$(JEKYLL) serve
-SERVEOPTS=--verbose --livereload
+SERVEOPTS=--verbose --livereload --incremental
 ALLOPTS=--drafts --unpublished --future
 
 all: SERVEOPTS := $(SERVEOPTS) $(ALLOPTS)
@@ -32,3 +32,10 @@ future: serve
 
 unpub: SERVEOPTS := $(SERVEOPTS) --unpublished
 unpub: serve
+
+profile:
+	$(JEKYLL) clean
+	$(JEKYLL) build --profile --verbose
+
+doctor:
+	$(JEKYLL) doctor
