@@ -1,0 +1,13 @@
+{
+    "name": "mvwicky.github.io",
+    "version": "1.0.0",
+    "private": true,
+    "repository": "https://github.com/mvwicky/mvwicky.github.io",
+    "author": "Michael Van Wickle <mvanwickle@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "babel-minify": "^0.4.3",
+        "webpack": "^4.19.0",
+        "webpack-cli": "^3.1.0"
+    }
+}
