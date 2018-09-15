@@ -16,7 +16,8 @@ Because of the surfeit of candidates, I decided to ignore my unwritten/unspoken 
 
 {% assign interlink = "https://birthmoviesdeath.com/2017/08/04/film-crit-hulk-smash-on-criticism-in-the-intersectional-age" %}
 {% include link.html title="On Criticism in the Intersectional Age" link=interlink author=hulk %}
-<p></p>
+The oppressors[^5] are the only group in an oppressive system with the actual capacity to effect change; slaves could not emancipate themselves and women could not grant suffrage to themselves.
+But in order for change to be effected, those who benefit from the system, who are often blind to its (the system's) existence, must take care to heed the outcry, to accept that their reality is not universal.
 
 {% assign gadsbylink = "https://observer.com/2018/08/film-crit-hulk-hannah-gadsby-rejects-the-premise/" %}
 {% include link.html title="Hannah Gadsby Rejects the Premise" link=gadsbylink author=hulk %}
@@ -41,3 +42,4 @@ Obviously, the "thing" in this instance is __Star Wars__ and its legion of entit
 [^2]: Films, video games, TV shows, media generally.
 [^3]: If you don't know what an incel is, first off, lucky you, and to get up to speed on what that means, read [this _Vox_ article](https://www.vox.com/world/2018/4/25/17277496/incel-toronto-attack-alek-minassian) and/or watch [this YouTube video](https://www.youtube.com/watch?v=f-gX0spJpa0), and prepare to be horrified and disgusted.
 [^4]: This might be a tad harsh, but a lot of their commentary and criticisms of __The Last Jedi__ sounds disturbingly close to what incels say about the world generally.
+[^5]: By which I mean white people and males, who are, if not actively oppressing, at least the beneficiaries of an oppresive system.
