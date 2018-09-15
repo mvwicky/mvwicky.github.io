@@ -1,6 +1,12 @@
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 
+img/apple-touch-icon.png
+img/favicon*.ico
+# img/favicon16.ico
+# img/favicon36.ico
+# img/favicon72.ico
+
 *.sublime-workspace
 
 # report folder generatred by webhint
