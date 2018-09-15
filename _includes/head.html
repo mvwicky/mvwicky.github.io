@@ -9,7 +9,7 @@
     <title>{{ page.title }}</title>
 
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    {% comment %}<link rel="apple-touch-icon" href="/apple-touch-icon.png">{% endcomment %}
+
     {%- assign iconsizes = "180;152;144;120;114;76;72;60;57" | split: ";" %}
     {% for sz in iconsizes -%}
     <link rel="apple-touch-icon" type="image/png" sizes="{{sz}}x{{sz}}" href="/img/apple-touch-icon-{{sz}}.png">
