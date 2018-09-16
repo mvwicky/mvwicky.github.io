@@ -21,6 +21,7 @@ a:visited {
 
 nav, #content {
     @include border-radius(1em);
+    border: 1px solid rgba(0, 0, 0, 0.33);
     margin: 0 auto;
     padding: 0.75em;
     @include responsive-width($resp-width);
@@ -29,21 +30,27 @@ nav, #content {
 
 nav {
     font-family: $header-font;
+
     background: #ddf;
     min-height: 50px;
+    margin-bottom: 1em;
     ul {
-        margin-left: 0;
+        margin: 0.5em auto;
+        /* margin-left: 0; */
         padding-left: 0;
     }
     li {
         display: inline-block;
-        margin: 1.5em 2%;
-        a {
-            @include border-radius(0.25em);
-            border: 1px solid black;
-            font-size: 14pt;
-            padding: 0.5em;
-        }
+    }
+    .nav-link {
+        margin: 0.75em 2%;
+        @include border-radius(0.25em);
+        border: 1px solid black;
+        padding: 0.75em;
+        @include resp-font(320px, 1200px, 14px, 20px);
+    }
+    #current-loc {
+        background-color: #88e;
     }
 }
 
@@ -115,6 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #content {
     background: #eef;
+    /* border: 1px solid rgba(0, 0, 0, 0.33); */
     line-height: 1.7;
     padding-bottom: $footer-height;
     h2 > a {

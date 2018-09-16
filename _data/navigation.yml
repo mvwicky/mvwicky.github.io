@@ -1,0 +1,6 @@
+- name: Home
+  link: /
+- name: About Me
+  link: /pages/about
+- name: Resume
+  link: /pages/cv

@@ -16,4 +16,8 @@ date: 2018-09-26
 {% include link.html title="How Duterte Used Facebook to Fuel the Philipine Drug War" link=fblink author="Davey Alba" %}
 <p></p>
 
+{% assign readlink = "http://time.com/5388681/audiobooks-reading-books/" %}
+{% include link.html title="Are Audiobooks As Good For You As Reading? Here's What Experts Say" link=readlink author="Markham Heid" %}
+<p></p>
+
 <hr class="footsep">

@@ -1,12 +1,14 @@
 <head lang="en-US">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="Michael Van Wickle">
-    <meta name="description" content="A blog, which generally consists of posts that are lists of links">
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="description" content="{{ site.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0af">
 
+    {% comment %}
     <title>{{ page.title }}</title>
+    {% endcomment %}
 
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
@@ -18,4 +20,5 @@
     {% include fonts.html %}
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    {% seo %}
 </head>

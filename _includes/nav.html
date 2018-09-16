@@ -1,8 +1,14 @@
 <nav>
                 <ul id="nav">
-                    <li><a href="/">Home</a></li>
-                    <!-- <li><a href="/blog">Blog</a></li> -->
-                    <li><a href="/pages/about">About Me</a></li>
-                    <li><a href="/pages/cv">Resume</a></li>
+                    {%- for item in site.data.navigation %}
+                    <li class="nav-link"{% if page.url == item.link %} id="current-loc"{%- endif -%}>
+                        {%- if page.url == item.link -%}
+                            {{ item.name }}
+                        {%- else -%}
+                            <a href="{{ item.link }}">{{ item.name }}</a>
+                        {%- endif -%}
+                        </li>
+                    {%- endfor %}
+
                 </ul>
             </nav>
