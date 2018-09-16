@@ -2,6 +2,7 @@
 layout: somelinks
 title: "Movies and Immigrants and Engineers"
 date: 2018-09-05
+description: "This is the super socially conscious article, not that the others aren't, but this one is particularly so."
 ---
 
 I meant to rewrite some of the synopses below,[^a] but I didn't quite have the time/will power to do so.

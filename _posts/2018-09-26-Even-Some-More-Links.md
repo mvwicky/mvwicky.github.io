@@ -2,6 +2,7 @@
 layout: somelinks
 title: "PLACEHOLDER TITLE"
 date: 2018-09-26
+description: "Placeholder description."
 ---
 
 {% assign nbpalink = "https://www.documentcloud.org/documents/4829342-National-Black-Police-Association-Letter-to-Nike.html" %}

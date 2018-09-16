@@ -2,6 +2,7 @@
 layout: somelinks
 title: "The Film Crit Hulk Post."
 date: 2018-09-19
+description: "Articles written by the Film Crit Hulk, along with my commentary."
 ---
 
 There are so many articles that I could link here.[^1]
