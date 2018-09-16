@@ -5,13 +5,10 @@
     <meta name="description" content="{{ site.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0af">
-
     {% comment %}
     <title>{{ page.title }}</title>
-    {% endcomment %}
-
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-
+    {% endcomment %}
     {%- assign iconsizes = "180;152;144;120;114;76;72;60;57" | split: ";" %}
     {% for sz in iconsizes -%}
     <link rel="apple-touch-icon" type="image/png" sizes="{{sz}}x{{sz}}" href="/img/apple-touch-icon-{{sz}}.png">
