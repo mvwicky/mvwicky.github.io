@@ -1,4 +1,5 @@
-@import "util";
+@import 'util';
+@import 'colors';
 
 $header-font: 'Trirong', Garamond, serif;
 $body-font: 'Rubik', Helvetica, sans-serif;
@@ -16,12 +17,12 @@ html {
 }
 
 a:visited {
-    color: blue;
+    color: $a-visited-color;
 }
 
 nav, #content {
     @include border-radius(1em);
-    border: 1px solid rgba(0, 0, 0, 0.33);
+    border: 1px solid $common-border-color;
     margin: 0 auto;
     padding: 0.75em;
     @include responsive-width($resp-width);
@@ -31,12 +32,11 @@ nav, #content {
 nav {
     font-family: $header-font;
 
-    background: #ddf;
+    background: $nav-color;
     min-height: 50px;
     margin-bottom: 1em;
     ul {
         margin: 0.5em auto;
-        /* margin-left: 0; */
         padding-left: 0;
     }
     li {
@@ -45,21 +45,13 @@ nav {
     .nav-link {
         margin: 0.75em 2%;
         @include border-radius(0.25em);
-        border: 1px solid black;
+        border: 1px solid $nav-link-border-color;
         padding: 0.75em;
         @include resp-font(320px, 1200px, 14px, 20px);
     }
     #current-loc {
-        background-color: #88e;
+        background-color: $nav-current-color;
     }
-}
-
-.footnote {
-    background-color: rgba(180, 180, 250, 0.5);
-    @include border-radius(2px);
-    padding: 0.5px 0.5px 0px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -84,9 +76,9 @@ h1, h2, h3, h4, h5, h6 {
         @include resp-font(320px, 1200px, 16px, 24px);
         .link-title {
             text-decoration: none;
-            color: black;
+            color: $title-color;
             &:hover {
-                background-color: lightgray;
+                background-color: $title-hover-color;
             }
         }
     }
@@ -108,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
             &::before {
                 content: "TODO: ";
             }
-            color: red;
+            color: $todo-color;
             font-size: 16pt;
             font-weight: bold;
             text-decoration: underline;
@@ -122,13 +114,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #content {
     background: #eef;
-    /* border: 1px solid rgba(0, 0, 0, 0.33); */
     line-height: 1.7;
     padding-bottom: $footer-height;
     h2 > a {
         text-decoration: none;
         &:hover {
-            background-color: gainsboro;
+            background-color: $link-hover-color;
+            text-decoration: underline;
         }
     }
 }
@@ -142,8 +134,18 @@ footer {
     width: 100%;
 }
 
+.footnote {
+    background-color: $fn-bg-color;
+    @include border-radius(2px);
+    padding: 0.5px 0.5px 0px;
+    border: 1px solid $fn-border-color;
+    text-decoration: none;
+}
+
+$footsep-border-size: 1px;
 .footsep {
-    border-bottom: 1px solid #ccc;
+    border-top: $footsep-border-size solid $footsep-border-color;
+    border-bottom: $footsep-border-size solid $footsep-border-color;
     margin: 5.5em 0 1em;
-    padding-top: 0.75em;
+    padding-top: 0.7em;
 }
