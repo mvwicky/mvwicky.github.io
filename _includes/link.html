@@ -1,2 +1,3 @@
-<h2 id="{{ include.title | escape | slugify }}"><span class="link-marker">&#172;</span> <a href="{{ include.link }}">{{ include.title | escape }}</a></h2>
+{% assign linkmarker = "&#172;" %}
+<h2 id="{{ include.title | escape | slugify }}"><span class="link-marker">{{ linkmarker }}</span> <a href="{{ include.link }}">{{ include.title | escape }}</a></h2>
 <h4 id="{{ include.author | slugify }}">{{ include.author }}</h4>

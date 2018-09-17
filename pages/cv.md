@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: miscpages
 title: "Resume"
 ---
 
@@ -15,7 +15,7 @@ __High School__ --- _Santa Barbara High School_ --- 2009--2013
 
 ---
 
-## __Embedded Software Engineer__ 
+## __Embedded Software Engineer__
 ### _Lumenpulse Inc.,_ Boston --- 2017
 
 
@@ -26,7 +26,7 @@ Applications included stress testing of networked lighting and factory-level qua
     - Python-based GUI exposing hardware settings
 - Networked lighting test script, used to stress-test large installations
 
-## __Software Engineering Co-op__ 
+## __Software Engineering Co-op__
 ### _Qinetiq-NA_, Waltham --- 2016
 
 Worked in the Power Line Sensors division
@@ -55,3 +55,5 @@ Worked in the Power Line Sensors division
 - Python
 - Linux
 - Lighting Protocols
+
+<hr class="footsep">

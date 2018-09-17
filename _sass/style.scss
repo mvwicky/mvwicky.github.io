@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
         margin: 0;
     }
     h1 {
-        @include resp-font(320px, 1200px, 16px, 24px);
+        @include resp-font(320px, 1200px, 18px, 26px);
         .link-title {
             text-decoration: none;
             color: $title-color;
@@ -116,6 +116,9 @@ h1, h2, h3, h4, h5, h6 {
     background: #eef;
     line-height: 1.7;
     padding-bottom: $footer-height;
+    .link-marker {
+
+    }
     h2 > a {
         text-decoration: none;
         &:hover {
