@@ -27,7 +27,7 @@ Anyways, Hulk excels at articulating things that I feel intuitively, but are stu
 He, not to put too fine or dramatic a point on it, is like the lightning that finally woke up the oozing puddle of proteins that finally became the first life.
 
 {% include link.html title="Anthony Bourdain, Suicide, and Grace" link=page.links.bourdain author=page.hulk %}
-This one specifically is pretty meaningful to me.
+<p></p>
 
 {% include link.html title="On Criticism in the Intersectional Age" link=page.links.inter author=page.hulk %}
 The oppressors[^5] are the only group in an oppressive system with the actual capacity to effect change; slaves could not emancipate themselves and women could not grant suffrage to themselves.
