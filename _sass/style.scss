@@ -6,149 +6,164 @@ $body-font: 'Rubik', Helvetica, sans-serif;
 $footer-height: 2em;
 $resp-width: 768px;
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a:visited {
-    color: $a-visited-color;
+  color: $a-visited-color;
 }
 
-nav, #content {
-    @include border-radius(1em);
-    border: 1px solid $common-border-color;
-    margin: 0 auto;
-    padding: 0.75em;
-    @include responsive-width($resp-width);
-    width: 90%;
+nav,
+#content {
+  @include border-radius(1em);
+  border: 1px solid $common-border-color;
+  margin: 0 auto;
+  padding: 0.75em;
+  @include responsive-width($resp-width);
+  width: 90%;
 }
 
 nav {
-    font-family: $header-font;
+  font-family: $header-font;
 
-    background: $nav-color;
-    min-height: 50px;
-    margin-bottom: 1em;
-    ul {
-        margin: 0.5em auto;
-        padding-left: 0;
-    }
-    li {
-        display: inline-block;
-    }
-    .nav-link {
-        margin: 0.75em 2%;
-        @include border-radius(0.25em);
-        border: 1px solid $nav-link-border-color;
-        padding: 0.75em;
-        @include resp-font(320px, 1200px, 14px, 20px);
-    }
-    #current-loc {
-        background-color: $nav-current-color;
-    }
+  background: $nav-color;
+  min-height: 50px;
+  margin-bottom: 1em;
+  ul {
+    margin: 0.5em auto;
+    padding-left: 0;
+  }
+  li {
+    display: inline-block;
+  }
+  .nav-link {
+    margin: 0.75em 2%;
+    @include border-radius(0.25em);
+    border: 1px solid $nav-link-border-color;
+    padding: 0.75em;
+    @include resp-font(320px, 1200px, 14px, 20px);
+  }
+  #current-loc {
+    background-color: $nav-current-color;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $header-font;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font;
 }
 
 #container {
-    min-height: 100%;
-    position: relative;
-    padding: 0;
-    overflow: hidden;
-    #title {
-        margin: 0.5em auto;
-        @include responsive-width($resp-width);
-        @include resp-font(320px, 1200px, 20px, 36px);
-}
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: 700;
-        margin: 0;
+  min-height: 100%;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  #title {
+    margin: 0.5em auto;
+    @include responsive-width($resp-width);
+    @include resp-font(320px, 1200px, 20px, 36px);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    margin: 0;
+  }
+  h1 {
+    @include resp-font(320px, 1200px, 18px, 26px);
+    .link-title {
+      text-decoration: none;
+      color: $title-color;
+      &:hover {
+        background-color: $title-hover-color;
+      }
     }
-    h1 {
-        @include resp-font(320px, 1200px, 18px, 26px);
-        .link-title {
-            text-decoration: none;
-            color: $title-color;
-            &:hover {
-                background-color: $title-hover-color;
-            }
-        }
+  }
+  h2 {
+    @include respond-to-width($resp-width, 'font-size', 16pt, 14pt);
+  }
+  h3 {
+    font-size: 14pt;
+  }
+  h4 {
+    font-size: 14pt;
+  }
+  div {
+    font-family: $body-font;
+    @include resp-font(320px, 1200px, 12px, 16px);
+    font-weight: 500;
+    margin: 0.5em auto;
+    .notice-todo {
+      &::before {
+        content: 'TODO: ';
+      }
+      color: $todo-color;
+      font-size: 16pt;
+      font-weight: bold;
+      text-decoration: underline;
+      margin: 0;
     }
-    h2 {
-        @include respond-to-width($resp-width, "font-size", 16pt, 14pt);
+    .footnotes {
+      font-size: 80%;
     }
-    h3 {
-        font-size: 14pt;
-    }
-    h4 {
-        font-size: 14pt;
-    }
-    div {
-        font-family: $body-font;
-        @include resp-font(320px, 1200px, 12px, 16px);
-        font-weight: 500;
-        margin: 0.5em auto;
-        .notice-todo {
-            &::before {
-                content: "TODO: ";
-            }
-            color: $todo-color;
-            font-size: 16pt;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        .footnotes {
-            font-size: 80%;
-        }
-    }
-
+  }
 }
 
 #content {
-    background: #eef;
-    line-height: 1.7;
-    padding-bottom: $footer-height;
-    .link-marker {
-
+  background: $content-background-color;
+  line-height: 1.7;
+  padding-bottom: $footer-height;
+  .link-marker {
+  }
+  h2 > a {
+    text-decoration: none;
+    &:hover {
+      background-color: $link-hover-color;
+      text-decoration: underline;
     }
-    h2 > a {
-        text-decoration: none;
-        &:hover {
-            background-color: $link-hover-color;
-            text-decoration: underline;
-        }
-    }
+  }
 }
 
 footer {
-    bottom: 0;
-    height: $footer-height;
-    margin: 1em auto 0;
-    position: absolute;
-    text-align: center;
-    width: 100%;
+  bottom: 0;
+  height: $footer-height;
+  margin: 1em auto 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 
 .footnote {
-    background-color: $fn-bg-color;
-    @include border-radius(2px);
-    padding: 0.5px 0.5px 0px;
-    border: 1px solid $fn-border-color;
-    text-decoration: none;
+  background-color: $fn-bg-color;
+  @include border-radius(2px);
+  padding: 0.5px 0.5px 0px;
+  border: 1px solid $fn-border-color;
+  text-decoration: none;
 }
 
 $footsep-border-size: 1px;
 .footsep {
-    border-top: $footsep-border-size solid $footsep-border-color;
-    border-bottom: $footsep-border-size solid $footsep-border-color;
-    margin: 5.5em 0 1em;
-    padding-top: 0.7em;
+  border-top: $footsep-border-size solid $footsep-border-color;
+  border-bottom: $footsep-border-size solid $footsep-border-color;
+  margin: 5.5em 0 1em;
+  padding-top: 0.7em;
+}
+
+.art-sep {
+  margin: 1.5em auto 0;
 }
