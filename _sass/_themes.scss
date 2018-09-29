@@ -1,0 +1,55 @@
+/* General Theming */
+
+@import 'colors';
+@import 'util';
+
+$responsive-min-width: 320px;
+$responsive-max-width: 1200px;
+
+/* Sets the default min and max viewport widths */
+@mixin default-resp-font($min-font-size, $max-font-size) {
+  @include resp-font($responsive-min-width, $responsive-max-width, $min-font-size, $max-font-size);
+}
+
+/* Fonts */
+$header-font: 'Trirong', Garamond, serif;
+$body-font: 'Rubik', Helvetica, sans-serif;
+
+/* The width at which we trigger styling changes */
+$resp-width: 768px;
+
+/* Nav/Content Section */
+$common-border: 1px solid $common-border-color;
+$common-border-radius: 1em;
+$common-margin: 0 auto;
+$common-padding: 0.75em;
+$common-width: 80%;
+
+/* Container */
+$site-title-margin: 0.5em auto;
+
+
+/* Footer (not really used) */
+/* Height of the page footer (not used) */
+$footer-height: 2em;
+$footer-margin: 1em auto 0;
+
+/* Navigation Bar */
+$nav-margin: 0 0 1em 0;
+
+/* Navigation Links */
+$nav-link-margin: 0.75em 2%;
+$nav-link-padding: 0.75em;
+
+/* Footer Rule */
+$footsep-border-size: 1px;
+
+/* Footnote */
+$footnote-padding: 0 0.4% 0 0.5px;
+$footnote-border: 1px solid $fn-border-color;
+$footnote-border-radius: 4px;
+
+.font-normal {
+  font-style: normal;
+  font-weight: normal;
+}

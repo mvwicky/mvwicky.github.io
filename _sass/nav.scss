@@ -1,0 +1,48 @@
+@import 'colors';
+@import 'themes';
+@import 'util';
+
+nav {
+  font-family: $header-font;
+  background: $nav-color;
+  min-height: 50px;
+  margin: $nav-margin;
+
+  ul {
+    margin: 0.5em auto;
+    padding-left: 0;
+  }
+  li {
+    display: inline-block;
+  }
+  .nav-link {
+    margin: $nav-link-margin;
+    padding: 0;
+    a {
+      border: 1px solid $nav-link-border-color;
+      @include border-radius(0.25em);
+      color: $a-header-color;
+
+
+      display: inline-block;
+      font-style: normal;
+      margin: 0;
+      padding: $nav-link-padding;
+      @include resp-font(320px, 1200px, 14px, 20px);
+
+
+
+      &:hover {
+        background-color: $nav-link-hover-color;
+      }
+      &:visited {
+        color: $a-header-color;
+      }
+
+
+    }
+    #current-loc {
+      background-color: $nav-current-color;
+    }
+  }
+}
