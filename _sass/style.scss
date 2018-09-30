@@ -16,9 +16,10 @@ html {
 }
 
 a {
-  color: $a-color;
+  color: $link-color;
+  text-decoration: none;
   &:visited {
-    color: $a-color;
+    color: $link-color;
   }
 }
 
@@ -29,7 +30,7 @@ nav,
   margin: $common-margin;
   padding: $common-padding;
   @include responsive-width($resp-width);
-  width: $common-width;
+  // width: $common-width;
 }
 
 h1,
@@ -39,6 +40,12 @@ h4,
 h5,
 h6 {
   font-family: $header-font;
+}
+
+code {
+  font-family: $code-font;
+  font-size: 90%;
+  font-weight: 550;
 }
 
 footer {
@@ -56,9 +63,9 @@ footer {
   border: $footnote-border;
   @include border-radius($footnote-border-radius);
   padding: $footnote-padding;
+  font-size: 80%;
   text-decoration: none;
 }
-
 
 .footsep {
   border-top: $footsep-border-size solid $footsep-border-color;
@@ -69,4 +76,23 @@ footer {
 
 .article-sep {
   margin: 1.5em auto 0;
+}
+
+$date-col: minmax(6em, 1fr);
+$title-col: minmax(min-content, 10fr);
+
+#posts-list {
+  align-items: center;
+  box-sizing: border-box;
+  display: grid;
+  gap: 0.33em 0;
+  grid-auto-rows: minmax(1.75em, auto);
+  grid-template-columns: 0.75em $date-col 1em $title-col;
+  width: 100%;
+
+  div {
+    font-size: 105%;
+    margin: 0;
+    overflow: wrap;
+  }
 }

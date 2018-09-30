@@ -1,5 +1,18 @@
+{% assign postsep = "&raquo;" %}
+<div id="posts-list">
+    {% for post in site.posts %}
+        <div class="post-bullet">&bullet;</div>
+        <div class="post-date">{{ post.date | date_to_string }}</div>
+        <div class="post-sep">{{ postsep }}</div>
+        <div class="post-title"><a class="post-link" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></div>
+    {% endfor %}
+</div>
+{% comment %}
 <ul class="posts">
     {% for post in site.posts %}
         <li><span>{{ post.date | date_to_string }}</span> &raquo; <a class="post-link" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
     {% endfor %}
 </ul>
+{% endcomment %}
+
+

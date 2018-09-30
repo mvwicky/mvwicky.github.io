@@ -3,14 +3,14 @@
 @import 'util';
 
 #container {
-  min-height: 100%;
+  // min-height: 100%;
   position: relative;
   padding: 0;
   overflow: hidden;
+
   #title {
     margin: $site-title-margin;
     @include responsive-width($resp-width);
-
     @include default-resp-font(20px, 36px);
   }
   h1,
@@ -19,11 +19,11 @@
   h4,
   h5,
   h6 {
-    font-weight: 700;
-    margin: 0;
+    font-weight: $header-font-weight;
+    margin: $header-margin;
   }
   h1 {
-    @include resp-font(320px, 1200px, 18px, 26px);
+    @include default-resp-font(18px, 26px);
     .link-title {
       text-decoration: none;
       color: $title-color;
@@ -34,6 +34,7 @@
   }
   h2 {
     @include respond-to-width($resp-width, 'font-size', 16pt, 14pt);
+    // @include default-resp-font(16px, 20px);
   }
   h3 {
     font-size: 14pt;
@@ -43,9 +44,9 @@
   }
   div {
     font-family: $body-font;
-    @include resp-font(320px, 1200px, 12px, 16px);
-    font-weight: 500;
-    margin: 0.5em auto;
+    @include default-resp-font(12px, 16px);
+    font-weight: $body-font-weight;
+    margin: $body-margin;
     .notice-todo {
       &::before {
         content: 'TODO: ';
@@ -55,9 +56,6 @@
       font-weight: bold;
       text-decoration: underline;
       margin: 0;
-    }
-    .footnotes {
-      font-size: 80%;
     }
   }
   .post-link {
@@ -70,11 +68,11 @@
   line-height: 1.7;
   padding-bottom: $footer-height;
   p {
+    text-indent: $body-indent-length;
+    margin: $body-par-margin;
     a {
-      font-style: oblique;
+      font-style: $body-link-style;
     }
-  }
-  .link-marker {
   }
   h2 > a {
     @include border-radius(5px);
@@ -83,6 +81,14 @@
     &:hover {
       background-color: $link-hover-color;
       text-decoration: underline;
+    }
+  }
+  .link-marker {
+  }
+  .footnotes {
+    font-size: $footnotes-font-size;
+    p {
+      text-indent: 0;
     }
   }
 }

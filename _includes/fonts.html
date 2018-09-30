@@ -8,7 +8,8 @@
     <script type="text/javascript">
         WebFont.load({
             google: {
-                families: ['Rubik', 'Trirong']
+                {% comment %}families: ['Rubik', 'Trirong']{% endcomment %}
+                families: ['{{ site.data.fonts.body }}', '{{ site.data.fonts.heading }}', '{{ site.data.fonts.code }}']
             }
         });
     </script>

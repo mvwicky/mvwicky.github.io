@@ -1,19 +1,31 @@
 name: Michael Van Wickle
 markdown: kramdown
-url: "https://wherewasigoing.com"
+url: 'https://wherewasigoing.com'
 repository: mvwicky/mvwicky.github.io
-title: "Where Was I Going With That?"
-description: "A blog, which generally consists of posts that are lists of links, followed by thoughts on said links"
+title: 'Where Was I Going With That?'
+description: 'A blog, which generally consists of posts that are lists of links, followed by thoughts on said links'
 permalink: /blog/:year/:month/:day/:title
 future: false
+exclude:
+  [
+    'Gemfile',
+    'Gemfile.lock',
+    'node_modules',
+    'vendor/bundle/',
+    'vendor/cache/',
+    'vendor/gems/',
+    'vendor/ruby/',
+    'doc/',
+  ]
 plugins:
   - jekyll-sitemap
   - jekyll-include-cache
   - jekyll-seo-tag
-
 author:
   name: Michael Van Wickle
   twitter: mvwicky
-
 sass:
   style: compressed
+kramdown:
+  math_engine: mathjax
+  show_warnings: true

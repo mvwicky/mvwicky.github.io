@@ -7,9 +7,10 @@ $content-background-color: #eeeeff;
 
 /* Nav Bar */
 $nav-color: rgba(221, 221, 255, 1);
-$nav-current-color: rgba(150, 150, 238, 0.8);
+$nav-link-color: rgba(80, 80, 250, 1);
+$nav-current-color: rgba(150, 150, 238, 0.7);
 $nav-link-border-color: rgba(0, 0, 0, 0.75);
-$nav-link-hover-color: rgba(200, 200, 255, 0.25);
+$nav-link-hover-color: rgba(200, 200, 255, 0.5);
 
 /* Footnotes */
 $fn-opacity: 0.15;
@@ -30,6 +31,4 @@ $link-hover-color: gainsboro;
 $footsep-border-color: #cccccc;
 
 /* <a> tags */
-$a-color: rgb(0, 0, 200);
-$a-header-color: rgb(0, 0, 255);
-$a-visited-color: blue;
+$link-color: rgba(0, 0, 200, 1);

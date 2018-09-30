@@ -1,8 +1,12 @@
 'use strict';
-const DEBUG = false;
+const DEBUG = true;
 
 function log(...args) {
   DEBUG && console.log(...args);
+}
+
+function byId(id) {
+  return document.getElementById(id);
 }
 
 function fnMouseOver(event) {
@@ -33,4 +37,25 @@ function main(e) {
     fn.addEventListener('mouseout', fnMouseOut);
   });
 }
+
+function print_style(elem, prop) {
+  let style = window.getComputedStyle(elem);
+  console.log(prop, style.getPropertyValue(prop));
+}
+
+function styleDebug() {
+  let title = document.querySelector('.post-title');
+  console.log(title.innerText);
+
+  let container = byId('container');
+  let style = window.getComputedStyle(container);
+
+  let p = document.querySelector('p');
+  print_style(p, 'font-family');
+
+  let h2 = document.querySelector('h2');
+  print_style(h2, 'font-family');
+}
+
 // window.addEventListener('load', main);
+window.addEventListener('load', styleDebug);

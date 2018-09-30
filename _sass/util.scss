@@ -12,15 +12,18 @@
     $lt: the value if the screen is smaller than $break-width
 */
 @mixin respond-to-width($break-width, $attr, $gt, $lt) {
-  @media (min-width: $break-width) {#{$attr}: $gt;}
-  @media (max-width: $break-width) {#{$attr}: $lt;}
+  @media (min-width: $break-width) {
+    #{$attr}: $gt;
+  }
+  @media (max-width: $break-width) {
+    #{$attr}: $lt;
+  }
 }
 
 /* Convinence specialization of respond-to-width */
 @mixin responsive-width($w) {
-  @include respond-to-width($w, "max-width", $w * 0.9, 90%);
+  @include respond-to-width($w, 'max-width', $w * 0.9, 90%);
 }
-
 
 @function strip-unit($v) {
   @return $v / ($v * 0 + 1);
@@ -37,7 +40,10 @@
     & {
       font-size: $min-font-size;
       @media screen and (min-width: $min-vw) {
-        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
       }
       @media screen and (min-width: $max-vw) {
         font-size: $max-font-size;
