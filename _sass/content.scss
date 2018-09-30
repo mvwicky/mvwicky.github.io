@@ -35,13 +35,10 @@
     // @include default-resp-font(16px, 20px);
     @include rfs(20);
   }
-  h3 {
-    // font-size: 14pt;
-    @include rfs(16);
-  }
+  h3,
   h4 {
     // font-size: 14pt;
-    @include rfs(16);
+    @include rfs(18);
   }
   div {
     font-family: $body-font;

@@ -6,20 +6,40 @@ description: "PLACEHOLDER DESCRIPTION."
 links:
     dict: "https://www.fastcompany.com/90235948/dictionary-com-is-political-now"
     solnit: "https://lithub.com/rebecca-solnit-the-case-of-the-missing-perpetrator/"
+    tronc: "https://www.theringer.com/2018/9/26/17903750/tronc-2018-chicago-tribune-la-times-nydn"
+    janus: "http://www.chicagomag.com/city-life/July-2018/Why-the-Janus-Decision-Means-Roe-and-Same-Sex-Marriage-Are-At-Risk/"
+    explain: "http://articles.latimes.com/2008/apr/13/opinion/op-solnit13"
 ---
 
 I'm worried about the fact that the time between these posts is growing precipitously.
-I mean, it's an obvious artifact of the fact that I have a job right now, but, it's still a bit troubling.
+I mean, it's an obvious artifact of the fact that I have a job right now, but, it's almost a bit troubling.
+Hopefully as I settle into the routine of my job I'll get better at working outside of it.
 
 {% include link.html title="How Dictionary.com's Twitter account got so cleverly woke" link=page.links.dict author="Joe Berkowitz" %}
 The proportion of the short, short time I have on Earth I've spent telling people about how great [Dictionary.com](https://dictionary.com) is at [Twitter](https://twitter.com/Dictionarycom), is likely abnormal.[^1]
+They're great, I assume that it's multiple people running that account, and pretty snarky.
 
 {% include link.html title="The Case of the Missing Perpetrator" link=page.links.solnit author="Rebecca Solnit" %}
 I first read, first heard of, Rebecca Solnit in the photography class I took my last semester of college.
-In that instance, we read excerpts from an acclaimed book of hers in which she examines the life (and photographs) of Eadweard Muybridge,[^2] a man who photographs of the American West before American interlopers got their hands on it[^5] and took some [pictures of horses.](http://100photos.time.com/photos/eadweard-muybridge-horse-in-motion)[^3]
+In that instance, we read excerpts from an acclaimed book of hers in which she examines the life (and photographs) of Eadweard Muybridge,[^2] a man who photographs of the American West before American interlopers got their hands on it[^5] and took some [pictures of horses](http://100photos.time.com/photos/eadweard-muybridge-horse-in-motion).[^3]
 Anyways, that digression[^4] was basically a brag letting you know that I had heard of the writer to whom I am linking you now.
 
 It's a great read, well, to be fair, it's not great, it's rough and hard to read at times, but it is certainly important.[^6]
+
+{% assign tronctitle = "Billionaires, Buyouts, and a Newspaper Empire in the Balance: the Continuing Saga of Tronc" %}
+{% include link.html title=tronctitle link=page.links.tronc author="Kate Knibbs" %}
+<p></p>
+
+{% capture janustitle %}
+Why the <i>Janus</i> Decision Means <i>Roe</i> and Same-Sex Marriage are at Risk
+
+{%- endcapture %}
+
+{% include link.html title=janustitle link=page.links.janus author="Sheryl Ring" %}
+<p></p>
+
+{% include link.html title="Men who explain things" link=page.links.explain author="Rebecca Solnit" %}
+Yeah, two Rebecca Solnit articles in this one, sue me.
 
 <hr class="footsep" />
 

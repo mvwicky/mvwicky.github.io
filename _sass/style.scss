@@ -64,14 +64,21 @@ footer {
   width: 100%;
 }
 
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.7em;
+}
+
 .footnote {
   @extends .font-normal;
   background-color: $fn-bg-color;
   border: $footnote-border;
-  @include border-radius($footnote-border-radius);
+  // @include border-radius($footnote-border-radius);
   padding: $footnote-padding;
   // font-size: 80%;
-  font-size: rfs(12);
+  font-size: rfs(14);
   text-decoration: none;
 }
 

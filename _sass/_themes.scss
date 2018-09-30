@@ -61,9 +61,10 @@ $nav-link-text-dec: underline;
 $footsep-border-size: 1px;
 
 /* Footnote (Markers) */
-$footnote-padding: 0 0.4% 0.1% 0.1%;
-$footnote-border: 1px solid $fn-border-color;
-$footnote-border-radius: 4px;
+
+$footnote-padding: 0;
+$footnote-border: 0px dotted $fn-border-color;
+$footnote-border-radius: 1px;
 
 /* Footnotes (Text) */
 $footnotes-font-size: 80%;
