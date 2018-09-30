@@ -32,7 +32,6 @@ This is a long one,[^1] but well worth the effort.
 
 {% include link.html title="How Duterte Used Facebook to Fuel the Philipine Drug War" link=page.links.face author="Davey Alba" %}
 I've found Rodrigo Duterte pretty disgusting for a while, and this only confirmed my preexisting notions about him.
-{% include todo.html msg="more about Duterte; also Facebook" %}
 
 This seems like a decent opportunity to reiterate my theory regarding _Buzzfeed News_, which is the source of some truly great reporting these days.
 My theory, or my hypotheses on their future,[^4] is that at some point, they will be bought by someone or spun off in some way or at the very least rebranded.
