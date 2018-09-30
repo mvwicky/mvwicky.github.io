@@ -1,18 +1,25 @@
+$rfs-breakpoint: 1000px;
+$rfs-factor: 8;
+@import 'rfs';
+
 @import 'util';
 @import 'colors';
 @import 'themes';
 @import 'nav';
 @import 'content';
 
+html {
+  box-sizing: border-box;
+}
+body {
+  @include rfs(16);
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100%;
-}
-
-html {
-  box-sizing: border-box;
 }
 
 a {
@@ -63,7 +70,8 @@ footer {
   border: $footnote-border;
   @include border-radius($footnote-border-radius);
   padding: $footnote-padding;
-  font-size: 80%;
+  // font-size: 80%;
+  font-size: rfs(12);
   text-decoration: none;
 }
 
@@ -78,7 +86,7 @@ footer {
   margin: 1.5em auto 0;
 }
 
-$date-col: minmax(6em, 1fr);
+$date-col: minmax(5.5rem, 1fr);
 $title-col: minmax(min-content, 10fr);
 
 #posts-list {
@@ -87,11 +95,10 @@ $title-col: minmax(min-content, 10fr);
   display: grid;
   gap: 0.33em 0;
   grid-auto-rows: minmax(1.75em, auto);
-  grid-template-columns: 0.75em $date-col 1em $title-col;
+  grid-template-columns: 0.75em $date-col 1rem $title-col;
   width: 100%;
-
+  @include rfs(18);
   div {
-    font-size: 105%;
     margin: 0;
     overflow: wrap;
   }
