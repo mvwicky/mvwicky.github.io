@@ -5,6 +5,8 @@ JEKYLLSERVE=$(JEKYLL) serve
 SERVEOPTS=--verbose --livereload# --incremental
 ALLOPTS=--drafts --unpublished --future
 
+
+
 all: SERVEOPTS := $(SERVEOPTS) $(ALLOPTS)
 all: serve
 
@@ -23,6 +25,7 @@ update:
 	$(BUNDLE) update
 
 serve:
+	export JEKYLL_ENV=development
 	$(JEKYLLSERVE) $(SERVEOPTS)
 
 drafts: SERVEOPTS := $(SERVEOPTS) --drafts

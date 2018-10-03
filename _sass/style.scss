@@ -62,15 +62,17 @@ footer {
   bottom: 0;
   margin: $footer-margin;
   padding: $footer-padding;
-
   text-align: center;
+
   ul {
     margin: $nav-ul-margin;
     padding: $nav-ul-padding;
   }
+
   .foot-link {
     display: inline-block;
     margin: $foot-link-margin;
+
     padding: auto;
     width: 7em;
     a {

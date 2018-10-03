@@ -7,7 +7,6 @@
   #title {
     margin: $site-title-margin;
     @include responsive-width($resp-width);
-    // @include default-resp-font(20px, 36px);
     @include rfs(36);
   }
   h1,
@@ -20,7 +19,6 @@
     margin: $header-margin;
   }
   h1 {
-    // @include default-resp-font(18px, 26px);
     @include rfs(26);
     .link-title {
       text-decoration: none;
@@ -32,17 +30,14 @@
   }
   h2 {
     @include respond-to-width($resp-width, 'font-size', 16pt, 14pt);
-    // @include default-resp-font(16px, 20px);
     @include rfs(20);
   }
   h3,
   h4 {
-    // font-size: 14pt;
     @include rfs(18);
   }
   div {
     font-family: $body-font;
-    // @include default-resp-font(12px, 16px);
     @include rfs(15);
     font-weight: $body-font-weight;
     margin: $body-margin;
@@ -67,6 +62,7 @@
   line-height: 1.7;
   padding-bottom: $footer-height;
   p {
+    text-align: justify;
     text-indent: $body-indent-length;
     margin: $body-par-margin;
     a {

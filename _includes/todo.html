@@ -1,3 +1,3 @@
-{% if page.published != true %}
+{% if jekyll.environment == "development" %}
 <div class="notice-todo">{{ include.msg | default: "Task to do"}}</div>
 {% endif %}

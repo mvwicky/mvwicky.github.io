@@ -4,6 +4,6 @@
         <div class="post-bullet">&bullet;</div>
         <div class="post-date">{{ post.date | date_to_string }}</div>
         <div class="post-sep">{{ postsep }}</div>
-        <div class="post-title"><a class="post-link" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></div>
+        <div data-tags="{{ post.tags | join " " }}" class="post-title"><a class="post-link" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></div>
     {% endfor %}
 </div>

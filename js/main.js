@@ -30,7 +30,7 @@ function fnMouseOut(event) {
   sup.appendChild(a);
 }
 
-function main(e) {
+function handleFootnotes(e) {
   let footnotes = document.querySelectorAll('.footnote');
   Array.from(footnotes).forEach((fn) => {
     fn.addEventListener('mouseover', fnMouseOver);
@@ -43,7 +43,7 @@ function print_style(elem, prop) {
   console.log(prop, style.getPropertyValue(prop));
 }
 
-function styleDebug() {
+function styleDebug(e) {
   let title = document.querySelector('.post-title');
   console.log(title.innerText);
 
@@ -57,5 +57,24 @@ function styleDebug() {
   print_style(h2, 'font-family');
 }
 
-// window.addEventListener('load', main);
-window.addEventListener('load', styleDebug);
+function postData(e) {
+  let titles = document.querySelectorAll('div.post-title');
+
+  Array.from(titles).forEach((e) => {
+    console.log(e.dataset.tags.split(' '));
+  });
+}
+
+function main(e) {
+  document.body.classList.add('hidden');
+  let postList = document.querySelector('div#posts-list');
+  if (postList !== null) {
+    postData(e);
+  }
+  document.body.classList.remove('hidden');
+}
+
+// window.addEventListener('load', handleFootnotes);
+// window.addEventListener('load', styleDebug);
+// window.addEventListener('load', postData);
+window.addEventListener('load', main);

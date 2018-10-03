@@ -2,6 +2,17 @@
 layout: default
 title: Home
 ---
-<div>
-    {% include postslist.html %}
-</div>
+{% if jekyll.environment == "development" %}
+<label for="post-tags"><h1>All Posts</h1></label>
+<select id="post-tags">
+    <option value="all">All</option>
+    {% for elem in site.tags %}
+    {% assign tag = elem[0]%}
+    <option value="{{ tag }}">{{ tag | capitalize }}</option>
+    {% endfor %}
+</select>
+{% else %}
+<h1>All Posts</h1>
+{% endif %}
+
+{% include postslist.html %}
