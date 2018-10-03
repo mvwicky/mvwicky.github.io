@@ -2,6 +2,7 @@
 layout: post
 title: "Text Versus Texture"
 date: 2018-05-22
+tags: [post]
 ---
 
 Film Crit Hulk is the pen name of an impressively incisive film commentator (columnist?) who has a knack for expressing, clearly, thoughts that I have regarding film.

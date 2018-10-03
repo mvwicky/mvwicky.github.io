@@ -3,6 +3,7 @@ layout: somelinks
 title: "Oppression and reading."
 date: 2018-09-28
 description: "Nike and Kaepernick, Facebook and the Philippines."
+tags: [links]
 links:
     nbpa: "https://www.documentcloud.org/documents/4829342-National-Black-Police-Association-Letter-to-Nike.html"
     rep: "https://www.theatlantic.com/magazine/archive/2014/06/the-case-for-reparations/361631/"

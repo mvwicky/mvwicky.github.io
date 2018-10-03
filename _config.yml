@@ -6,6 +6,12 @@ title: 'Where Was I Going With That?'
 description: 'A blog, which generally consists of posts that are lists of links, followed by thoughts on said links'
 permalink: /blog/:year/:month/:day/:title
 future: false
+strict_front_matter: true
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: default
 exclude:
   [
     'Gemfile',

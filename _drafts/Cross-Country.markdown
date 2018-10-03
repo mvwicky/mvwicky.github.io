@@ -2,6 +2,7 @@
 layout: post
 title: "Cross Country Trip 2018"
 date: 2018-05-26
+tags: [post]
 ---
 
 After graduating college, I went on a cross-country road trip.
@@ -33,7 +34,7 @@ Anyways, I planned a trip that featured the following stops:
 
 I started in Boston; the last stop was home, Santa Barbara.
 
-Before the trip, I had to pack up and move out of 269 Highland. 
+Before the trip, I had to pack up and move out of 269 Highland.
 
 ## May 16: Boston to Burlington
 This leg was ... eventful, to say the least.

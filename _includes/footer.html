@@ -1,1 +1,15 @@
-{% comment %}<!-- <footer><a href="/">Home</a></footer> -->{% endcomment %}
+{% if page.tags %}
+<footer>
+    <ul>
+        {% if page.previous %}
+        <li class="foot-link"><a href="{{ page.previous.url }}">Previous Post</a></li>
+        {% endif %}
+
+        <li class="foot-link"><a href="/">Home</a></li>
+
+        {% if page.next %}
+        <li class="foot-link"><a href="{{ page.next.url }}">Next Post</a></li>
+    {% endif %}
+    </ul>
+</footer>
+{% endif %}

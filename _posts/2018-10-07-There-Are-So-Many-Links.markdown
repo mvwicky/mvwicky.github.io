@@ -1,8 +1,9 @@
 ---
 layout: somelinks
-title: "PLACEHOLDER TITLE."
+title: "Rebecca Solnit and friends."
 date: 2018-10-07
 description: "PLACEHOLDER DESCRIPTION."
+tags: [links]
 links:
     dict: "https://www.fastcompany.com/90235948/dictionary-com-is-political-now"
     solnit: "https://lithub.com/rebecca-solnit-the-case-of-the-missing-perpetrator/"

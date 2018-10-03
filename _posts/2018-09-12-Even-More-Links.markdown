@@ -3,6 +3,7 @@ layout: somelinks
 title: "Who can fathom the mind of Man? Who'd want to?"
 date: 2018-09-12
 description: "A couple links which make me sad and/or scared, and one that makes me sad and makes me laugh."
+tags: [links]
 ---
 
 {% assign elonlink = "http://bostonreview.net/class-inequality/andrew-elrod-rooting-elon" %}

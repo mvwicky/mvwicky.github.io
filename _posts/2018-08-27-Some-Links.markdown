@@ -2,6 +2,7 @@
 layout: somelinks
 title: "Senators, mental health, and wrongness."
 date: 2018-08-27
+tags: [links]
 ---
 
 {% include link.html title="Vintage John McCain: Dead at 81, He Was America's Senator, Not Arizona's" link="https://www.phoenixnewtimes.com/news/john-mccain-america-senator-arizona-obituary-10001670" author="Amy Silverman" %}

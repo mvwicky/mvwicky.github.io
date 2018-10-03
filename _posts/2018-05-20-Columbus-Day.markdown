@@ -2,6 +2,7 @@
 layout: post
 title: "Columbus Day"
 date: 2018-05-20
+tags: [post]
 ---
 
 The title does not refer to actual Columbus Day, like the 'holiday.'

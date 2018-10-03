@@ -3,6 +3,7 @@ layout: onreflections
 title: "Reflections On: War on Peace"
 book_title: "War on Peace: The End of Diplomacy and the Decline of American Democracy"
 date: 2018-05-24
+tags: [post]
 ---
 
 Recently, I finished reading _War on Peace: The End of Diplomacy and the Decline of American Democracy_ by Ronan Farrow.

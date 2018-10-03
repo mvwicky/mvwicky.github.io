@@ -1,0 +1,9 @@
+{% assign postsep = "&raquo;" %}
+<div id="posts-list">
+    {% for e in include.elems %}
+        <div class="post-bullet">&bullet;</div>
+        <div class="post-date">{{ e.date | date_to_string }}</div>
+        <div class="post-sep">{{ postsep }}</div>
+        <div class="post-title"><a class="post-link" href="{{ e.url }}" title="{{ e.title }}">{{ e.title }}</a></div>
+    {% endfor %}
+</div>

@@ -3,6 +3,7 @@ layout: somelinks
 title: "The Film Crit Hulk Post."
 date: 2018-09-19
 description: "Articles written by the Film Crit Hulk, along with my commentary."
+tags: [links]
 hulk: "Film Crit Hulk"
 links:
     speed1: "https://observer.com/2018/05/looking-back-at-the-wachowskis-2008-masterpiece-speed-racer/"
@@ -48,7 +49,7 @@ Obviously, the "thing" in this instance is __Star Wars__ and its legion of entit
 {% include link.html title="The Revenant, Mad Max, and the Nexus of Cinematic Language" link=page.links.cinematic author=page.hulk %}
 <p></p>
 
-<hr class="footsep">
+<hr class="footsep" />
 
 [^1]: And desperately want to, but for the sake of the readers, and my own, I will desist.
 [^2]: Films, video games, TV shows, media generally.

@@ -2,6 +2,7 @@
 layout: somelinks
 title: "The Totalitarian Left."
 date: 2018-08-31
+tags: [links]
 ---
 
 Isn't Kate McKinnon just a national treasure?

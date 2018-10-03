@@ -2,6 +2,7 @@
 layout: post
 title: "To My Friends"
 date: 2018-05-16
+tags: [post]
 ---
 
 I used to tell people, truthfully, that I couldn't remember the last time I had been truly happy.

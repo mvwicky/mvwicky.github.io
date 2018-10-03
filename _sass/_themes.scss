@@ -38,10 +38,13 @@ $body-link-style: oblique 10deg;
 $body-indent-length: 3ex;
 $body-par-margin: 0.3em auto;
 
-/* Footer (not really used) */
-/* Height of the page footer (not used) */
-$footer-height: 2em;
-$footer-margin: 1em auto 0;
+/* Footer */
+/* Height of the page footer  */
+$footer-height: 3em;
+$footer-margin: 0 auto 1em;
+$footer-padding: 0.5em;
+$foot-link-margin: 0.1em auto;
+$foot-link-padding: 0.5em;
 
 /* Navigation Bar */
 $nav-margin: 0 0 1em 0;
@@ -61,7 +64,6 @@ $nav-link-text-dec: underline;
 $footsep-border-size: 1px;
 
 /* Footnote (Markers) */
-
 $footnote-padding: 0;
 $footnote-border: 0px dotted $fn-border-color;
 $footnote-border-radius: 1px;
