@@ -14,7 +14,7 @@ links:
 
 I'm worried about the fact that the time between these posts is growing precipitously.
 I mean, it's an obvious artifact of the fact that I have a job right now, but, it's almost a bit troubling.
-Hopefully as I settle into the routine of my job I'll get better at working outside of it.
+Hopefully, as I settle into the routine of my job I'll get better at working outside of it.
 
 {% include link.html title="How Dictionary.com's Twitter account got so cleverly woke" link=page.links.dict author="Joe Berkowitz" %}
 The proportion of the short, short time I have on Earth I've spent telling people about how great [Dictionary.com](https://dictionary.com) is at [Twitter](https://twitter.com/Dictionarycom), is likely abnormal.[^1]
@@ -29,7 +29,9 @@ It's a great read, well, to be fair, it's not great, it's rough and hard to read
 
 {% assign tronctitle = "Billionaires, Buyouts, and a Newspaper Empire in the Balance: the Continuing Saga of Tronc" %}
 {% include link.html title=tronctitle link=page.links.tronc author="Kate Knibbs" %}
-_Tronc_ is a company name liable to make me hate any company, but this company earns my ire in a less superficial way.[^7]
+Tronc is a company name liable to make me hate any company, but this company earns my ire in a less superficial way.[^7]
+
+It normally takes a re-watch of _The Newsroom_ to get me all up in arms about the state of news media; in the Trump era it feels like I'm constantly ready to fight over the state of the news.
 
 {% capture janustitle %}Why the <i>Janus</i> Decision Means <i>Roe</i> and Same-Sex Marriage are at Risk{%- endcapture %}
 
@@ -42,7 +44,9 @@ But they've been losing political, and actual, power for years; this makes it wo
 
 {% include link.html title="Men who explain things" link=page.links.explain author="Rebecca Solnit" %}
 Yeah, two Rebecca Solnit articles in this one, sue me.
-This essay was actually expanded into a book.
+This essay was actually expanded into a book, which was, I think, a series of essays.
+
+I have less to say about this piece because I used my anecdote in the last one...
 
 <hr class="footsep" />
 

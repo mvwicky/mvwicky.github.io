@@ -9,6 +9,10 @@ function byId(id) {
   return document.getElementById(id);
 }
 
+function qSel(s) {
+  return document.querySelector(s);
+}
+
 function fnMouseOver(event) {
   log(event.target.parentElement);
   let href = event.target.getAttribute('href');
@@ -58,10 +62,27 @@ function styleDebug(e) {
 }
 
 function postData(e) {
-  let titles = document.querySelectorAll('div.post-title');
-
-  Array.from(titles).forEach((e) => {
-    console.log(e.dataset.tags.split(' '));
+  let psel = qSel('select[name="post-select"]');
+  psel.addEventListener('change', (e) => {
+    let num = e.target.value;
+    let opt = qSel(`option[value="${num}"]`);
+    let label = opt.getAttribute('label');
+    let titles = document.querySelectorAll('div.post-title');
+    Array.from(titles).forEach((t) => {
+      let tags = t.dataset.tags.split(' ');
+      let ids = Array.from(
+        document.querySelectorAll(`#${t.getAttribute('id')}`)
+      );
+      if (tags.includes(label) || label === 'all') {
+        ids.forEach((p) => {
+          p.classList.remove('hidden');
+        });
+      } else {
+        ids.forEach((p) => {
+          p.classList.add('hidden');
+        });
+      }
+    });
   });
 }
 

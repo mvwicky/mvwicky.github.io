@@ -1,0 +1,37 @@
+---
+layout: miscpages
+title: "Tags"
+---
+
+{% if jekyll.environment == "development" %}
+{% comment %}<label for="post-tags"><h1>Posts</h1></label>{% endcomment %}
+<select id="post-tags" name="post-select">
+    <option value="{% increment post_counter %}" label="all">All</option>
+    {% for elem in site.tags %}
+    {% assign tag = elem[0]%}
+    <option value="{% increment post_counter %}" label={{ tag }}>{{ tag | capitalize }}</option>
+    {% endfor %}
+</select>
+
+{% include postslist.html %}
+
+{% else %}
+
+A list of every post by category.[^1]
+
+<h2>Lists of Links</h2>
+
+{% include gridlist.html elems=site.tags.links %}
+
+<h2>Post</h2>
+
+{% include gridlist.html elems=site.tags.post %}
+{% endif %}
+
+<hr class="footsep" />
+
+{% if jekyll.environment != "development" %}
+
+[^1]: There are two categories, links (i.e., a list of links) and posts (more generic musings, ideas, thoughts, etc.)
+
+{% endif %}
