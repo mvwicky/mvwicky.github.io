@@ -21,6 +21,10 @@ links:
         href: "https://mystudentvoices.com/beware-of-wolves-in-sheeps-clothing-the-tale-of-a-progressive-professor-who-forgot-to-hide-her-7efe21b1fc5d"
         title: "Beware of Wolves in Sheep's Clothing"
         author: Kayla Renee Parker
+    poly:
+        href: "https://antipolygraph.org/statements/statement-038.shtml"
+        title: Personal Statement of a CIA Analyst
+        author: Anonymous
 ---
 
 {% include objlink.html obj=page.links.judge %}
@@ -33,6 +37,9 @@ links:
 <p></p>
 
 {% include objlink.html obj=page.links.wolves %}
+<p></p>
+
+{% include objlink.html obj=page.links.poly %}
 <p></p>
 
 
