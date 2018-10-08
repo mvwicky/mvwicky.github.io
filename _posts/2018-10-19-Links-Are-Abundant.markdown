@@ -40,7 +40,7 @@ links:
 <p></p>
 
 {% include objlink.html obj=page.links.poly %}
-<p></p>
+It was weird to see this so close (temporally) to Christine Blasey Ford's testimony, but it's not related at all really to that.
 
 
 <hr class="footsep" />
