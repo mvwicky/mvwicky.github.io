@@ -82,8 +82,18 @@
   }
   .footnotes {
     font-size: $footnotes-font-size;
-    p {
-      text-indent: 0;
+    margin: 0 auto;
+    ol {
+      list-style-position: outside;
+      margin: 0 1rem 0 0;
+      li {
+        p:first-child {
+          text-indent: 0;
+        }
+        p {
+          text-indent: 3ex;
+        }
+      }
     }
   }
 }

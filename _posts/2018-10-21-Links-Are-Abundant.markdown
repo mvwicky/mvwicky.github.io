@@ -1,7 +1,7 @@
 ---
 layout: somelinks
 title: "PLACEHOLDER TITLE."
-date: 2018-10-19
+date: 2018-10-21
 description: "PLACEHOLDER DESCRIPTION."
 tags: [links]
 links:
@@ -27,6 +27,12 @@ links:
         author: Anonymous
 ---
 
+There are so many phrases and words that I'd like to work into my day-to-day, but just the thought of saying them aloud, like _to another human being_, seems so unnatural.
+For instance, I'd like to use the word "perforce" more in conversation.
+It's a word that just sounds nice, and I always feel like it'll be so much more applicable than it ever is.
+
+"Good looking out," to showcase another example, is great, but always feels so out of place w.r.t. my normal speaking patterns.
+
 {% include objlink.html obj=page.links.judge %}
 <p></p>
 
@@ -40,7 +46,9 @@ links:
 <p></p>
 
 {% include objlink.html obj=page.links.poly %}
-It was weird to see this so close (temporally) to Christine Blasey Ford's testimony, but it's not related at all really to that.
+It was weird to see this so close (temporally) to Christine Blasey Ford's testimony,[^1] but it's not related at all really to that.
 
 
 <hr class="footsep" />
+
+[^1]: Man, that was like a week ago (as of this writing), but it feels like it's been several millennia since then.
