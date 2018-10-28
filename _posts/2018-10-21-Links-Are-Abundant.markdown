@@ -1,8 +1,8 @@
 ---
 layout: somelinks
-title: "PLACEHOLDER TITLE."
+title: "No writing really."
 date: 2018-10-21
-description: "PLACEHOLDER DESCRIPTION."
+description: "Didn't have a lot of time to make this one."
 tags: [links]
 links:
     judge:
