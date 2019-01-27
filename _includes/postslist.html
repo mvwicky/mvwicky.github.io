@@ -5,7 +5,7 @@
         <div id="post{{n}}" class="post-bullet">&bullet;</div>
         <div id="post{{n}}" class="post-date">{{ post.date | date_to_string }}</div>
         <div id="post{{n}}" class="post-sep">{{ postsep }}</div>
-        <div id="post{{n}}" data-tags="{{ post.tags | join " " }}" class="post-title"><a class="post-link" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></div>
+        <div id="post{{n}}" data-tags="{{ post.tags | join " " }}" class="post-title"><a title="{{ post.description }}" class="post-link" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></div>
     {% assign n = n | plus: 1 %}
     {% endfor %}
 </div>
