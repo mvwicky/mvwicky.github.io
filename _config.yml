@@ -16,7 +16,7 @@ exclude:
   - "Gemfile"
   - "Gemfile.lock"
   - "node_modules"
-  - "vendor/bundle/"
+  - "vendor/bundler/"
   - "vendor/cache/"
   - "vendor/gems/"
   - "vendor/ruby/"
