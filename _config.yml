@@ -12,16 +12,15 @@ defaults:
       path: ""
     values:
       layout: default
-exclude:
-  - "Gemfile"
-  - "Gemfile.lock"
-  - "node_modules"
-  - "vendor/bundler/"
-  - "vendor/cache/"
-  - "vendor/gems/"
-  - "vendor/ruby/"
-  - "doc/"
-
+# exclude:
+#   - "Gemfile"
+#   - "Gemfile.lock"
+#   - "node_modules"
+#   - "vendor/bundler/"
+#   - "vendor/cache/"
+#   - "vendor/gems/"
+#   - "vendor/ruby/"
+#   - "doc/"
 plugins:
   - jekyll-sitemap
   - jekyll-include-cache
