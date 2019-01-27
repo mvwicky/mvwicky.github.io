@@ -10,18 +10,16 @@
     "folders": [
         {
             "path": ".",
-            "folder_exclude_patterns":
-            [
+            "folder_exclude_patterns": [
                 ".bundle",
-                "_site",
                 "doc",
                 "node_modules",
                 "vendor"
             ],
             "file_exclude_patterns": [
                 "*.png",
-                "*.lock",
                 "*.git",
+                "yarn.lock",
                 "*.sublime-workspace",
                 "*.sublime-project",
                 "desktop.ini",
@@ -29,10 +27,5 @@
                 "*.txt"
             ]
         }
-    ],
-    "settings": {
-        "tab_size": 4,
-        "translate_tabs_to_spaces": true,
-        "detect_indentation": false
-    }
+    ]
 }
