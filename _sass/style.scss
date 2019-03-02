@@ -1,12 +1,12 @@
 $rfs-breakpoint: 1000px;
 $rfs-factor: 8;
-@import 'rfs';
+@import "rfs";
 
-@import 'util';
-@import 'colors';
-@import 'themes';
-@import 'nav';
-@import 'content';
+@import "util";
+@import "colors";
+@import "themes";
+@import "nav";
+@import "content";
 
 html {
   box-sizing: border-box;
@@ -140,5 +140,9 @@ $title-col: minmax(min-content, 10fr);
   div {
     margin: 0;
     overflow: wrap;
+  }
+  .post-date,
+  .post-bullet {
+    @include rfs(16);
   }
 }

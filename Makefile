@@ -24,6 +24,10 @@ build:
 update:
 	$(BUNDLE) update
 
+prod:
+	export JEKYLL_ENV=production
+	$(JEKYLLSERVE) $(SERVEOPTS)
+
 serve:
 	export JEKYLL_ENV=development
 	$(JEKYLLSERVE) $(SERVEOPTS)

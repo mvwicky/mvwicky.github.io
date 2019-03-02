@@ -1,11 +1,14 @@
 ---
 layout: default
 ---
-<h1 class="post-title" id="{{ page.title | slugify }}"><a class="link-title" href="#{{ page.title | slugify }}">{{ page.title | markdownify }}</a></h1>
-{% comment %}
-<!-- This part doesnt work with the github-pages gem version of Jekyll -->
-<h3 class="post-date">{{ page.date | date_to_string: "ordinal", "US" }}</h3>
-{% endcomment %}
+{% assign slug = page.title | slugify %}
+
+{% capture hdr %}
+# [{{ page.title }}](#{{ slug }}){: .link-title}
+{: .post-title #{{ slug }}}
+{% endcapture %}
+
+{{ hdr | markdownify }}
 <h3 class="post-date">{{ page.date | date_to_string }}</h3>
 <hr>
 {{ content -}}

@@ -27,5 +27,13 @@
                 "*.txt"
             ]
         }
-    ]
+    ],
+    "settings": {
+        "Jekyll": {
+            // "jekyll_auto_find_paths": true
+            "jekyll_posts_path": "/Users/michael/GitHub/mvwicky.github.io/_posts",
+            "jekyll_drafts_path": "/Users/michael/GitHub/mvwicky.github.io/_drafts",
+            "jekyll_debug": true
+        }
+    }
 }
