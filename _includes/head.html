@@ -1,21 +1,29 @@
 <head lang="en-US">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0af">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0af" />
     {% comment %}
-    <meta name="author" content="{{ site.author.name }}">
-    <meta name="description" content="{{ site.description }}">
+    <meta name="author" content="{{ site.author.name }}" />
+    <meta name="description" content="{{ site.description }}" />
     <title>{{ page.title }}</title>
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
     {% endcomment %}
     {%- assign iconsizes = "180;152;144;120;114;76;72;60;57" | split: ";" %}
     {% for sz in iconsizes -%}
-    <link rel="apple-touch-icon" type="image/png" sizes="{{sz}}x{{sz}}" href="/img/apple-touch-icon-{{sz}}.png">
+    <link
+        rel="apple-touch-icon"
+        type="image/png"
+        sizes="{{sz}}x{{sz}}"
+        href="/img/apple-touch-icon-{{sz}}.png"
+    />
     {% endfor -%}
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://ajax.googleapis.com" />
+
     {% include fonts.html %}
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
     {% seo %}
 </head>
