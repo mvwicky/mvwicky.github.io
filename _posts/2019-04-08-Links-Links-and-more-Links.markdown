@@ -22,7 +22,7 @@ links:
     title: "The Making of the Fox News White House"
     author: Jane Meyer
   staceyabrams:
-    href: "https://foreignaffairs.com/articles/2019-02-01/stacey-abrams-response-to-francis-fukuyama-identity-politics-article"
+    href: "https://www.foreignaffairs.com/articles/2019-02-01/stacey-abrams-response-to-francis-fukuyama-identity-politics-article"
     title: "E Pluribus Unum?"
     author: "Stacey Abrams"
   mossad:
