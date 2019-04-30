@@ -3,5 +3,10 @@
 {% capture linkid %}{{ include.title | strip_html | escape | slugify }}{% endcapture %}
 {% capture linktitle %}{{ include.title | smartify }}{% endcapture %}
 <hr class="article-sep" />
-<h2 id="{{ linkid }}"><span class="link-marker">{{ linkmarker }}</span> <a href="{{ include.link }}">{{ linktitle }}</a></h2>
-<h4 id="{{ include.author | slugify }}"><span class="auth-marker">{{ authmarker }}</span>{{ include.author }}</h4>
+
+<h2 id="{{ linkid }}">
+  <span class="link-marker">{{ linkmarker }}</span> <a href="{{ include.link }}">{{ linktitle }}</a>
+</h2>
+<h4 id="{{ include.author | slugify }}">
+  <span class="auth-marker">{{ authmarker }}</span>{{ include.author }}
+</h4>

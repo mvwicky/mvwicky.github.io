@@ -7,8 +7,14 @@ layout: default
 # [{{ page.title }}](#{{ slug }}){: .link-title}
 {: .post-title #{{ slug }}}
 {% endcapture %}
+<header>
+  {{ hdr | markdownify }}
+  <h3 class="post-date">{{ page.date | date_to_string }}</h3>
+</header>
 
-{{ hdr | markdownify }}
-<h3 class="post-date">{{ page.date | date_to_string }}</h3>
 <hr>
-{{ content -}}
+
+<article>
+  {{ content -}}
+</article>
+
