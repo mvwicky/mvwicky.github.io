@@ -37,6 +37,12 @@ const config = {
       filename: path.resolve(__dirname, "_includes", "js_output.html"),
       minify: false,
       inject: false
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "_includes", "css_template.html"),
+      filename: path.resolve(__dirname, "_includes", "css_output.html"),
+      minify: false,
+      inject: false
     })
   ],
   module: {

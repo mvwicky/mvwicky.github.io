@@ -1,4 +1,4 @@
 <!-- prettier-ignore -->
-<% _.forEach(htmlWebpackPlugin.files.js, function(f) { %>
-<script type="text/javascript" src="<%- f %>"></script>
-%< }); %>
+<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+<script src="{{ site.baseurl }}/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+<% } %>

@@ -4,6 +4,7 @@ JEKYLL=$(EXEC) jekyll
 JEKYLLSERVE=$(JEKYLL) serve
 SERVEOPTS=--verbose --livereload# --incremental
 ALLOPTS=--drafts --unpublished --future
+YARN=yarn
 
 
 
@@ -19,6 +20,7 @@ clean:
 	$(JEKYLL) clean
 
 build:
+	$(YARN) run build
 	$(JEKYLL) build
 
 update:

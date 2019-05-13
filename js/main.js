@@ -2,6 +2,7 @@
 const DEBUG = true;
 
 import "sanitize.css";
+import "../css/main.scss";
 
 function log(...args) {
   DEBUG && console.log(...args);

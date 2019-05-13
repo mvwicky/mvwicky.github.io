@@ -6,8 +6,9 @@
         <script type="text/javascript" src="{{ site.baseurl }}/js/plugins.js"></script>
         <script type="text/javascript" src="{{ site.baseurl }}/js/main.js"></script>
         {% endcomment %}
+    {% include js_output.html %}
     {% if jekyll.environment == "development" %}
-      <script type="text/javascript" src="{{ site.baseurl }}/js/main.js"></script>
+
     {% endif %}
       <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
       <script>
