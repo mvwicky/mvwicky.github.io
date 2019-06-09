@@ -3,7 +3,7 @@ const process = require("process");
 const packageData = require("./package.json");
 const webpack = require("webpack");
 
-const { CleanPlugin } = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Fiber = require("fibers");
 const OptimizeCSSPlugin = require("optimize-css-assets-webpack-plugin");
@@ -30,7 +30,7 @@ const config = {
   devtool: "source-map",
   mode: "production",
   plugins: [
-    new CleanPlugin(cleanOpts),
+    new CleanWebpackPlugin(cleanOpts),
     new MiniCssExtractPlugin({ filename: "style.[contenthash:32].css" }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "_includes", "js_template.html"),

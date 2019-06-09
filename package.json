@@ -5,6 +5,10 @@
   "repository": "https://github.com/mvwicky/mvwicky.github.io",
   "author": "Michael Van Wickle <mvanwickle@gmail.com>",
   "license": "MIT",
+  "enginex": {
+    "node": "12.x",
+    "yarn": "1.x"
+  },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
