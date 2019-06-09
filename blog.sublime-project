@@ -14,9 +14,7 @@
       "file_exclude_patterns": [
         "*.png",
         "*.git",
-        "yarn.lock",
         "*.sublime-workspace",
-        "*.sublime-project",
         "desktop.ini",
         "*.xml",
         "*.txt"

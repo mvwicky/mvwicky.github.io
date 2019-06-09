@@ -32,7 +32,7 @@ prod:
 
 serve:
 	export JEKYLL_ENV=development
-	$(JEKYLLSERVE) $(SERVEOPTS)
+	$(YARN) run watch & $(JEKYLLSERVE) $(SERVEOPTS) && fg
 
 drafts: SERVEOPTS := $(SERVEOPTS) --drafts
 drafts: serve
