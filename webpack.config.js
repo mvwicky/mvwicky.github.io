@@ -3,7 +3,7 @@ const process = require("process");
 const packageData = require("./package.json");
 const webpack = require("webpack");
 
-const CleanPlugin = require("clean-webpack-plugin");
+const { CleanPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Fiber = require("fibers");
 const OptimizeCSSPlugin = require("optimize-css-assets-webpack-plugin");
