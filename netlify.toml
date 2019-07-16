@@ -1,3 +1,10 @@
 [build]
   publish = "_site/"
   command = "make build"
+
+[[headers]]
+  for = "/js/dist/*"
+  [headers.values]
+    cache-control = '''
+    public,
+    max-age=86400'''
