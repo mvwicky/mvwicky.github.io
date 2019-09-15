@@ -5,7 +5,6 @@ const webpack = require("webpack");
 
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const Fiber = require("fibers");
 const OptimizeCSSPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -84,8 +83,7 @@ const config = {
           {
             loader: "sass-loader",
             options: {
-              implementation: require("sass"),
-              fiber: Fiber
+              implementation: require("sass")
             }
           }
         ]
