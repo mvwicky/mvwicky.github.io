@@ -10,7 +10,14 @@
   "folders": [
     {
       "path": ".",
-      "folder_exclude_patterns": [".bundle", "doc", "node_modules", "vendor"],
+      "folder_exclude_patterns": [
+        ".bundle",
+        "doc",
+        "node_modules",
+        "vendor",
+        ".jekyll-cache",
+        "_site"
+      ],
       "file_exclude_patterns": [
         "*.png",
         "*.git",

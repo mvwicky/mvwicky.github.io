@@ -1,4 +1,4 @@
 <!-- prettier-ignore -->
 <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-<script src="{{ site.baseurl }}/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+<script async src="{{ site.baseurl }}/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
 <% } %>
