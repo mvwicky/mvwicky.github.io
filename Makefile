@@ -2,7 +2,7 @@ BUNDLE=bundle
 EXEC=$(BUNDLE) exec
 JEKYLL=$(EXEC) jekyll
 JEKYLLSERVE=$(JEKYLL) serve
-SERVEOPTS=--verbose --livereload# --incremental
+SERVEOPTS=--verbose --livereload
 ALLOPTS=--drafts --unpublished --future
 YARN=yarn
 
@@ -19,8 +19,12 @@ clean:
 	$(BUNDLE) clean
 	$(JEKYLL) clean
 
-build:
+build: build-yarn build-jekyll
+
+build-yarn:
 	$(YARN) run build
+
+build-jekyll:
 	$(JEKYLL) build
 
 update:
@@ -32,7 +36,7 @@ prod:
 
 serve:
 	export JEKYLL_ENV=development
-	$(YARN) run watch & $(JEKYLLSERVE) $(SERVEOPTS) && fg
+	$(JEKYLLSERVE) $(SERVEOPTS)
 
 drafts: SERVEOPTS := $(SERVEOPTS) --drafts
 drafts: serve

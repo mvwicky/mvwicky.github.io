@@ -3,8 +3,18 @@
   command = "make build"
 
 [[headers]]
-  for = "/js/dist/*"
+  for = "/js/dist/*.:hash.js"
   [headers.values]
     cache-control = '''
     public,
+    immutable,
     max-age=86400'''
+
+[[headers]]
+  for = "/js/dist/manifest.json"
+  [headers.values]
+    cache-control = '''
+    max-age=0,
+    no-cache,
+    no-store,
+    must-revalidate'''

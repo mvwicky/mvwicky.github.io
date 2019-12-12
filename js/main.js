@@ -1,5 +1,5 @@
 "use strict";
-const DEBUG = true;
+const DEBUG = false;
 
 import "sanitize.css";
 import "../css/main.scss";

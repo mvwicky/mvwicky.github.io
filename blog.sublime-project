@@ -32,7 +32,7 @@
     "tab_size": 2,
     "rulers": [110],
     "draw_centered": false,
-    "wrap_width": 110,
+    "wrap_width": 150,
     "Jekyll": {
       "jekyll_posts_path": "/Users/michael/GitHub/mvwicky.github.io/_posts",
       "jekyll_drafts_path": "/Users/michael/GitHub/mvwicky.github.io/_drafts",

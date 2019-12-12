@@ -8,6 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const WebpackPwaManifest = require("webpack-pwa-manifest");
 
 const prodMode = process.env.NODE_ENV === "production";
 
@@ -17,6 +18,10 @@ const cleanOpts = {
   dry: false
 };
 
+const incDir = path.resolve(__dirname, "_includes");
+const outPath = incDir;
+const layoutDir = path.resolve(__dirname, "_layouts");
+
 const config = {
   entry: "./js/main.js",
   output: {
@@ -24,24 +29,42 @@ const config = {
     path: path.resolve(__dirname, "js", "dist"),
     hashFunction: "sha256",
     hashDigestLength: 64,
-    publicPath: "js/dist/"
+    publicPath: "{{ site.baseurl }}/js/dist/"
   },
   devtool: "source-map",
   mode: "production",
   plugins: [
     new CleanWebpackPlugin(cleanOpts),
-    new MiniCssExtractPlugin({ filename: "style.[contenthash:32].css" }),
+    new MiniCssExtractPlugin({
+      filename: prodMode ? "style.[contenthash:32].css" : "style.css"
+    }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "_includes", "js_template.html"),
-      filename: path.resolve(__dirname, "_includes", "js_output.html"),
+      template: path.join(layoutDir, "default_tpl.html"),
+      filename: path.resolve(layoutDir, "default_out.html"),
+      minify: false,
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(incDir, "css_template.html"),
+      filename: path.resolve(outPath, "css_output.html"),
       minify: false,
       inject: false
     }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "_includes", "css_template.html"),
-      filename: path.resolve(__dirname, "_includes", "css_output.html"),
-      minify: false,
-      inject: false
+    new WebpackPwaManifest({
+      name: "Where Was I Going With That?",
+      short_name: "Where Was I Going",
+      description: "A Blog",
+      background_color: "#eeeeff",
+      publicPath: "/js/dist/",
+      fingerprints: false,
+      icons: [
+        {
+          src: path.resolve(__dirname, "img", "apple-touch-icon.png"),
+          sizes: [96, 128, 192, 256, 384, 512],
+          destination: "img"
+        }
+      ],
+      inject: true
     })
   ],
   module: {

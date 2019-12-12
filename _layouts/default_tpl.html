@@ -1,0 +1,38 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+    <head lang="en-US">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0af" />
+        {%- assign iconsizes = "180;152;144;120;114;76;72;60;57" | split: ";" %}
+        {% for sz in iconsizes -%}
+        <link
+            rel="apple-touch-icon"
+            type="image/png"
+            sizes="{{sz}}x{{sz}}"
+            href="/img/apple-touch-icon-{{sz}}.png"
+        />
+        {% endfor -%}
+        {% include fonts.html %}
+        {% seo %}
+    </head>
+
+    <body>
+        <div id="container">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">
+                You are using an <strong>outdated</strong> browser.
+                Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header>
+            <h1 id="title">Where Was I Going With That?</h1>
+            {% include nav.html %}
+        </header>
+        <div id="content">
+            {{- content -}}
+        </div>
+        {% include footer.html %}
+        </div>
+    </body>
+</html>

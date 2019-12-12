@@ -1,11 +1,11 @@
 {% assign postsep = "&raquo;" %}
 <div id="posts-list">
-    {% assign n = 0 %}
     {% for post in site.posts %}
-        <div id="post{{n}}" class="post-bullet">&bullet;</div>
-        <div id="post{{n}}" class="post-date">{{ post.date | date_to_string }}</div>
-        <div id="post{{n}}" class="post-sep">{{ postsep }}</div>
-        <div id="post{{n}}" data-tags="{{ post.tags | join " " }}" class="post-title"><a title="{{ post.description }}" class="post-link" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></div>
-    {% assign n = n | plus: 1 %}
+        <div id="post{{ forloop.index0 }}-bullet" class="post-bullet">&bullet;</div>
+        <div id="post{{ forloop.index0 }}-date" class="post-date">{{ post.date | date_to_string }}</div>
+        <div id="post{{ forloop.index0 }}-sep" class="post-sep">{{ postsep }}</div>
+        <div id="post{{ forloop.index0 }}-title" data-tags="{{ post.tags | join " " }}" class="post-title">
+          <a title="{{ post.description }}" class="post-link" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </div>
     {% endfor %}
 </div>

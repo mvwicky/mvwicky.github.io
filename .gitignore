@@ -5,6 +5,7 @@
 
 _includes/css_output.html
 _includes/js_output.html
+_layouts/default_out.html
 
 # report folder generatred by webhint
 hint-report/
