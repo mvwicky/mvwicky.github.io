@@ -6,8 +6,6 @@ SERVEOPTS=--verbose --livereload
 ALLOPTS=--drafts --unpublished --future
 YARN=yarn
 
-
-
 all: SERVEOPTS := $(SERVEOPTS) $(ALLOPTS)
 all: serve
 
@@ -25,6 +23,7 @@ build-yarn:
 	$(YARN) run build
 
 build-jekyll:
+	export JEKYLL_ENV=production
 	$(JEKYLL) build
 
 update:
