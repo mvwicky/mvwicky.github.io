@@ -12,12 +12,28 @@ const WebpackPwaManifest = require("webpack-pwa-manifest");
 
 const prodMode = process.env.NODE_ENV === "production";
 
+function compact(arr) {
+  return arr.filter((e) => e !== undefined && typeof e !== "undefined");
+}
+
+function prodOr(p, d) {
+  return prodMode ? p : d;
+}
+
+function ifProd(p) {
+  return prodOr(p, undefined);
+}
+
 const cleanOpts = {
   cleanOnceBeforeBuildPatterns: ["*.*", "!sell/*"],
   verbose: false,
   dry: false
 };
 
+const hashFn = prodOr("sha256", "md5");
+const hashlength = prodOr(32, 10);
+const fontHash = `${hashFn}:hash:hex:${hashlength}`;
+const fontName = `[name].[${fontHash}].[ext]`;
 const incDir = path.resolve(__dirname, "_includes");
 const outPath = incDir;
 const layoutDir = path.resolve(__dirname, "_layouts");
@@ -25,18 +41,18 @@ const layoutDir = path.resolve(__dirname, "_layouts");
 const config = {
   entry: "./js/main.js",
   output: {
-    filename: "[name].[contenthash:32].js",
-    path: path.resolve(__dirname, "js", "dist"),
+    filename: `[name].[contenthash:${hashlength}].js`,
+    path: path.resolve(__dirname, "dist"),
     hashFunction: "sha256",
     hashDigestLength: 64,
-    publicPath: "{{ site.baseurl }}/js/dist/"
+    publicPath: "/dist/"
   },
-  devtool: "source-map",
-  mode: "production",
+  devtool: prodOr("source-map", "cheap-module-eval-source-map"),
+  mode: prodOr("production", "development"),
   plugins: [
     new CleanWebpackPlugin(cleanOpts),
     new MiniCssExtractPlugin({
-      filename: prodMode ? "style.[contenthash:32].css" : "style.css"
+      filename: `style.[contenthash:${hashlength}].css`
     }),
     new HtmlWebpackPlugin({
       template: path.join(layoutDir, "default_tpl.html"),
@@ -44,18 +60,13 @@ const config = {
       minify: false,
       inject: true
     }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(incDir, "css_template.html"),
-      filename: path.resolve(outPath, "css_output.html"),
-      minify: false,
-      inject: false
-    }),
     new WebpackPwaManifest({
       name: "Where Was I Going With That?",
       short_name: "Where Was I Going",
       description: "A Blog",
-      background_color: "#eeeeff",
-      publicPath: "/js/dist/",
+      background_color: packageData.colors.background,
+      theme_color: packageData.colors.theme,
+      publicPath: "/dist/",
       fingerprints: false,
       icons: [
         {
@@ -106,26 +117,47 @@ const config = {
           {
             loader: "sass-loader",
             options: {
-              implementation: require("sass")
+              implementation: require("sass"),
+              sassOptions: {
+                outputStyle: "expanded"
+              }
             }
           }
         ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: fontName,
+              outputPath: "fonts",
+              esModule: false
+            }
+          }
+        ],
+        include: path.resolve("css", "fonts")
       }
     ]
   },
   optimization: {
-    minimizer: [
-      new TerserPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
-      }),
-      new OptimizeCSSPlugin({
-        cssProcessor: require("cssnano"),
-        cssProcessorOptions: { preset: ["default"], map: true },
-        canPrint: false
-      })
-    ]
+    minimizer: compact([
+      ifProd(
+        new TerserPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: true
+        })
+      ),
+      ifProd(
+        new OptimizeCSSPlugin({
+          cssProcessor: require("cssnano"),
+          cssProcessorOptions: { preset: ["default"], map: true },
+          canPrint: false
+        })
+      )
+    ])
   },
   resolve: {
     extensions: [".js"],

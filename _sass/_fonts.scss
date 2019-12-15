@@ -1,0 +1,35 @@
+@import "~bourbon/core/bourbon";
+
+$font-dir: "./fonts/";
+$file-types: ("eot", "woff", "woff2", "ttf", "svg");
+$font-display: fallback;
+
+@mixin make-font-face($name, $file-name, $style, $weight) {
+  @include font-face($name, $font-dir + $file-name, $file-types) {
+    font-display: $font-display;
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
+
+$font-types: (
+  ("regular", normal, 400),
+  ("700", normal, 700),
+  ("italic", italic, 400)
+);
+$font-parts: (
+  ("Fira Sans", "fira-sans", "fira-sans-v9-latin"),
+  ("Spectral", "spectral", "spectral-v6-latin"),
+  ("IBM Plex Mono", "ibm-plex-mono", "ibm-plex-mono-v5-latin")
+);
+
+@each $name, $dirname, $base-name in $font-parts {
+  @each $suffix, $style, $weight in $font-types {
+    @include make-font-face(
+      $name,
+      "#{$dirname}/#{$base-name}-#{$suffix}",
+      $style,
+      $weight
+    );
+  }
+}

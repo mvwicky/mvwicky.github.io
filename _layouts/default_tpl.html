@@ -4,7 +4,6 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0af" />
         {%- assign iconsizes = "180;152;144;120;114;76;72;60;57" | split: ";" %}
         {% for sz in iconsizes -%}
         <link
@@ -14,7 +13,6 @@
             href="/img/apple-touch-icon-{{sz}}.png"
         />
         {% endfor -%}
-        {% include fonts.html %}
         {% seo %}
     </head>
 

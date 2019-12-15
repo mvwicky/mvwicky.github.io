@@ -34,7 +34,8 @@ $common-width: 80%;
 $site-title-margin: 0.5em auto;
 $body-font-weight: 500;
 $body-margin: 0.5em auto;
-$body-link-style: oblique 10deg;
+// $body-link-style: oblique 10deg;
+$body-link-style: normal;
 $body-indent-length: 3ex;
 $body-par-margin: 0.3em auto;
 
@@ -60,7 +61,7 @@ $nav-link-margin: 0.75em 0.2em;
 // $nav-link-margin: 0.75em auto;
 $nav-link-padding: 0.75em;
 $nav-link-font-style: normal;
-$nav-link-font-weight: 500;
+$nav-link-font-weight: 400;
 $nav-link-text-dec: underline;
 
 /* Footer Rule */

@@ -1,7 +1,9 @@
 $rfs-breakpoint: 1000px;
 $rfs-factor: 8;
-@import "rfs";
 
+@import "~rfs/scss";
+
+@import "fonts";
 @import "util";
 @import "colors";
 @import "themes";
@@ -48,16 +50,19 @@ h4,
 h5,
 h6 {
   font-family: $header-font;
+  font-style: normal;
 }
 
 code {
   font-family: $code-font;
+  font-style: normal;
   font-size: 90%;
   font-weight: 550;
 }
 
 footer {
   font-family: $header-font;
+  font-style: normal;
   background-color: $nav-color;
   bottom: 0;
   margin: $footer-margin;
@@ -104,7 +109,8 @@ sup {
 }
 
 .footnote {
-  @extends .font-normal;
+  font-style: normal;
+  font-weight: 400;
   background-color: $fn-bg-color;
   border: $footnote-border;
   // @include border-radius($footnote-border-radius);

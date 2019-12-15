@@ -1,5 +1,4 @@
 #container {
-  // min-height: 100%;
   position: relative;
   padding: 0;
   overflow: hidden;
@@ -38,13 +37,13 @@
   }
   div {
     font-family: $body-font;
+    font-style: normal;
     strong {
       font-weight: 700;
-      font-style: italic;
       text-decoration: underline;
     }
     @include rfs(17);
-    font-weight: $body-font-weight;
+    font-weight: 400;
     margin: $body-margin;
     .notice-todo {
       &::before {

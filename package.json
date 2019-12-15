@@ -5,9 +5,13 @@
   "repository": "https://github.com/mvwicky/mvwicky.github.io",
   "author": "Michael Van Wickle <mvanwickle@gmail.com>",
   "license": "MIT",
-  "enginex": {
-    "node": "12.x",
+  "engines": {
+    "node": "13.x",
     "yarn": "1.x"
+  },
+  "colors": {
+    "theme": "#0af",
+    "background": "#eeeeff"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -25,7 +29,7 @@
     "cross-env": "^6.0.3",
     "css-loader": "^3.0.0",
     "cssnano": "^4.1.10",
-    "fibers": "^4.0.1",
+    "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.11.0",
@@ -47,6 +51,7 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js --progress",
+    "prod": "cross-env NODE_ENV=production webpack -p --config webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.js",
     "watch": "cross-env NODE_ENV=development webpack --config webpack.config.js --progress --watch"
   }
