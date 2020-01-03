@@ -1,6 +1,7 @@
 $rfs-breakpoint: 1000px;
 $rfs-factor: 8;
 
+@import "~bourbon/core/bourbon";
 @import "~rfs/scss";
 
 @import "fonts";
@@ -9,6 +10,7 @@ $rfs-factor: 8;
 @import "themes";
 @import "nav";
 @import "content";
+@import "footer";
 
 html {
   box-sizing: border-box;
@@ -40,7 +42,6 @@ footer {
   margin: $common-margin;
   padding: $common-padding;
   @include responsive-width($resp-width);
-  // width: $common-width;
 }
 
 h1,
@@ -58,47 +59,6 @@ code {
   font-style: normal;
   font-size: 90%;
   font-weight: 550;
-}
-
-footer {
-  font-family: $header-font;
-  font-style: normal;
-  background-color: $nav-color;
-  bottom: 0;
-  margin: $footer-margin;
-  padding: $footer-padding;
-  text-align: center;
-
-  ul {
-    margin: $nav-ul-margin;
-    padding: $nav-ul-padding;
-  }
-
-  .foot-link {
-    display: inline-block;
-    margin: $foot-link-margin;
-
-    padding: auto;
-    width: 7em;
-    a {
-      border: $nav-link-border;
-      @include border-radius($nav-link-border-radius);
-      color: $nav-link-color;
-      @include rfs(14);
-      display: inline-block;
-      font-style: $nav-link-font-style;
-      font-weight: $nav-link-font-weight;
-      padding: $foot-link-padding;
-      text-decoration: $nav-link-text-dec;
-
-      &:hover {
-        background-color: $nav-link-hover-color;
-      }
-      &:visited {
-        color: $nav-link-color;
-      }
-    }
-  }
 }
 
 sup {

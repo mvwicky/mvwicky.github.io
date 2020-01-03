@@ -2,7 +2,7 @@ BUNDLE=bundle
 EXEC=$(BUNDLE) exec
 JEKYLL=$(EXEC) jekyll
 JEKYLLSERVE=$(JEKYLL) serve
-SERVEOPTS=--verbose --livereload
+SERVEOPTS=--verbose --incremental
 ALLOPTS=--drafts --unpublished --future
 YARN=yarn
 

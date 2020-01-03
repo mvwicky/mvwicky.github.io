@@ -1,28 +1,31 @@
-nav {
+footer {
   font-family: $header-font;
-  background: $nav-color;
-  min-height: 50px;
-  margin: $nav-margin;
+  font-style: normal;
+  background-color: $nav-color;
+  bottom: 0;
+  margin: $footer-margin;
+  padding: $footer-padding;
+  text-align: center;
 
   ul {
     margin: $nav-ul-margin;
     padding: $nav-ul-padding;
   }
-  li {
-    margin: auto;
-  }
-  .nav-link {
-    display: inline-block;
-    margin: $nav-link-margin;
 
+  .foot-link {
+    display: inline-block;
+    margin: $foot-link-margin;
+
+    padding: auto;
+    width: 7em;
     a {
       border: $nav-link-border;
       @include border-radius($nav-link-border-radius);
       color: $nav-link-color;
-      @include rfs(20);
+      @include rfs(14);
       display: inline-block;
       font-weight: $nav-link-font-weight;
-      padding: $nav-link-padding;
+      padding: $foot-link-padding;
       text-decoration: $nav-link-text-dec;
 
       &:hover {
@@ -31,10 +34,6 @@ nav {
       &:visited {
         color: $nav-link-color;
       }
-    }
-    #current-loc {
-      background-color: $nav-current-color;
-      text-decoration: none;
     }
   }
 }

@@ -8,7 +8,8 @@
         "node_modules",
         "vendor",
         ".jekyll-cache",
-        "_site"
+        "_site",
+        "dist"
       ],
       "file_exclude_patterns": [
         "*.png",
@@ -16,7 +17,9 @@
         "*.sublime-workspace",
         "desktop.ini",
         "*.xml",
-        "*.txt"
+        "*.txt",
+        ".jekyll-metadata",
+        ".nojekyll"
       ]
     }
   ],

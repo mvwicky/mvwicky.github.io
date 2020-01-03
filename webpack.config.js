@@ -163,7 +163,12 @@ const config = {
     extensions: [".js"],
     symlinks: false
   },
-  node: false
+  node: false,
+  stats: {
+    modules: false,
+    children: false,
+    excludeAssets: [(name) => !/\.(js|css)$/.test(name)]
+  }
 };
 
 module.exports = config;

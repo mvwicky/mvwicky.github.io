@@ -19,16 +19,8 @@
   }
   h1 {
     @include rfs(26);
-    .link-title {
-      text-decoration: none;
-      color: $title-color;
-      &:hover {
-        background-color: $title-hover-color;
-      }
-    }
   }
   h2 {
-    @include respond-to-width($resp-width, "font-size", 16pt, 14pt);
     @include rfs(20);
   }
   h3,
@@ -36,14 +28,11 @@
     @include rfs(18);
   }
   div {
-    font-family: $body-font;
-    font-style: normal;
     strong {
       font-weight: 700;
       text-decoration: underline;
     }
     @include rfs(17);
-    font-weight: 400;
     margin: $body-margin;
     .notice-todo {
       &::before {
@@ -56,12 +45,27 @@
       margin: 0;
     }
   }
-  .post-link {
-    // font-style: normal;
+}
+
+.post-title {
+}
+
+.link-title {
+  --title-padding: 0.25em;
+  border-radius: 3px;
+  color: $title-color;
+  padding-bottom: var(--title-padding);
+  padding-top: var(--title-padding);
+  text-decoration: none;
+  &:hover {
+    background-color: $title-hover-color;
+    text-decoration: underline;
   }
 }
 
 #content {
+  font-family: $body-font;
+  font-style: normal;
   background: $content-background-color;
   line-height: 1.7;
   padding-bottom: $footer-height;
