@@ -1,0 +1,42 @@
+#content {
+  font-family: $body-font;
+  font-style: normal;
+  background: $content-background-color;
+  line-height: 1.7;
+  padding-bottom: $footer-height;
+  p {
+    text-align: justify;
+    text-indent: $body-indent-length;
+    margin: $body-par-margin;
+    a {
+      font-style: $body-link-style;
+    }
+  }
+  h2 > a {
+    @include border-radius(5px);
+    font-style: normal;
+    text-decoration: none;
+    &:hover {
+      background-color: $link-hover-color;
+      text-decoration: underline;
+    }
+  }
+  .link-marker {
+  }
+  .footnotes {
+    font-size: $footnotes-font-size;
+    margin: 0 auto;
+    ol {
+      list-style-position: outside;
+      margin: 0 1rem 0 0;
+      li {
+        p:first-child {
+          text-indent: 0;
+        }
+        p {
+          text-indent: 3ex;
+        }
+      }
+    }
+  }
+}

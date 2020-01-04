@@ -1,5 +1,5 @@
-import "sanitize.css";
-import "../css/main.scss";
+import "normalize.css";
+import "../scss/main.scss";
 
 function postData() {
   const psel = document.querySelector('select[name="post-select"]');

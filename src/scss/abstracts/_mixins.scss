@@ -22,7 +22,7 @@
 
 /* Convinence specialization of respond-to-width */
 @mixin responsive-width($w) {
-  @include respond-to-width($w, 'max-width', $w * 0.9, 90%);
+  @include respond-to-width($w, "max-width", $w * 0.9, 90%);
 }
 
 @function strip-unit($v) {
@@ -52,4 +52,12 @@
   }
 }
 
-/* font-size: calc([min size] + ([max size] - [min size]) * ((100vw - [min vw]) / ([max vw] - [min vw]))) */
+/* Sets the default min and max viewport widths */
+@mixin default-resp-font($min-font-size, $max-font-size) {
+  @include resp-font(
+    $responsive-min-width,
+    $responsive-max-width,
+    $min-font-size,
+    $max-font-size
+  );
+}

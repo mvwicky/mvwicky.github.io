@@ -46,8 +46,10 @@
   },
   "dependencies": {
     "bourbon": "^6.0.0",
+    "normalize.css": "^8.0.1",
     "rfs": "^9.0.0",
-    "sanitize.css": "^11.0.0"
+    "sanitize.css": "^11.0.0",
+    "sass-mq": "^5.0.1"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js --progress",

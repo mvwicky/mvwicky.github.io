@@ -1,20 +1,9 @@
-/* General Theming */
-
-@import "colors";
-@import "util";
+$header-font: "Spectral", Garamond, serif;
+$body-font: "Fira Sans", Helvetica, sans-serif;
+$code-font: "IBM Plex Mono", monospace;
 
 $responsive-min-width: 320px;
 $responsive-max-width: 1200px;
-
-/* Sets the default min and max viewport widths */
-@mixin default-resp-font($min-font-size, $max-font-size) {
-  @include resp-font(
-    $responsive-min-width,
-    $responsive-max-width,
-    $min-font-size,
-    $max-font-size
-  );
-}
 
 /* Header Styling */
 $header-font-weight: 700;
@@ -73,8 +62,3 @@ $footnote-border-radius: 1px;
 
 /* Footnotes (Text) */
 $footnotes-font-size: 80%;
-
-.font-normal {
-  font-style: normal;
-  font-weight: normal;
-}

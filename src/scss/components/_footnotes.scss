@@ -1,0 +1,18 @@
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.7em;
+}
+
+.footnote {
+  font-style: normal;
+  font-weight: 400;
+  background-color: $fn-bg-color;
+  border: $footnote-border;
+  // @include border-radius($footnote-border-radius);
+  padding: $footnote-padding;
+  // font-size: 80%;
+  font-size: rfs(14);
+  text-decoration: none;
+}

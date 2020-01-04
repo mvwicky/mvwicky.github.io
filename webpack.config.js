@@ -25,24 +25,23 @@ function ifProd(p) {
 }
 
 const cleanOpts = {
-  cleanOnceBeforeBuildPatterns: ["*.*", "!sell/*"],
-  verbose: false,
-  dry: false
+  verbose: true,
+  dry: false,
+  cleanOnceBeforeBuildPatterns: []
 };
 
 const hashFn = prodOr("sha256", "md5");
 const hashlength = prodOr(32, 10);
 const fontHash = `${hashFn}:hash:hex:${hashlength}`;
 const fontName = `[name].[${fontHash}].[ext]`;
-const incDir = path.resolve(__dirname, "_includes");
-const outPath = incDir;
+const outPath = path.resolve(__dirname, "dist");
 const layoutDir = path.resolve(__dirname, "_layouts");
 
 const config = {
-  entry: "./js/main.js",
+  entry: "./src/js/main.js",
   output: {
     filename: `[name].[contenthash:${hashlength}].js`,
-    path: path.resolve(__dirname, "dist"),
+    path: outPath,
     hashFunction: "sha256",
     hashDigestLength: 64,
     publicPath: "/dist/"
@@ -50,7 +49,7 @@ const config = {
   devtool: prodOr("source-map", "cheap-module-eval-source-map"),
   mode: prodOr("production", "development"),
   plugins: [
-    new CleanWebpackPlugin(cleanOpts),
+    // new CleanWebpackPlugin(cleanOpts),
     new MiniCssExtractPlugin({
       filename: `style.[contenthash:${hashlength}].css`
     }),
@@ -133,11 +132,12 @@ const config = {
             options: {
               name: fontName,
               outputPath: "fonts",
-              esModule: false
+              esModule: false,
+              emitFile: true
             }
           }
         ],
-        include: path.resolve("css", "fonts")
+        include: path.resolve("src", "scss")
       }
     ]
   },
@@ -166,8 +166,8 @@ const config = {
   node: false,
   stats: {
     modules: false,
-    children: false,
-    excludeAssets: [(name) => !/\.(js|css)$/.test(name)]
+    children: false
+    // excludeAssets: [(name) => !/\.(js|css)$/.test(name)]
   }
 };
 

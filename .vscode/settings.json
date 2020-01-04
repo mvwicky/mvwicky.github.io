@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    ".jekyll-*": true,
+    "_site": true,
+    "dist": false,
+    "node_modules": true,
+    "*.sublime-*": true,
+    "vendor": true,
+    ".nojekyll": true
+  },
+  "files.associations": {
+    "*.html": "jekyll"
+  },
+  "editor.tabSize": 2
+}
