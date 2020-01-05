@@ -1,12 +1,16 @@
-{% assign linkmarker = "&curren;" %}
-{% assign authmarker = "&emsp;" %}
-{% capture linkid %}{{ include.title | strip_html | escape | slugify }}{% endcapture %}
-{% capture linktitle %}{{ include.title | smartify }}{% endcapture %}
+{%- assign linkmarker = "&curren;" -%}
+{%- assign authmarker = "&emsp;" -%}
+{%- capture linkid -%}
+{{ include.title | strip_html | escape | slugify }}
+{%- endcapture -%}
+{%- capture linktitle -%}
+{{ include.title | smartify }}
+{%- endcapture -%}
 <hr class="article-sep" />
 
-<h2 id="{{ linkid }}">
+<h3 class="link-name" id="{{ linkid }}">
   <span class="link-marker">{{ linkmarker }}</span> <a href="{{ include.link }}">{{ linktitle }}</a>
-</h2>
-<h4 id="{{ include.author | slugify }}">
+</h3>
+<h4 class="link-author" id="{{ include.author | slugify }}">
   <span class="auth-marker">{{ authmarker }}</span>{{ include.author }}
 </h4>

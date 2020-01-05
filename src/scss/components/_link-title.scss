@@ -1,0 +1,9 @@
+.link-title {
+  border-radius: 3px;
+  color: $title-color;
+  text-decoration: none;
+  &:hover {
+    background-color: $title-hover-color;
+    text-decoration: underline;
+  }
+}

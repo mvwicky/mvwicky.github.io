@@ -2,18 +2,39 @@ $header-font: "Spectral", Garamond, serif;
 $body-font: "Fira Sans", Helvetica, sans-serif;
 $code-font: "IBM Plex Mono", monospace;
 
+$rfs-base-value: 1rem;
+$rfs-breakpoint: 992px;
+$rfs-factor: 10;
+
+$mq-responsive: true;
+$mq-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
 /* Header Styling */
 $header-font-weight: 700;
-$header-margin: 0;
+$header-margin-bottom: 0.5rem;
+$h1-font-size: 2.5rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.75rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1rem;
 
 /* The width at which we trigger styling changes */
-$resp-width: 768px;
+$resp-width: 700px;
 
 /* Nav/Content Section */
 $common-border: 1px solid $common-border-color;
 $common-border-radius: 0.5rem;
 $common-margin: 0 auto;
 $common-padding: 0;
+
+$par-margin-bottom: 1rem;
 
 /* Container */
 $site-title-margin: 0.5em auto;
@@ -27,10 +48,11 @@ $body-par-margin: 0.3em auto;
 /* Footer */
 /* Height of the page footer  */
 $footer-height: 3em;
+$footer-min-height: 1em;
 $footer-margin: 0 auto 1em;
 $footer-padding: 0.5em;
-$foot-link-margin: 0.1em auto;
-$foot-link-padding: 0.5em;
+$foot-link-margin: 0.25em;
+$foot-link-padding: 0.25em;
 
 /* Navigation Bar */
 $nav-margin: 0 auto;
@@ -56,3 +78,5 @@ $footnote-border-radius: 1px;
 
 /* Footnotes (Text) */
 $footnotes-font-size: 80%;
+
+$link-title-font-size: 1.75rem;

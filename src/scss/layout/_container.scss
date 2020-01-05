@@ -1,37 +1,9 @@
-#container {
+.container {
   overflow: hidden;
   padding: 0;
   position: relative;
 
-  #title {
-    margin: $site-title-margin;
-    max-width: 100%;
-    @include font-size(2.25rem);
-    @include mq($from: "md") {
-      max-width: $resp-width * 0.9;
-    }
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: $header-font-weight;
-    margin: $header-margin;
-  }
-  h1 {
-    @include font-size(1.6rem);
-  }
-  h2 {
-    @include font-size(1.1rem);
-  }
-  h3,
-  h4 {
-    @include font-size(1.1rem);
-  }
   div {
-    @include font-size(1.1rem);
     strong {
       font-weight: 700;
       text-decoration: underline;
@@ -47,18 +19,5 @@
         content: "TODO: ";
       }
     }
-  }
-}
-
-.link-title {
-  --title-padding: 0.25em;
-  border-radius: 3px;
-  color: $title-color;
-  padding-bottom: var(--title-padding);
-  padding-top: var(--title-padding);
-  text-decoration: none;
-  &:hover {
-    background-color: $title-hover-color;
-    text-decoration: underline;
   }
 }

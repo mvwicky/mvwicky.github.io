@@ -1,4 +1,5 @@
 SHELL:=bash
+.ONESHELL:
 .SHELLFLAGS:=-eu -o pipefail -c
 .DELETE_ON_ERROR:
 MAKEFLAGS += --warn-undefined-variables
@@ -9,7 +10,7 @@ EXEC=$(BUNDLE) exec
 CACHE_DIR=.cache
 JEKYLL=$(EXEC) jekyll
 
-SERVEOPTS=--verbose --incremental
+SERVEOPTS=
 ALLOPTS=--drafts --unpublished --future
 YARN=yarn
 
@@ -40,9 +41,9 @@ build-jekyll: $(JEKYLL_CACHE)
 yarn-dev: $(YARN_DEV_CACHE)
 
 $(YARN_CACHE): $(YARN_INPUT) $(CACHE_DIR)
+	@touch $@
 	export NODE_ENV=production
 	$(YARN) run build
-	@touch $@
 	@touch $(YARN_DEV_CACHE)
 	@rm $(YARN_DEV_CACHE)
 

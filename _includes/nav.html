@@ -2,7 +2,7 @@
   <ul class="nav-list" id="nav">
   {%- for item in site.data.navigation %}
     <li class="nav-link">
-        <a{% if page.url == item.link %} id="current-loc"{% endif %} href="{{ item.link }}">{{ item.name }}</a>
+        <a{% if page.url == item.link %} class="current-loc"{% endif %} href="{{ item.link }}">{{ item.name }}</a>
     </li>
     {%- endfor %}
   </ul>

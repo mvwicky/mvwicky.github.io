@@ -6,7 +6,9 @@
 @import "./vendors/mq";
 @import "./vendors/rfs";
 
+@import "./base/reset";
 @import "./base/base";
+@import "./base/typography";
 
 @import "./layout/header";
 @import "./layout/container";
@@ -14,6 +16,9 @@
 @import "./layout/footer";
 
 @import "./components/footnotes";
+@import "./components/hrules";
+@import "./components/link-title";
+@import "./components/link-name";
 @import "./components/postslist";
 
 @import "./themes/fonts";

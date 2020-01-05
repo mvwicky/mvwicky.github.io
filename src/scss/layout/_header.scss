@@ -1,5 +1,4 @@
 nav {
-  font-family: $header-font;
   background: $nav-color;
   margin: $nav-margin;
   @include border-top-radius($common-border-radius);
@@ -15,13 +14,13 @@ nav {
 
     a {
       border: $nav-link-border;
-      @include border-radius($nav-link-border-radius);
       color: $nav-link-color;
-      @include font-size(1.25rem);
       display: inline-block;
       font-weight: $nav-link-font-weight;
       padding: $nav-link-padding;
       text-decoration: $nav-link-text-dec;
+      @include border-radius($nav-link-border-radius);
+      @include font-size(1.25rem);
 
       &:hover {
         background-color: $nav-link-hover-color;
@@ -30,7 +29,7 @@ nav {
         color: $nav-link-color;
       }
     }
-    #current-loc {
+    .current-loc {
       background-color: $nav-current-color;
       text-decoration: none;
     }

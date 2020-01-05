@@ -25,6 +25,8 @@ exclude:
   - "webpack.config.js"
   - "Makefile"
   - "*.py"
+  - "src/"
+  - "*.sublime-*"
 plugins:
   - jekyll-sitemap
   - jekyll-include-cache

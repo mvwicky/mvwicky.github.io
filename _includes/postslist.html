@@ -1,5 +1,5 @@
 {% assign postsep = "&raquo;" %}
-<div id="posts-list">
+<div class="posts-list" id="posts-list">
     {% for post in site.posts %}
         <div id="post{{ forloop.index0 }}-bullet" class="post-bullet">&bullet;</div>
         <div id="post{{ forloop.index0 }}-date" class="post-date">{{ post.date | date_to_string }}</div>

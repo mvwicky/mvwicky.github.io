@@ -1,6 +1,7 @@
 <footer>
+  <div class="footer-inner">
     {% if page.tags %}
-    <div class="foot-link">
+    <div class="foot-link foot-link-prev">
       {% if page.previous %}
       <a href="{{ page.previous.url }}">Previous Post</a>
       {% else %}
@@ -8,9 +9,9 @@
       {% endif %}
     </div>
 
-    <div class="foot-link"><a href="/">Home</a></div>
+    <div class="foot-link foot-link-home"><a href="/">Home</a></div>
 
-    <div class="foot-link">
+    <div class="foot-link foot-link-next">
       {% if page.next %}
       <a href="{{ page.next.url }}">Next Post</a>
       {% else %}
@@ -18,4 +19,6 @@
       {% endif %}
     </div>
     {% endif %}
+  </div>
+
 </footer>

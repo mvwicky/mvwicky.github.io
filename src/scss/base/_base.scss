@@ -1,6 +1,3 @@
-html {
-  box-sizing: border-box;
-}
 body {
   @include rfs(1rem);
 }
@@ -20,6 +17,21 @@ a {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: $header-margin-bottom;
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: $par-margin-bottom;
+  margin-top: 0;
+}
+
 %common-border {
   @include border-width(1px 1px null 1px);
   @include border-style(solid solid null solid);
@@ -29,39 +41,23 @@ a {
 }
 
 nav,
-#content,
+.title,
+.content,
 footer {
-  margin: $common-margin;
-  padding: $common-padding;
-  width: 90%;
-  @extend %common-border;
+  width: 95%;
   @include mq($from: "md") {
-    width: $resp-width * 0.9;
+    width: $resp-width;
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $header-font;
-  font-style: normal;
+nav,
+.content,
+footer {
+  margin: $common-margin;
+  padding: $common-padding;
+  @extend %common-border;
 }
 
-code {
-  font-family: $code-font;
-  @include font-size(0.9em);
-}
-
-.footsep {
-  border-bottom: $footsep-border-size solid $footsep-border-color;
-  border-top: $footsep-border-size solid $footsep-border-color;
-  margin: 5.5em 0 1em;
-  padding-top: 0.7em;
-}
-
-.article-sep {
-  margin: 1.5em auto 0;
+.title {
+  margin: $site-title-margin;
 }

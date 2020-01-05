@@ -6,7 +6,7 @@ title: Home
 {% if jekyll.environment == "development" %}
 <div class="post-tags-container">
   <label for="post-tags">Select A Category</label>
-  <select id="post-tags" name="post-select">
+  <select class="post-tags-select" id="post-tags" name="post-select">
       <option value="{% increment post_counter %}" label="all" selected>All</option>
       {% for elem in site.tags -%}
       {%- assign tag = elem[0] -%}

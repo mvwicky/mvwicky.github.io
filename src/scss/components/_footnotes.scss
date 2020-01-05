@@ -1,15 +1,18 @@
 .footnotes {
-  font-size: $footnotes-font-size;
   margin: 0 auto;
+  @include font-size($footnotes-font-size);
   ol {
     list-style-position: outside;
     margin: 0 1rem 0 0;
     li {
       p {
-        text-indent: 3ex;
+        text-indent: 0;
       }
       p:first-child {
         text-indent: 0;
+      }
+      p:last-child {
+        margin-bottom: 0.25rem;
       }
     }
   }
@@ -25,8 +28,6 @@ sup {
 .footnote {
   background-color: $fn-bg-color;
   border: $footnote-border;
-  font-style: normal;
-  font-weight: 400;
   padding: $footnote-padding;
   text-decoration: none;
   @include font-size(0.8rem);

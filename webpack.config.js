@@ -112,18 +112,18 @@ const config = {
       },
       {
         test: /\.(s?css)$/,
-        use: [
+        use: compact([
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: prodOr(MiniCssExtractPlugin.loader, "style-loader")
           },
           {
             loader: "css-loader",
             options: {
-              importLoaders: 2,
-              sourceMap: true
+              importLoaders: prodOr(2, 1),
+              sourceMap: prodMode
             }
           },
-          {
+          ifProd({
             loader: "postcss-loader",
             options: {
               sourceMap: true,
@@ -131,7 +131,7 @@ const config = {
                 return [require("autoprefixer")];
               }
             }
-          },
+          }),
           {
             loader: "sass-loader",
             options: {
@@ -141,7 +141,7 @@ const config = {
               }
             }
           }
-        ]
+        ])
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/,

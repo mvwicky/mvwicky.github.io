@@ -1,0 +1,16 @@
+.link-marker {
+  display: none;
+}
+
+.link-name > a {
+  text-decoration: none;
+  @include border-radius(5px);
+  &:hover {
+    background-color: $link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+.link-author {
+  margin-top: -$header-margin-bottom;
+}
