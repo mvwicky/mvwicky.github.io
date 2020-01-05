@@ -1,21 +1,12 @@
-<head lang="en-US">
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0af" />
-    {%- assign iconsizes = "180;152;144;120;114;76;72;60;57" | split: ";" %}
-    {% for sz in iconsizes -%}
-    <link
-        rel="apple-touch-icon"
-        type="image/png"
-        sizes="{{sz}}x{{sz}}"
-        href="/img/apple-touch-icon-{{sz}}.png"
-    />
-    {% endfor -%}
-
-    {% include fonts.html %}
-    <!-- <link rel="stylesheet" type="text/css" href="/css/normalize.css" /> -->
-    <!-- <link rel="stylesheet" type="text/css" href="/css/main.css" /> -->
-    {% include css_output.html %}
-    {% seo %}
-</head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+{% assign rel = "apple-touch-icon" -%}
+{%- assign type = "image/png" -%}
+{% for size in site.data.icons.sizes -%}
+{%- capture sizes -%}{{ size }}x{{ size }}{%- endcapture -%}
+{%- capture href -%}/img/apple-touch-icon-{{ size }}.png{%- endcapture -%}
+<link rel="{{ rel }}" type="{{ type }}" sizes="{{ sizes }}" href="{{ href }}"/>
+{% endfor -%}
+<base href="{{ site.url }}">
+{%- seo -%}

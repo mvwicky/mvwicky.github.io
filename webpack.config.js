@@ -25,15 +25,22 @@ function ifProd(p) {
 }
 
 const cleanOpts = {
-  verbose: true,
+  verbose: false,
   dry: false,
-  cleanOnceBeforeBuildPatterns: []
+  cleanOnceBeforeBuildPatterns: [
+    "**/*",
+    "!fonts",
+    "!fonts/**/*",
+    "!img",
+    "!img/**/*"
+  ]
 };
 
 const hashFn = prodOr("sha256", "md5");
 const hashlength = prodOr(32, 10);
 const fontHash = `${hashFn}:hash:hex:${hashlength}`;
 const fontName = `[name].[${fontHash}].[ext]`;
+const srcDir = path.resolve(__dirname, "src");
 const outPath = path.resolve(__dirname, "dist");
 const layoutDir = path.resolve(__dirname, "_layouts");
 
@@ -49,7 +56,7 @@ const config = {
   devtool: prodOr("source-map", "cheap-module-eval-source-map"),
   mode: prodOr("production", "development"),
   plugins: [
-    // new CleanWebpackPlugin(cleanOpts),
+    new CleanWebpackPlugin(cleanOpts),
     new MiniCssExtractPlugin({
       filename: `style.[contenthash:${hashlength}].css`
     }),
@@ -83,13 +90,25 @@ const config = {
         test: /\.(js)$/,
         use: [
           {
-            loader: require.resolve("babel-loader"),
+            loader: "babel-loader",
             options: {
-              cacheDirectory: true
+              cacheDirectory: path.resolve(__dirname, ".cache"),
+              exclude: /node_modules/,
+              presets: [
+                [
+                  "@babel/preset-env",
+                  {
+                    corejs: { version: 3, proposals: true },
+                    modules: false,
+                    debug: true,
+                    useBuiltIns: "usage"
+                  }
+                ]
+              ]
             }
           }
         ],
-        include: path.resolve(__dirname, "js")
+        include: path.join(srcDir, "js")
       },
       {
         test: /\.(s?css)$/,

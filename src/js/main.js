@@ -1,6 +1,10 @@
 import "normalize.css";
 import "../scss/main.scss";
 
+class PostDataList {
+  constructor() {}
+}
+
 function postData() {
   const psel = document.querySelector('select[name="post-select"]');
   psel.addEventListener("change", (e) => {
@@ -30,6 +34,8 @@ function main(e) {
   const postList = document.querySelector("div#posts-list");
   console.log(postList);
   if (postList !== null) {
+    const dataList = new PostDataList();
+    console.log(dataList);
     postData();
   }
 }

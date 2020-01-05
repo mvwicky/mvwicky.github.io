@@ -6,7 +6,15 @@
   for = "/dist/*.*.js"
   [headers.values]
     cache-control = '''
-    max-age=86400,
+    max-age=604800,
+    public,
+    immutable'''
+
+[[headers]]
+  for = "/dist/*.*.css"
+  [headers.values]
+    cache-control = '''
+    max-age=604800,
     public,
     immutable'''
 

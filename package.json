@@ -26,11 +26,12 @@
     "babel-loader": "^8.0.5",
     "babel-minify": "^0.5.0",
     "clean-webpack-plugin": "^3.0.0",
+    "core-js": "^3.6.1",
     "cross-env": "^6.0.3",
     "css-loader": "^3.0.0",
     "cssnano": "^4.1.10",
     "file-loader": "^5.0.2",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^4.0.0-beta.11",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
@@ -39,7 +40,6 @@
     "prettier": "^1.19.1",
     "sass": "^1.18.0",
     "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.0",
     "stylelint": "^12.0.1",
     "stylelint-config-prettier": "^8.0.0",
     "stylelint-config-recommended-scss": "^4.1.0",
@@ -115,5 +115,11 @@
       "scss/at-mixin-argumentless-call-parentheses": "never",
       "scss/at-rule-no-unknown": true
     }
-  }
+  },
+  "browserslist": [
+    "> 0.2%",
+    "last 1 major versions",
+    "Firefox ESR",
+    "not dead"
+  ]
 }
