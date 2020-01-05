@@ -1,0 +1,26 @@
+#post-tags {
+  word-wrap: normal;
+}
+
+#posts-list {
+  align-items: center;
+  box-sizing: border-box;
+  display: grid;
+  gap: 0.33rem;
+  grid-auto-rows: minmax(1.75em, auto);
+  grid-template-columns: min-content max-content min-content 1fr;
+  justify-content: stretch;
+  justify-items: start;
+  width: 100%;
+  @include rfs(1.1rem);
+  div {
+    margin: auto;
+  }
+  .post-date,
+  .post-bullet {
+    @include rfs(1rem);
+  }
+  .post-title {
+    width: 100%;
+  }
+}

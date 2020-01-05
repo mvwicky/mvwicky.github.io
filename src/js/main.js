@@ -28,6 +28,7 @@ function postData() {
 
 function main(e) {
   const postList = document.querySelector("div#posts-list");
+  console.log(postList);
   if (postList !== null) {
     postData();
   }

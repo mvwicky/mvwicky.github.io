@@ -1,11 +1,13 @@
 footer {
-  font-family: $header-font;
-  font-style: normal;
   background-color: $nav-color;
+  border-bottom: $common-border;
   bottom: 0;
+  font-family: $header-font;
   margin: $footer-margin;
-  padding: $footer-padding;
+  min-height: 1em;
   text-align: center;
+  @include border-bottom-radius($common-border-radius);
+  @include border-top-radius(0);
 
   ul {
     margin: $nav-ul-margin;
@@ -20,13 +22,13 @@ footer {
     width: 7em;
     a {
       border: $nav-link-border;
-      @include border-radius($nav-link-border-radius);
       color: $nav-link-color;
-      @include rfs(14);
       display: inline-block;
       font-weight: $nav-link-font-weight;
       padding: $foot-link-padding;
       text-decoration: $nav-link-text-dec;
+      @include border-radius($nav-link-border-radius);
+      @include font-size(0.8rem);
 
       &:hover {
         background-color: $nav-link-hover-color;

@@ -2,14 +2,14 @@ html {
   box-sizing: border-box;
 }
 body {
-  @include rfs(16);
+  @include rfs(1rem);
 }
 
 html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
 a {
@@ -20,16 +20,23 @@ a {
   }
 }
 
+%common-border {
+  @include border-width(1px 1px null 1px);
+  @include border-style(solid solid null solid);
+  @include border-color(
+    $common-border-color $common-border-color null $common-border-color
+  );
+}
+
 nav,
 #content,
 footer {
-  @include border-radius(1em);
-  border: $common-border;
   margin: $common-margin;
   padding: $common-padding;
-  max-width: 90%;
+  width: 90%;
+  @extend %common-border;
   @include mq($from: "md") {
-    max-width: $resp-width * 0.9;
+    width: $resp-width * 0.9;
   }
 }
 
@@ -45,40 +52,16 @@ h6 {
 
 code {
   font-family: $code-font;
-  font-style: normal;
-  font-size: 90%;
-  font-weight: 550;
+  @include font-size(0.9em);
 }
 
 .footsep {
-  border-top: $footsep-border-size solid $footsep-border-color;
   border-bottom: $footsep-border-size solid $footsep-border-color;
+  border-top: $footsep-border-size solid $footsep-border-color;
   margin: 5.5em 0 1em;
   padding-top: 0.7em;
 }
 
 .article-sep {
   margin: 1.5em auto 0;
-}
-
-$date-col: minmax(5.5rem, 1fr);
-$title-col: minmax(min-content, 10fr);
-
-#posts-list {
-  align-items: center;
-  box-sizing: border-box;
-  display: grid;
-  gap: 0.33em 0;
-  grid-auto-rows: minmax(1.75em, auto);
-  grid-template-columns: 0.75em $date-col 1rem $title-col;
-  width: 100%;
-  @include rfs(18);
-  div {
-    margin: 0;
-    overflow: wrap;
-  }
-  .post-date,
-  .post-bullet {
-    @include rfs(16);
-  }
 }

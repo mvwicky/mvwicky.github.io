@@ -1,18 +1,33 @@
+.footnotes {
+  font-size: $footnotes-font-size;
+  margin: 0 auto;
+  ol {
+    list-style-position: outside;
+    margin: 0 1rem 0 0;
+    li {
+      p {
+        text-indent: 3ex;
+      }
+      p:first-child {
+        text-indent: 0;
+      }
+    }
+  }
+}
+
 sup {
   line-height: 0;
   position: relative;
-  vertical-align: baseline;
   top: -0.7em;
+  vertical-align: baseline;
 }
 
 .footnote {
-  font-style: normal;
-  font-weight: 400;
   background-color: $fn-bg-color;
   border: $footnote-border;
-  // @include border-radius($footnote-border-radius);
+  font-style: normal;
+  font-weight: 400;
   padding: $footnote-padding;
-  // font-size: 80%;
-  font-size: rfs(14);
   text-decoration: none;
+  @include font-size(0.8rem);
 }

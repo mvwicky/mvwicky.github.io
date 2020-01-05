@@ -166,8 +166,8 @@ const config = {
   node: false,
   stats: {
     modules: false,
-    children: false
-    // excludeAssets: [(name) => !/\.(js|css)$/.test(name)]
+    children: false,
+    excludeAssets: [/^fonts\//]
   }
 };
 

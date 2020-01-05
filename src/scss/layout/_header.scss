@@ -1,15 +1,13 @@
 nav {
   font-family: $header-font;
   background: $nav-color;
-  min-height: 50px;
   margin: $nav-margin;
+  @include border-top-radius($common-border-radius);
+  @include border-bottom-radius(0);
 
   ul {
     margin: $nav-ul-margin;
     padding: $nav-ul-padding;
-  }
-  li {
-    margin: auto;
   }
   .nav-link {
     display: inline-block;
@@ -19,7 +17,7 @@ nav {
       border: $nav-link-border;
       @include border-radius($nav-link-border-radius);
       color: $nav-link-color;
-      @include rfs(20);
+      @include font-size(1.25rem);
       display: inline-block;
       font-weight: $nav-link-font-weight;
       padding: $nav-link-padding;

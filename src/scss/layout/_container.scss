@@ -1,15 +1,15 @@
 #container {
-  position: relative;
-  padding: 0;
   overflow: hidden;
+  padding: 0;
+  position: relative;
 
   #title {
     margin: $site-title-margin;
     max-width: 100%;
+    @include font-size(2.25rem);
     @include mq($from: "md") {
       max-width: $resp-width * 0.9;
     }
-    @include rfs(36);
   }
   h1,
   h2,
@@ -21,36 +21,33 @@
     margin: $header-margin;
   }
   h1 {
-    @include rfs(26);
+    @include font-size(1.6rem);
   }
   h2 {
-    @include rfs(20);
+    @include font-size(1.1rem);
   }
   h3,
   h4 {
-    @include rfs(18);
+    @include font-size(1.1rem);
   }
   div {
+    @include font-size(1.1rem);
     strong {
       font-weight: 700;
       text-decoration: underline;
     }
-    @include rfs(17);
-    margin: $body-margin;
+    // margin: $body-margin;
     .notice-todo {
+      color: $todo-color;
+      font-weight: 700;
+      margin: 0;
+      text-decoration: underline;
+      @include font-size(1.25rem);
       &::before {
         content: "TODO: ";
       }
-      color: $todo-color;
-      font-size: 16pt;
-      font-weight: bold;
-      text-decoration: underline;
-      margin: 0;
     }
   }
-}
-
-.post-title {
 }
 
 .link-title {

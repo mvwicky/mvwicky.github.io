@@ -1,6 +1,5 @@
-{% if page.tags %}
 <footer>
-
+    {% if page.tags %}
     <div class="foot-link">
       {% if page.previous %}
       <a href="{{ page.previous.url }}">Previous Post</a>
@@ -18,6 +17,5 @@
       <a>Next Post</a>
       {% endif %}
     </div>
-
+    {% endif %}
 </footer>
-{% endif %}

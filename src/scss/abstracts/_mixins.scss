@@ -51,13 +51,3 @@
     }
   }
 }
-
-/* Sets the default min and max viewport widths */
-@mixin default-resp-font($min-font-size, $max-font-size) {
-  @include resp-font(
-    $responsive-min-width,
-    $responsive-max-width,
-    $min-font-size,
-    $max-font-size
-  );
-}

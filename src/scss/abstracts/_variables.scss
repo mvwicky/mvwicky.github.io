@@ -2,9 +2,6 @@ $header-font: "Spectral", Garamond, serif;
 $body-font: "Fira Sans", Helvetica, sans-serif;
 $code-font: "IBM Plex Mono", monospace;
 
-$responsive-min-width: 320px;
-$responsive-max-width: 1200px;
-
 /* Header Styling */
 $header-font-weight: 700;
 $header-margin: 0;
@@ -14,14 +11,13 @@ $resp-width: 768px;
 
 /* Nav/Content Section */
 $common-border: 1px solid $common-border-color;
-$common-border-radius: 1em;
+$common-border-radius: 0.5rem;
 $common-margin: 0 auto;
-$common-padding: 0.75em;
-$common-width: 80%;
+$common-padding: 0;
 
 /* Container */
 $site-title-margin: 0.5em auto;
-$body-font-weight: 500;
+$body-font-weight: 400;
 $body-margin: 0.5em auto;
 // $body-link-style: oblique 10deg;
 $body-link-style: normal;
@@ -37,16 +33,14 @@ $foot-link-margin: 0.1em auto;
 $foot-link-padding: 0.5em;
 
 /* Navigation Bar */
-// $nav-margin: 0 0 1em 0;
 $nav-margin: 0 auto;
-// $nav-ul-margin: 0.25em 0;
-$nav-ul-margin: 0 auto;
-$nav-ul-padding: 0 0 0 0;
+$nav-ul-margin: 0 0.5rem;
+$nav-ul-padding: 0;
 
 /* Navigation Links */
 $nav-link-border: 1px solid $nav-link-border-color;
-$nav-link-border-radius: 0.4em;
-$nav-link-margin: 0.75em 0.2em;
+$nav-link-border-radius: 0.25rem;
+$nav-link-margin: 1em 0.25em;
 // $nav-link-margin: 0.75em auto;
 $nav-link-padding: 0.75em;
 $nav-link-font-weight: 400;
@@ -57,7 +51,7 @@ $footsep-border-size: 1px;
 
 /* Footnote (Markers) */
 $footnote-padding: 0;
-$footnote-border: 0px dotted $fn-border-color;
+$footnote-border: 0 dotted $fn-border-color;
 $footnote-border-radius: 1px;
 
 /* Footnotes (Text) */
