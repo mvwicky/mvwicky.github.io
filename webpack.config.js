@@ -45,7 +45,7 @@ const outPath = path.resolve(__dirname, "dist");
 const layoutDir = path.resolve(__dirname, "_layouts");
 
 const config = {
-  entry: "./src/js/main.js",
+  entry: "./src/js/main.ts",
   output: {
     filename: `[name].[contenthash:${hashlength}].js`,
     path: outPath,
@@ -87,7 +87,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.(js|ts)$/,
         use: [
           {
             loader: "babel-loader",
@@ -100,11 +100,19 @@ const config = {
                   {
                     corejs: { version: 3, proposals: true },
                     modules: false,
-                    debug: true,
+                    debug: false,
                     useBuiltIns: "usage"
                   }
-                ]
-              ]
+                ],
+                "@babel/typescript"
+              ],
+              plugins: [
+                "@babel/plugin-proposal-optional-chaining",
+                "@babel/proposal-object-rest-spread"
+              ],
+              parserOpts: {
+                strictMode: true
+              }
             }
           }
         ],

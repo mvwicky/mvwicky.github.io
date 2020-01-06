@@ -21,19 +21,20 @@ footer {
     max-width: 30%;
     padding: $foot-link-padding;
     @include border-radius($nav-link-border-radius);
-    a {
+  }
+  a {
+    color: $disabled-color;
+  }
+  a[href] {
+    color: $nav-link-color;
+    font-weight: $nav-link-font-weight;
+    text-decoration: $nav-link-text-dec;
+    @include font-size(1rem);
+    &:hover {
+      background-color: $nav-link-hover-color;
+    }
+    &:visited {
       color: $nav-link-color;
-      font-weight: $nav-link-font-weight;
-      text-decoration: $nav-link-text-dec;
-
-      @include font-size(0.8rem);
-
-      &:hover {
-        background-color: $nav-link-hover-color;
-      }
-      &:visited {
-        color: $nav-link-color;
-      }
     }
   }
 }

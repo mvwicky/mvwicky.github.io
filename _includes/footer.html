@@ -1,24 +1,22 @@
+{%- assign prevclass = "foot-link foot-link-prev" -%}
+{%- assign nextclass = "foot-link foot-link-next" -%}
+
 <footer>
-  <div class="footer-inner">
-    {% if page.tags %}
-    <div class="foot-link foot-link-prev">
-      {% if page.previous %}
-      <a href="{{ page.previous.url }}">Previous Post</a>
-      {% else %}
-      <a>Previous Post</a>
-      {% endif %}
-    </div>
+  <nav class="footer-inner">
+    {%- if page.tags -%}
+    {%- if page.previous -%}
+    <a class="{{ prevclass }}" href="{{ page.previous.url }}">Previous Post</a>
+    {%- else -%}
+    <a class="{{ prevclass }}">Previous Post</a>
+    {%- endif -%}
 
-    <div class="foot-link foot-link-home"><a href="/">Home</a></div>
+    <a class="foot-link foot-link-home" href="/">Home</a>
 
-    <div class="foot-link foot-link-next">
-      {% if page.next %}
-      <a href="{{ page.next.url }}">Next Post</a>
-      {% else %}
-      <a>Next Post</a>
-      {% endif %}
-    </div>
-    {% endif %}
-  </div>
-
+    {%- if page.next -%}
+    <a class="{{ nextclass }}" href="{{ page.next.url }}">Next Post</a>
+    {%- else -%}
+    <a class="{{ nextclass }}" disabled>Next Post</a>
+    {%- endif -%}
+    {%- endif -%}
+  </nav>
 </footer>

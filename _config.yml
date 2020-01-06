@@ -13,13 +13,12 @@ defaults:
     values:
       layout: default
 exclude:
-  - "Gemfile"
-  - "Gemfile.lock"
-  - "node_modules"
-  - "vendor/bundle/"
-  - "vendor/cache/"
-  - "vendor/gems/"
-  - "vendor/ruby/"
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
   - "doc/"
   - "package.json"
   - "webpack.config.js"
@@ -27,6 +26,7 @@ exclude:
   - "*.py"
   - "src/"
   - "*.sublime-*"
+  - ".cache/"
 plugins:
   - jekyll-sitemap
   - jekyll-include-cache

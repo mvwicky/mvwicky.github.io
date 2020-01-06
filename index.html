@@ -4,6 +4,8 @@ title: Home
 ---
 <h1>All Posts</h1>
 {% if jekyll.environment == "development" %}
+
+{% endif %}
 <div class="post-tags-container">
   <label for="post-tags">Select A Category</label>
   <select class="post-tags-select" id="post-tags" name="post-select">
@@ -14,6 +16,4 @@ title: Home
       {% endfor %}
   </select>
 </div>
-{% endif %}
-
 {% include postslist.html %}

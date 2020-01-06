@@ -28,7 +28,8 @@ $todo-color: red;
 $link-hover-color: gainsboro;
 
 /* Footnote Separator */
-$footsep-border-color: #cccccc;
+$footsep-border-color: rgb(204, 204, 204);
 
 /* <a> tags */
 $link-color: rgba(0, 0, 200, 1);
+$disabled-color: rgba(204, 204, 204, 0.75);

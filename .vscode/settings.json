@@ -6,6 +6,7 @@
     "node_modules": true,
     "*.sublime-*": true,
     "vendor": true,
+    ".cache": true,
     ".nojekyll": true
   },
   "files.associations": {

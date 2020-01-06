@@ -1,10 +1,8 @@
 - name: Home
   link: /
+- name: Read
+  link: /pages/reading
 - name: About Me
   link: /pages/about
-- name: Resume
-  link: /pages/cv
-- name: Tags
-  link: /pages/tags
 - name: GitHub
   link: https://github.com/mvwicky

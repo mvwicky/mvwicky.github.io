@@ -13,6 +13,11 @@ JEKYLL=$(EXEC) jekyll
 SERVEOPTS=
 ALLOPTS=--drafts --unpublished --future
 YARN=yarn
+WEBPACK=node_modules/.bin/webpack
+WEBPACK_CFG=--config webpack.config.js
+
+WATCHEXEC=watchexec
+WATCH_OPTS=-w src -w webpack.config.js -p -d 1000
 
 YARN_INPUT=$(shell find src -type f) webpack.config.js package.json yarn.lock
 JEKYLL_INPUT=$(shell git ls-files | grep -v -e 'src\|Makefile')
@@ -40,10 +45,13 @@ build-jekyll: $(JEKYLL_CACHE)
 
 yarn-dev: $(YARN_DEV_CACHE)
 
+yarn-watch:
+	$(WATCHEXEC) $(WATCH_OPTS) make yarn-dev
+
 $(YARN_CACHE): $(YARN_INPUT) $(CACHE_DIR)
 	@touch $@
 	export NODE_ENV=production
-	$(YARN) run build
+	$(WEBPACK) -p $(WEBPACK_CFG)
 	@touch $(YARN_DEV_CACHE)
 	@rm $(YARN_DEV_CACHE)
 
@@ -54,7 +62,7 @@ $(JEKYLL_CACHE): $(JEKYLL_INPUT) $(CACHE_DIR)
 
 $(YARN_DEV_CACHE): $(YARN_INPUT) $(CACHE_DIR)
 	export NODE_ENV=development
-	$(YARN) run dev
+	$(WEBPACK) $(WEBPACK_CFG) --progress
 	@touch $@
 	@touch $(YARN_CACHE)
 	@rm $(YARN_CACHE)
