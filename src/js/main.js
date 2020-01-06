@@ -1,42 +1,33 @@
 import "normalize.css";
 import "../scss/main.scss";
 
-class PostDataList {
-  constructor() {}
-}
-
-function postData() {
-  const psel = document.querySelector('select[name="post-select"]');
-  psel.addEventListener("change", (e) => {
-    const num = e.target.value;
+function postData(select) {
+  select.addEventListener("change", () => {
+    const num = select.value;
     const opt = document.querySelector(`option[value="${num}"]`);
     const label = opt.getAttribute("label");
     const titles = document.querySelectorAll("div.post-title");
-    Array.from(titles).forEach((t) => {
-      const tags = t.dataset.tags.split(" ");
-      const ids = Array.from(
-        document.querySelectorAll(`#${t.getAttribute("id")}`)
-      );
+    titles.forEach((title) => {
+      const tags = title.dataset.tags.split(" ");
+      const ids = Array.from(document.querySelectorAll(`#${title.id}`));
       if (tags.includes(label) || label === "all") {
         ids.forEach((p) => {
-          p.classList.remove("hidden");
+          p.classList.remove("d-none");
         });
       } else {
         ids.forEach((p) => {
-          p.classList.add("hidden");
+          p.classList.add("d-none");
         });
       }
     });
   });
 }
 
-function main(e) {
-  const postList = document.querySelector("div#posts-list");
-  console.log(postList);
-  if (postList !== null) {
-    const dataList = new PostDataList();
-    console.log(dataList);
-    postData();
+function main() {
+  document.removeEventListener("DOMContentLoaded", main);
+  const postSelect = document.querySelector('select[name="post-select"]');
+  if (postSelect !== null) {
+    postData(postSelect);
   }
 }
 
