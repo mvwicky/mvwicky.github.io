@@ -6,7 +6,7 @@
   YARN_VERSION = "1.21.0"
 
 [[headers]]
-  for = "/dist/sw.js"
+  for = "/sw.js"
   [headers.value]
     service-worker-allowed = "/"
     cache-control = '''
