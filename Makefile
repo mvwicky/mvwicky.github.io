@@ -49,20 +49,20 @@ yarn-dev: $(YARN_DEV_CACHE)
 yarn-watch:
 	$(WATCHEXEC) $(WATCH_OPTS) make yarn-dev
 
+$(YARN_CACHE): export NODE_ENV=production
 $(YARN_CACHE): $(YARN_INPUT) $(CACHE_DIR)
 	@touch $@
-	export NODE_ENV=production
 	$(WEBPACK) -p $(WEBPACK_CFG)
 	@touch $(YARN_DEV_CACHE)
 	@rm $(YARN_DEV_CACHE)
 
+$(JEKYLL_CACHE): export JEKYLL_ENV=production
 $(JEKYLL_CACHE): $(JEKYLL_INPUT) $(CACHE_DIR)
-	export JEKYLL_ENV=production
 	$(JEKYLL) build
 	@touch $@
 
+$(YARN_DEV_CACHE): export NODE_ENV=development
 $(YARN_DEV_CACHE): $(YARN_INPUT) $(CACHE_DIR)
-	export NODE_ENV=development
 	$(WEBPACK) $(WEBPACK_CFG) --progress
 	@touch $@
 	@touch $(YARN_CACHE)

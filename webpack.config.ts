@@ -19,7 +19,6 @@ import TerserPlugin = require("terser-webpack-plugin");
 import * as pkg from "./package.json";
 
 const cfg = yaml.safeLoad(fs.readFileSync("./_config.yml", "utf-8"));
-
 const prod = process.env.NODE_ENV === "production";
 
 function compact<T>(arr: (T | undefined)[]): T[] {

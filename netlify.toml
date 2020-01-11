@@ -3,7 +3,17 @@
   command = "make build"
 
 [[headers]]
-  for = "/dist/*.*.js"
+  for = "/dist/service-worker.js"
+  [headers.value]
+    service-worker-allowed = "/"
+    cache-control = '''
+    max-age=0,
+    no-cache,
+    no-store,
+    must-revalidate'''
+
+[[headers]]
+  for = "/dist/main.*.js"
   [headers.values]
     cache-control = '''
     max-age=604800,
@@ -11,7 +21,7 @@
     immutable'''
 
 [[headers]]
-  for = "/dist/*.*.css"
+  for = "/dist/style.*.css"
   [headers.values]
     cache-control = '''
     max-age=604800,
@@ -21,16 +31,6 @@
 [[headers]]
   for = "/dist/manifest.json"
   [headers.values]
-    cache-control = '''
-    max-age=0,
-    no-cache,
-    no-store,
-    must-revalidate'''
-
-[[headers]]
-  for = "/dist/service-worker.js"
-  [headers.value]
-    service-worker-allowed = "/"
     cache-control = '''
     max-age=0,
     no-cache,
