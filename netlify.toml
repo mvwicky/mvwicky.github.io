@@ -26,3 +26,8 @@
     no-cache,
     no-store,
     must-revalidate'''
+
+[[headers]]
+  for = "/dist/service-worker.js"
+  [headers.value]
+    service-worker-allowed = "/"
