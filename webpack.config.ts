@@ -1,30 +1,40 @@
-const path = require("path");
-const process = require("process");
-const packageData = require("./package.json");
-const webpack = require("webpack");
+import * as path from "path";
+import process from "process";
+import * as fs from "fs";
 
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const WebpackPwaManifest = require("webpack-pwa-manifest");
+import * as yaml from "js-yaml";
+import { GenerateSW } from "workbox-webpack-plugin";
+import webpack from "webpack";
+import {
+  CleanWebpackPlugin,
+  Options as CleanOptions
+} from "clean-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import WebpackPwaManifest from "webpack-pwa-manifest";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
-const prodMode = process.env.NODE_ENV === "production";
+import OptimizeCSSPlugin = require("optimize-css-assets-webpack-plugin");
+import TerserPlugin = require("terser-webpack-plugin");
 
-function compact(arr) {
-  return arr.filter((e) => e !== undefined && typeof e !== "undefined");
+import * as pkg from "./package.json";
+
+const cfg = yaml.safeLoad(fs.readFileSync("./_config.yml", "utf-8"));
+
+const prod = process.env.NODE_ENV === "production";
+
+function compact<T>(arr: (T | undefined)[]): T[] {
+  return arr.filter((e) => e !== undefined && typeof e !== "undefined") as T[];
 }
 
-function prodOr(p, d) {
-  return prodMode ? p : d;
+function prodOr<P = any, D = any>(pVal: P, dVal: D): P | D {
+  return prod ? pVal : dVal;
 }
 
-function ifProd(p) {
-  return prodOr(p, undefined);
+function ifProd<T>(obj: T): T | undefined {
+  return prodOr(obj, undefined);
 }
 
-const cleanOpts = {
+const cleanOpts: CleanOptions = {
   verbose: false,
   dry: false,
   cleanOnceBeforeBuildPatterns: [
@@ -43,15 +53,33 @@ const fontName = `[name].[${fontHash}].[ext]`;
 const srcDir = path.resolve(__dirname, "src");
 const outPath = path.resolve(__dirname, "dist");
 const layoutDir = path.resolve(__dirname, "_layouts");
+const publicPath = "/dist/";
 
-const config = {
-  entry: "./src/js/main.ts",
+function configureServiceWorker() {
+  const swDest = "service-worker.js";
+  const importsDirectory = "wb";
+  return new GenerateSW({
+    swDest,
+    importsDirectory,
+    importWorkboxFrom: "local",
+    cacheId: "wwigwt",
+    runtimeCaching: [
+      {
+        urlPattern: /\/blog\//,
+        handler: "CacheFirst"
+      }
+    ]
+  });
+}
+
+const config: webpack.Configuration = {
+  entry: pkg.entry,
   output: {
     filename: `[name].[contenthash:${hashlength}].js`,
     path: outPath,
     hashFunction: "sha256",
     hashDigestLength: 64,
-    publicPath: "/dist/"
+    publicPath
   },
   devtool: prodOr("source-map", "cheap-module-eval-source-map"),
   mode: prodOr("production", "development"),
@@ -67,12 +95,12 @@ const config = {
       inject: true
     }),
     new WebpackPwaManifest({
-      name: "Where Was I Going With That?",
+      name: cfg.title,
       short_name: "Where Was I Going",
-      description: "A Blog",
-      background_color: packageData.colors.background,
-      theme_color: packageData.colors.theme,
-      publicPath: "/dist/",
+      description: cfg.description,
+      background_color: pkg.colors.background,
+      theme_color: pkg.colors.theme,
+      publicPath,
       fingerprints: false,
       icons: [
         {
@@ -82,7 +110,8 @@ const config = {
         }
       ],
       inject: true
-    })
+    }),
+    configureServiceWorker()
   ],
   module: {
     rules: [
@@ -128,7 +157,7 @@ const config = {
             loader: "css-loader",
             options: {
               importLoaders: prodOr(2, 1),
-              sourceMap: prodMode
+              sourceMap: prod
             }
           },
           ifProd({
@@ -198,4 +227,4 @@ const config = {
   }
 };
 
-module.exports = config;
+export default config;

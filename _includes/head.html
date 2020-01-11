@@ -9,3 +9,17 @@
 <link rel="{{ rel }}" type="{{ type }}" sizes="{{ sizes }}" href="{{ href }}"/>
 {% endfor -%}
 {%- seo -%}
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/dist/service-worker.js", { scope: "/" })
+        .then(function(reg) {
+          console.log("Registered.");
+        })
+        .catch(function(err) {
+          console.log("Registration failed with: " + err);
+        });
+    });
+  }
+</script>

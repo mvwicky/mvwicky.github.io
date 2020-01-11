@@ -14,12 +14,13 @@ SERVEOPTS=
 ALLOPTS=--drafts --unpublished --future
 YARN=yarn
 WEBPACK=node_modules/.bin/webpack
-WEBPACK_CFG=--config webpack.config.js
+WEBPACK_CFG_FILE=webpack.config.ts
+WEBPACK_CFG=--config $(WEBPACK_CFG_FILE)
 
 WATCHEXEC=watchexec
-WATCH_OPTS=-w src -w webpack.config.js -p -d 1000
+WATCH_OPTS=-w src -w $(WEBPACK_CFG_FILE) -p -d 1000
 
-YARN_INPUT=$(shell find src -type f) webpack.config.js package.json yarn.lock
+YARN_INPUT=$(shell find src -type f) $(WEBPACK_CFG_FILE) package.json yarn.lock
 JEKYLL_INPUT=$(shell git ls-files | grep -v -e 'src\|Makefile')
 
 JEKYLL_CACHE=$(CACHE_DIR)/.build.jekyll
