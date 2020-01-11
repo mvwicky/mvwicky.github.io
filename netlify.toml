@@ -2,6 +2,9 @@
   publish = "_site/"
   command = "make build"
 
+[build.environment]
+  YARN_VERSION = "1.21.0"
+
 [[headers]]
   for = "/dist/sw.js"
   [headers.value]
