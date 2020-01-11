@@ -13,7 +13,7 @@
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
       navigator.serviceWorker
-        .register("/dist/service-worker.js", { scope: "/" })
+        .register("/dist/sw.js", { scope: "/" })
         .then(function(reg) {
           console.log("Registered.");
         })

@@ -3,7 +3,7 @@
   command = "make build"
 
 [[headers]]
-  for = "/dist/service-worker.js"
+  for = "/dist/sw.js"
   [headers.value]
     service-worker-allowed = "/"
     cache-control = '''

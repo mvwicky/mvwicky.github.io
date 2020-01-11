@@ -6,8 +6,9 @@
   "author": "Michael Van Wickle <mvanwickle@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "13.x",
-    "yarn": "*"
+    "node": "^13.6.0",
+    "yarn": "^1.21.0",
+    "npm": "^6.13.4"
   },
   "entry": {
     "main": "./src/js/main.ts"

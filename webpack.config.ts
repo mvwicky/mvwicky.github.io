@@ -55,7 +55,7 @@ const layoutDir = path.resolve(__dirname, "_layouts");
 const publicPath = "/dist/";
 
 function configureServiceWorker() {
-  const swDest = "service-worker.js";
+  const swDest = "sw.js";
   const importsDirectory = "wb";
   return new GenerateSW({
     swDest,
