@@ -70,6 +70,7 @@ function configureServiceWorker() {
         urlPattern: /\/blog\//,
         handler: "StaleWhileRevalidate",
         options: {
+          cacheName: "blog-posts",
           cacheableResponse: {
             statuses: [200]
           },
@@ -129,7 +130,7 @@ const config: webpack.Configuration = {
           {
             loader: "babel-loader",
             options: {
-              cacheDirectory: path.resolve(__dirname, ".cache"),
+              cacheDirectory: prodOr(false, path.resolve(__dirname, ".cache")),
               exclude: /node_modules/,
               presets: [
                 [
