@@ -15,21 +15,6 @@
     no-store,
     must-revalidate'''
 
-[[headers]]
-  for = "/dist/main.*.js"
-  [headers.values]
-    cache-control = '''
-    max-age=604800,
-    public,
-    immutable'''
-
-[[headers]]
-  for = "/dist/style.*.css"
-  [headers.values]
-    cache-control = '''
-    max-age=604800,
-    public,
-    immutable'''
 
 [[headers]]
   for = "/dist/manifest.json"
@@ -39,3 +24,28 @@
     no-cache,
     no-store,
     must-revalidate'''
+
+
+[[headers]]
+  for = "/dist/main.*.js*"
+  [headers.values]
+    cache-control = '''
+    max-age=86400,
+    public,
+    immutable'''
+
+[[headers]]
+  for = "/dist/style.*.css*"
+  [headers.values]
+    cache-control = '''
+    max-age=86400,
+    public,
+    immutable'''
+
+[[headers]]
+  for = "/dist/fonts/*"
+  [headers.values]
+    cache-control = '''
+    max-age=86400,
+    public,
+    immutable'''

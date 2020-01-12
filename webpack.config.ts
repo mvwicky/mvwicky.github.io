@@ -67,6 +67,17 @@ function configureServiceWorker() {
     exclude: [/default_out\.html/],
     runtimeCaching: [
       {
+        urlPattern: /\/?$/,
+        handler: "NetworkFirst",
+        options: {
+          cacheName: "home",
+          cacheableResponse: {
+            statuses: [200]
+          },
+          expiration: { maxEntries: 5, maxAgeSeconds: 3600 }
+        }
+      },
+      {
         urlPattern: /\/blog\//,
         handler: "StaleWhileRevalidate",
         options: {
@@ -78,6 +89,31 @@ function configureServiceWorker() {
         }
       }
     ]
+  });
+}
+
+function configureManifest(): WebpackPwaManifest {
+  const start_url: string = cfg.url;
+  const scope = start_url + (start_url.endsWith("/") ? "" : "/");
+  return new WebpackPwaManifest({
+    filename: "manifest.webmanifest",
+    name: cfg.title,
+    short_name: "Where Was I Going",
+    start_url,
+    scope,
+    description: cfg.description,
+    background_color: pkg.colors.background,
+    theme_color: pkg.colors.theme,
+    publicPath,
+    fingerprints: false,
+    icons: [
+      {
+        src: path.resolve(__dirname, "img", "apple-touch-icon.png"),
+        sizes: [96, 128, 192, 256, 384, 512],
+        destination: "img"
+      }
+    ],
+    inject: true
   });
 }
 
@@ -103,23 +139,7 @@ const config: webpack.Configuration = {
       minify: false,
       inject: true
     }),
-    new WebpackPwaManifest({
-      name: cfg.title,
-      short_name: "Where Was I Going",
-      description: cfg.description,
-      background_color: pkg.colors.background,
-      theme_color: pkg.colors.theme,
-      publicPath,
-      fingerprints: false,
-      icons: [
-        {
-          src: path.resolve(__dirname, "img", "apple-touch-icon.png"),
-          sizes: [96, 128, 192, 256, 384, 512],
-          destination: "img"
-        }
-      ],
-      inject: true
-    }),
+    configureManifest(),
     configureServiceWorker()
   ],
   module: {

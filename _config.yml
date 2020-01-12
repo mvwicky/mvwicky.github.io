@@ -19,12 +19,13 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - "doc/"
-  - "package.json"
-  - "webpack.config.js"
-  - "Makefile"
+  - package.json
+  - webpack.config.ts
+  - tsconfig.json
+  - Makefile
   - "*.py"
-  - "src/"
+  - src/
+  - README.md
   - "*.sublime-*"
   - .cache/
   - yarn.lock
