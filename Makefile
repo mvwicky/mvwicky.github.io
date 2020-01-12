@@ -71,12 +71,12 @@ $(YARN_DEV_CACHE): $(YARN_INPUT) $(CACHE_DIR)
 update:
 	$(BUNDLE) update
 
+prod: export JEKYLL_ENV=production
 prod:
-	export JEKYLL_ENV=production
 	$(JEKYLL) serve $(SERVEOPTS)
 
+serve: export JEKYLL_ENV=development
 serve:
-	export JEKYLL_ENV=development
 	$(JEKYLL) serve $(SERVEOPTS)
 
 drafts: SERVEOPTS := $(SERVEOPTS) --drafts

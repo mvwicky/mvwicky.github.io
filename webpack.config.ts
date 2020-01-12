@@ -57,15 +57,24 @@ const publicPath = "/dist/";
 function configureServiceWorker() {
   const swDest = path.join(__dirname, "sw.js");
   const importsDirectory = "wb";
+  const maxEntries = 30;
+  const maxAgeSeconds = 43200;
   return new GenerateSW({
     swDest,
     importsDirectory,
     importWorkboxFrom: "local",
     cacheId: "wwigwt",
+    exclude: [/default_out\.html/],
     runtimeCaching: [
       {
         urlPattern: /\/blog\//,
-        handler: "CacheFirst"
+        handler: "StaleWhileRevalidate",
+        options: {
+          cacheableResponse: {
+            statuses: [200]
+          },
+          expiration: { maxEntries, maxAgeSeconds }
+        }
       }
     ]
   });
