@@ -1,51 +1,5 @@
-# netlify.toml
-# Generated: 2020-01-23T19:00:35.318658
-
 [build]
 publish = "_site/"
 command = "make build"
   [build.environment]
   YARN_VERSION = "1.21.0"
-
-[[headers]]
-for = "sw.js"
-  [headers.values]
-  service-worker-allowed = "/"
-  cache-control = '''
-max-age=0,
-no-cache,
-no-store,
-must-revalidate'''
-
-[[headers]]
-for = "**/manifest.json"
-  [headers.values]
-  cache-control = '''
-max-age=0,
-no-cache,
-no-store,
-must-revalidate'''
-
-[[headers]]
-for = "/dist/*.*.js"
-  [headers.values]
-  cache-control = '''
-max-age=315360000,
-public,
-immutable'''
-
-[[headers]]
-for = "/dist/*.*.css"
-  [headers.values]
-  cache-control = '''
-max-age=315360000,
-public,
-immutable'''
-
-[[headers]]
-for = "/dist/fonts/*"
-  [headers.values]
-  cache-control = '''
-max-age=315360000,
-public,
-immutable'''

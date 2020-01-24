@@ -1,0 +1,27 @@
+/sw.js
+  service-worker-allowed: /
+  cache-control: max-age=0
+  cache-control: no-cache
+  cache-control: no-store
+  cache-control: must-revalidate
+
+*/manifest.json
+  cache-control: max-age=0
+  cache-control: no-cache
+  cache-control: no-store
+  cache-control: must-revalidate
+
+/dist/*.*.js
+  cache-control: max-age=315360000
+  cache-control: public
+  cache-control: immutable
+
+/dist/*.*.css
+  cache-control: max-age=315360000
+  cache-control: public
+  cache-control: immutable
+
+/dist/fonts/*
+  cache-control: max-age=315360000
+  cache-control: public
+  cache-control: immutable

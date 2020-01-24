@@ -30,6 +30,8 @@ exclude:
   - .cache/
   - yarn.lock
   - yarn-error.log
+include:
+  - _headers
 plugins:
   - jekyll-sitemap
   - jekyll-include-cache
