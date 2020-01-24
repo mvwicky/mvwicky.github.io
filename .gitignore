@@ -1,7 +1,7 @@
 *.sublime-workspace
 
 _layouts/default_out.html
-
+_netlify.toml
 # report folder generatred by webhint
 hint-report/
 

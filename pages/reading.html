@@ -3,7 +3,17 @@ layout: miscpages
 title: "What I'm Reading"
 ---
 
-{% if site.data.reading.books.size < 1 %}
+{%- for book in site.data.reading.books -%}
+<div class="reading-book">
+  <h3 class="title">{{ book.title }}</h3>
+  <h4 class="author">{{ book.author }} ({{ book.year }})</h4>
+  {%- if book.comments -%}{{ book.comments | markdownify }}{%- endif -%}
+</div>
+{%- else -%}
 <h3>Nothing I Guess</h3>
-{% else %}
-{% endif %}
+{%- endfor -%}
+
+
+<div class="schema-link">
+  <a href="/assets/reading-schema.json" target="_blank" type="application/schema+json">Schema</a>
+</div>

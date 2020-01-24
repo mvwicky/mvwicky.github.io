@@ -1,1 +1,15 @@
-books: []
+---
+# See /assets/reading-schema.json for more info.
+books:
+  - title: Fake Title
+    author: Fake Author
+    comments: |
+      This is a long multiline string.
+      It goes on for more than one line.
+      And another line in this first paragraph.
+
+      That was just a blank line.
+    year: 2019
+  - title: Another Fake Title
+    author: Fake Author
+    year: 2013

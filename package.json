@@ -3,85 +3,20 @@
   "version": "1.0.0",
   "private": true,
   "repository": "https://github.com/mvwicky/mvwicky.github.io",
-  "author": "Michael Van Wickle <mvanwickle@gmail.com>",
   "license": "MIT",
-  "engines": {
-    "node": "13.x.0",
-    "yarn": "1.21.x"
-  },
-  "entry": {
-    "main": "./src/js/main.ts"
-  },
-  "colors": {
-    "theme": "#0af",
-    "background": "#eeeeff"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
-    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/plugin-transform-classes": "^7.4.3",
-    "@babel/plugin-transform-regenerator": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/preset-typescript": "^7.7.7",
-    "@types/js-yaml": "^3.12.1",
-    "@types/mini-css-extract-plugin": "^0.9.0",
-    "@types/node": "^13.1.6",
-    "@types/optimize-css-assets-webpack-plugin": "^5.0.1",
-    "@types/terser-webpack-plugin": "^2.2.0",
-    "@types/webpack": "^4.41.2",
-    "@types/workbox-webpack-plugin": "^4.1.0",
-    "autoprefixer": "^9.5.1",
-    "babel-loader": "^8.0.5",
-    "babel-minify": "^0.5.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "core-js": "^3.6.1",
-    "cross-env": "^6.0.3",
-    "css-loader": "^3.0.0",
-    "cssnano": "^4.1.10",
-    "file-loader": "^5.0.2",
-    "html-webpack-plugin": "^4.0.0-beta.11",
-    "js-yaml": "^3.13.1",
-    "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.11.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "pnp-webpack-plugin": "^1.5.0",
-    "postcss-cli": "^7.1.0",
-    "postcss-loader": "^3.0.0",
-    "prettier": "^1.19.1",
-    "sass": "^1.18.0",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.1.2",
-    "stylelint": "^12.0.1",
-    "stylelint-config-prettier": "^8.0.0",
-    "stylelint-config-recommended-scss": "^4.1.0",
-    "stylelint-order": "^4.0.0",
-    "stylelint-prettier": "^1.1.2",
-    "stylelint-scss": "^3.13.0",
-    "terser-webpack-plugin": "^2.0.0",
-    "ts-node": "^8.6.1",
-    "typescript": "^3.7.4",
-    "webpack": "^4.19.0",
-    "webpack-cli": "^3.1.0",
-    "webpack-pwa-manifest": "^4.1.1",
-    "workbox-webpack-plugin": "^4.3.1"
-  },
-  "dependencies": {
-    "bourbon": "^6.0.0",
-    "normalize.css": "^8.0.1",
-    "rfs": "^9.0.0",
-    "sanitize.css": "^11.0.0",
-    "sass-mq": "^5.0.1"
-  },
+  "author": "Michael Van Wickle <mvanwickle@gmail.com>",
   "scripts": {
+    "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.js",
     "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js --progress",
     "prod": "cross-env NODE_ENV=production webpack -p --config webpack.config.js",
-    "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.js",
     "watch": "cross-env NODE_ENV=development webpack --config webpack.config.js --progress --watch"
   },
+  "browserslist": [
+    "> 0.2%",
+    "last 1 major versions",
+    "Firefox ESR",
+    "not dead"
+  ],
   "stylelint": {
     "extends": "stylelint-prettier/recommended",
     "plugins": [
@@ -134,10 +69,76 @@
       "scss/at-rule-no-unknown": true
     }
   },
-  "browserslist": [
-    "> 0.2%",
-    "last 1 major versions",
-    "Firefox ESR",
-    "not dead"
-  ]
+  "dependencies": {
+    "bourbon": "^6.0.0",
+    "normalize.css": "^8.0.1",
+    "rfs": "^9.0.0",
+    "sanitize.css": "^11.0.0",
+    "sass-mq": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-classes": "^7.4.3",
+    "@babel/plugin-transform-regenerator": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-typescript": "^7.7.7",
+    "@types/js-yaml": "^3.12.1",
+    "@types/mini-css-extract-plugin": "^0.9.0",
+    "@types/node": "^13.1.6",
+    "@types/optimize-css-assets-webpack-plugin": "^5.0.1",
+    "@types/terser-webpack-plugin": "^2.2.0",
+    "@types/webpack": "^4.41.2",
+    "@types/workbox-webpack-plugin": "^4.1.0",
+    "ajv": "^6.10.2",
+    "autoprefixer": "^9.5.1",
+    "babel-loader": "^8.0.5",
+    "babel-minify": "^0.5.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "core-js": "^3.6.1",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.0.0",
+    "cssnano": "^4.1.10",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^4.0.0-beta.11",
+    "js-yaml": "^3.13.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "pnp-webpack-plugin": "^1.5.0",
+    "postcss-cli": "^7.1.0",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.19.1",
+    "sass": "^1.18.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.1.2",
+    "stylelint": "^12.0.1",
+    "stylelint-config-prettier": "^8.0.0",
+    "stylelint-config-recommended-scss": "^4.1.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.13.0",
+    "terser-webpack-plugin": "^2.0.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.4",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-pwa-manifest": "^4.1.1",
+    "workbox-webpack-plugin": "^4.3.1"
+  },
+  "engines": {
+    "node": "13.x.0",
+    "yarn": "1.21.x"
+  },
+  "colors": {
+    "theme": "#0af",
+    "background": "#eeeeff"
+  },
+  "entry": {
+    "main": "./src/js/main.ts"
+  }
 }

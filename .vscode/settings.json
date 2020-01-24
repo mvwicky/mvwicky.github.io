@@ -17,7 +17,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
   },
-  "python.pythonPath": "/Users/michael/.pyenv/versions/3.8.0/bin/python",
+  "python.pythonPath": "/Users/michael/.pyenv/versions/blog-3.8.1/bin/python",
   "[python]": {
     "editor.tabSize": 4
   }

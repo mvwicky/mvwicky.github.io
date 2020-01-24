@@ -4,9 +4,9 @@
 {% assign rel = "apple-touch-icon" -%}
 {%- assign type = "image/png" -%}
 {% for size in site.data.icons.sizes -%}
-{%- capture sizes -%}{{ size }}x{{ size }}{%- endcapture -%}
-{%- capture href -%}/img/apple-touch-icon-{{ size }}.png{%- endcapture -%}
-<link rel="{{ rel }}" type="{{ type }}" sizes="{{ sizes }}" href="{{ href }}"/>
+  {%- capture sizes -%}{{ size }}x{{ size }}{%- endcapture -%}
+  {%- capture href -%}/img/apple-touch-icon-{{ size }}.png{%- endcapture -%}
+  <link rel="{{ rel }}" type="{{ type }}" sizes="{{ sizes }}" href="{{ href }}"/>
 {% endfor -%}
 {%- seo -%}
 <script>
