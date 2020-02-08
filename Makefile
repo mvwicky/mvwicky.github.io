@@ -55,7 +55,8 @@ $(WEBPACK_PROD_CACHE): export NODE_ENV=production
 $(WEBPACK_PROD_CACHE): $(WEBPACK_INPUT) $(CACHE_DIR)
 	@touch $@
 	$(WEBPACK) -p $(WEBPACK_CFG)
-	@touch -A -60 $(WEBPACK_DEV_CACHE)
+	@touch $(WEBPACK_DEV_CACHE)
+	@rm $(WEBPACK_DEV_CACHE)
 
 $(JEKYLL_CACHE): export JEKYLL_ENV=production
 $(JEKYLL_CACHE): $(JEKYLL_INPUT) $(CACHE_DIR)
@@ -66,7 +67,8 @@ $(WEBPACK_DEV_CACHE): export NODE_ENV=development
 $(WEBPACK_DEV_CACHE): $(WEBPACK_INPUT) $(CACHE_DIR)
 	@touch $@
 	$(WEBPACK) $(WEBPACK_CFG) --progress
-	@touch -A -60 $(WEBPACK_PROD_CACHE)
+	@touch $(WEBPACK_PROD_CACHE)
+	@rm $(WEBPACK_PROD_CACHE)
 
 update:
 	$(BUNDLE) update
