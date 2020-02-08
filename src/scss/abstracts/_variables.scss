@@ -1,5 +1,5 @@
-$header-font: "Spectral", Garamond, serif;
-$body-font: "Fira Sans", Helvetica, sans-serif;
+$body-font: "Spectral", Garamond, serif;
+$header-font: "Fira Sans", Helvetica, sans-serif;
 $code-font: "IBM Plex Mono", monospace;
 
 $rfs-base-value: 1rem;
@@ -17,7 +17,7 @@ $mq-breakpoints: (
 
 /* Header Styling */
 $header-font-weight: 700;
-$header-margin-bottom: 0.5rem;
+$header-margin-bottom: 0.33rem;
 $h1-font-size: 2.5rem;
 $h2-font-size: 2rem;
 $h3-font-size: 1.75rem;
@@ -77,6 +77,6 @@ $footnote-border: 0 dotted $fn-border-color;
 $footnote-border-radius: 1px;
 
 /* Footnotes (Text) */
-$footnotes-font-size: 80%;
+$footnotes-font-size: 85%;
 
 $link-title-font-size: 1.75rem;

@@ -2,6 +2,7 @@
 
 _layouts/default_out.html
 _netlify.toml
+._headers
 # report folder generatred by webhint
 hint-report/
 

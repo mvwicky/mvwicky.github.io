@@ -1,15 +1,12 @@
 ---
 # See /assets/reading-schema.json for more info.
 books:
-  - title: Fake Title
-    author: Fake Author
+  - title: Ghost Wars
+    author: Steve Coll
+    year: 2004
     comments: |
-      This is a long multiline string.
-      It goes on for more than one line.
-      And another line in this first paragraph.
+      I feel like I've been reading a lot about the America's middle east policy lately.
+      Spoiler alert: it has been quite a disaster for quite a while.
 
-      That was just a blank line.
-    year: 2019
-  - title: Another Fake Title
-    author: Fake Author
-    year: 2013
+      We tend to think of Iraq as a singularly huge foreign policy blunder.
+      While not exactly inaccurate, that formulation belies that fact that it was the culmination of decades of not great foreign policy.

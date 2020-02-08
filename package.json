@@ -77,6 +77,7 @@
     "sass-mq": "^5.0.1"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
@@ -106,6 +107,7 @@
     "file-loader": "^5.0.2",
     "html-webpack-plugin": "^4.0.0-beta.11",
     "js-yaml": "^3.13.1",
+    "liquidjs": "^9.6.2",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
@@ -140,5 +142,11 @@
   },
   "entry": {
     "main": "./src/js/main.ts"
+  },
+  "pwmetrics": {
+    "url": "https://wherewasigoing.com",
+    "flags": {
+      "runs": 5
+    }
   }
 }

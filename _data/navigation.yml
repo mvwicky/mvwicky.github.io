@@ -1,6 +1,6 @@
 - name: Home
   link: /
-- name: Read
+- name: Reading
   link: /pages/reading
 - name: About Me
   link: /pages/about

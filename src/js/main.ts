@@ -1,4 +1,3 @@
-import "normalize.css";
 import "../scss/main.scss";
 
 function hideAll(elements: NodeListOf<HTMLElement>) {
@@ -11,7 +10,6 @@ function showAll(elements: NodeListOf<HTMLElement>) {
 
 function postData(select: HTMLSelectElement) {
   select.addEventListener("change", () => {
-    const n = select.value;
     const opt = select.selectedOptions[0];
     const tag = opt.label;
     if (tag === "all") {

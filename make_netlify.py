@@ -33,7 +33,42 @@ def make_headers(dest: str, value: dict) -> Table:
     return hdrs_table
 
 
-if __name__ == "__main__":
+def make_headers_file():
+    file = Path("._headers")
+    path_headers = {
+        "/sw.js": {
+            "service-worker-allowed": "/",
+            "cache-control": ["max-age=0", "no-cache", "no-store", "must-revalidate"],
+        },
+        "*/manifest.json": {
+            "cache-control": ["max-age=0", "no-cache", "no-store", "must-revalidate"]
+        },
+        "/dist/*.*.js": {
+            "cache-control": [f"max-age={FOREVER}", "public", "immutable"]
+        },
+        "/dist/*.*.css": {
+            "cache-control": [f"max-age={FOREVER}", "public", "immutable"]
+        },
+        "/dist/fonts/*": {
+            "cache-control": [f"max-age={FOREVER}", "public", "immutable"]
+        },
+    }
+    lines, indent = [], (" " * 2)
+    for path, hdrs in path_headers.items():
+        lines.append(path)
+        for k, values in hdrs.items():
+            if isinstance(values, str):
+                values = [values]
+            for val in values:
+                lines.append(f"{indent}{k}: {val}")
+        lines.append("")
+
+    output = "\n".join(lines)
+    print(output)
+    file.write_text(output)
+
+
+def toml_headers():
     filename = Path("_netlify.toml")
 
     doc = document()
@@ -65,3 +100,7 @@ if __name__ == "__main__":
     print(output)
     sz = filename.write_text(output)
     print(sz)
+
+
+if __name__ == "__main__":
+    make_headers_file()

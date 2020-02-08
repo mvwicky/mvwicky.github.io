@@ -18,4 +18,5 @@ if (!valid) {
   console.log(validate.errors);
 } else {
   console.log("Data is valid");
+  console.log(dataObj.books);
 }
