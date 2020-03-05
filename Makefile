@@ -13,6 +13,7 @@ JEKYLL=$(BUNDLE) exec jekyll
 SERVEOPTS=
 ALLOPTS=--drafts --unpublished --future
 NPM=npm
+TS_NODE=node_modules/.bin/ts-node
 WEBPACK=node_modules/.bin/webpack
 WEBPACK_CFG_FILE=webpack.config.ts
 WEBPACK_CFG=--config $(WEBPACK_CFG_FILE)
@@ -20,7 +21,7 @@ WEBPACK_CFG=--config $(WEBPACK_CFG_FILE)
 WATCHEXEC=watchexec
 WATCH_OPTS=-w src -w $(WEBPACK_CFG_FILE) -p -d 1000
 
-WEBPACK_INPUT=$(shell find src -type f) $(WEBPACK_CFG_FILE) package.json package-lock.json
+WEBPACK_INPUT=$(shell find src -type f) $(WEBPACK_CFG_FILE) package.json yarn.lock
 JEKYLL_INPUT=$(shell git ls-files | grep -v -e 'src\|Makefile')
 
 JEKYLL_CACHE=$(CACHE_DIR)/.build.jekyll
@@ -28,7 +29,11 @@ WEBPACK_CACHE=$(CACHE_DIR)/.build.webpack
 WEBPACK_DEV_CACHE=$(WEBPACK_CACHE).dev
 WEBPACK_PROD_CACHE=$(WEBPACK_CACHE).prod
 
-.PHONY: build-webpack build-jekyll all webpack-dev webpack-watch
+VERIFY=bin/verify.ts
+VERIFY_DEPS=_data/reading.yml assets/reading-schema.json $(VERIFY)
+VERIFY_CACHE=$(CACHE_DIR)/.verify
+
+.PHONY: build-webpack build-jekyll all webpack-dev webpack-watch verify
 
 build: build-webpack build-jekyll
 
@@ -96,6 +101,13 @@ profile:
 
 doctor:
 	$(JEKYLL) doctor
+
+verify: $(VERIFY_CACHE)
+
+
+$(VERIFY_CACHE): $(VERIFY_DEPS) $(CACHE_DIR)
+	@touch $@
+	$(TS_NODE) $(VERIFY)
 
 $(CACHE_DIR):
 	mkdir $@

@@ -1,8 +1,6 @@
 import * as path from "path";
 import process from "process";
-import * as fs from "fs";
 
-import * as yaml from "js-yaml";
 import { GenerateSW } from "workbox-webpack-plugin";
 import webpack from "webpack";
 import {
@@ -10,7 +8,6 @@ import {
   Options as CleanOptions
 } from "clean-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import WebpackPwaManifest from "webpack-pwa-manifest";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 import OptimizeCSSPlugin = require("optimize-css-assets-webpack-plugin");
@@ -18,7 +15,6 @@ import TerserPlugin = require("terser-webpack-plugin");
 
 import * as pkg from "./package.json";
 
-const cfg = yaml.safeLoad(fs.readFileSync("./_config.yml", "utf-8"));
 const prod = process.env.NODE_ENV === "production";
 
 function compact<T>(arr: (T | undefined)[]): T[] {
@@ -36,13 +32,7 @@ function ifProd<T>(obj: T): T | undefined {
 const cleanOpts: CleanOptions = {
   verbose: false,
   dry: false,
-  cleanOnceBeforeBuildPatterns: [
-    "**/*",
-    "!fonts",
-    "!fonts/**/*",
-    "!img",
-    "!img/**/*"
-  ]
+  cleanOnceBeforeBuildPatterns: ["**/*", "!fonts", "!fonts/**/*"]
 };
 
 const hashFn = prodOr("sha256", "md5");
@@ -56,13 +46,10 @@ const publicPath = "/dist/";
 
 function configureServiceWorker() {
   const swDest = path.join(__dirname, "sw.js");
-  const importsDirectory = "wb";
   const maxEntries = 30;
   const maxAgeSeconds = 43200;
   return new GenerateSW({
-    swDest,
-    importsDirectory,
-    importWorkboxFrom: "local",
+    swDest: "sw.js",
     cacheId: "wwigwt",
     exclude: [/default_out\.html/],
     runtimeCaching: [
@@ -92,31 +79,6 @@ function configureServiceWorker() {
   });
 }
 
-function configureManifest(): WebpackPwaManifest {
-  const start_url: string = cfg.url;
-  const scope = start_url + (start_url.endsWith("/") ? "" : "/");
-  return new WebpackPwaManifest({
-    filename: "manifest.webmanifest",
-    name: cfg.title,
-    short_name: "Where Was I Going",
-    start_url,
-    scope,
-    description: cfg.description,
-    background_color: pkg.colors.background,
-    theme_color: pkg.colors.theme,
-    publicPath,
-    fingerprints: false,
-    icons: [
-      {
-        src: path.resolve(__dirname, "img", "apple-touch-icon.png"),
-        sizes: [96, 128, 192, 256, 384, 512],
-        destination: "img"
-      }
-    ],
-    inject: true
-  });
-}
-
 const config: webpack.Configuration = {
   entry: pkg.entry,
   output: {
@@ -139,7 +101,6 @@ const config: webpack.Configuration = {
       minify: false,
       inject: true
     }),
-    configureManifest(),
     configureServiceWorker()
   ],
   module: {
