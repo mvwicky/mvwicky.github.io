@@ -2,7 +2,7 @@ import * as path from "path";
 import process from "process";
 
 import { GenerateSW } from "workbox-webpack-plugin";
-import webpack from "webpack";
+import webpack, { RuleSetLoader } from "webpack";
 import {
   CleanWebpackPlugin,
   Options as CleanOptions
@@ -45,11 +45,10 @@ const layoutDir = path.resolve(__dirname, "_layouts");
 const publicPath = "/dist/";
 
 function configureServiceWorker() {
-  const swDest = path.join(__dirname, "sw.js");
   const maxEntries = 30;
   const maxAgeSeconds = 43200;
   return new GenerateSW({
-    swDest: "sw.js",
+    swDest: path.resolve(__dirname, "sw.js"),
     cacheId: "wwigwt",
     exclude: [/default_out\.html/],
     runtimeCaching: [
@@ -79,6 +78,35 @@ function configureServiceWorker() {
   });
 }
 
+const babelCache = path.resolve(__dirname, ".cache", "babel-loader");
+const babelLoader: RuleSetLoader = {
+  loader: "babel-loader",
+  options: {
+    cacheDirectory: prodOr(false, babelCache),
+    cacheCompression: false,
+    exclude: /node_modules/,
+    presets: [
+      [
+        "@babel/preset-env",
+        {
+          corejs: { version: 3, proposals: true },
+          modules: false,
+          debug: false,
+          useBuiltIns: "usage"
+        }
+      ],
+      ["@babel/preset-typescript"]
+    ],
+    plugins: [
+      "@babel/plugin-proposal-optional-chaining",
+      "@babel/proposal-object-rest-spread"
+    ],
+    parserOpts: {
+      strictMode: true
+    }
+  }
+};
+
 const config: webpack.Configuration = {
   entry: pkg.entry,
   output: {
@@ -86,12 +114,13 @@ const config: webpack.Configuration = {
     path: outPath,
     hashFunction: "sha256",
     hashDigestLength: 64,
-    publicPath
+    publicPath,
+    pathinfo: false
   },
-  devtool: prodOr("source-map", "cheap-module-eval-source-map"),
+  devtool: prodOr("source-map", false),
   mode: prodOr("production", "development"),
   plugins: [
-    new CleanWebpackPlugin(cleanOpts),
+    // new CleanWebpackPlugin(cleanOpts),
     new MiniCssExtractPlugin({
       filename: `style.[contenthash:${hashlength}].css`
     }),
@@ -106,35 +135,8 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.(js|ts)$/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              cacheDirectory: prodOr(false, path.resolve(__dirname, ".cache")),
-              exclude: /node_modules/,
-              presets: [
-                [
-                  "@babel/preset-env",
-                  {
-                    corejs: { version: 3, proposals: true },
-                    modules: false,
-                    debug: false,
-                    useBuiltIns: "usage"
-                  }
-                ],
-                "@babel/typescript"
-              ],
-              plugins: [
-                "@babel/plugin-proposal-optional-chaining",
-                "@babel/proposal-object-rest-spread"
-              ],
-              parserOpts: {
-                strictMode: true
-              }
-            }
-          }
-        ],
+        test: /\.(ts)$/,
+        use: [babelLoader],
         include: path.join(srcDir, "js")
       },
       {
@@ -188,6 +190,7 @@ const config: webpack.Configuration = {
     ]
   },
   optimization: {
+    splitChunks: false,
     minimizer: compact([
       ifProd(
         new TerserPlugin({

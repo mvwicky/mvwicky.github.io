@@ -1,8 +1,8 @@
 {
   "files.exclude": {
     ".jekyll-*": true,
-    "_site": true,
-    "dist": true,
+    "_site": false,
+    "dist": false,
     "node_modules": true,
     "*.sublime-*": true,
     "vendor": true,
@@ -20,5 +20,8 @@
   "python.pythonPath": "/Users/michael/.pyenv/versions/blog-3.8.1/bin/python",
   "[python]": {
     "editor.tabSize": 4
+  },
+  "yaml.schemas": {
+    "./assets/reading-schema.json": "_data/reading.yml"
   }
 }

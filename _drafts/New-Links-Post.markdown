@@ -17,13 +17,17 @@ links:
     href: "https://lrb.co.uk/the-paper/v28/n20/terry-eagleton/lunging-flailing-mispunching"
     title: Lunging, Flailing, Mispunching
     author: Terry Eagleton
+  hillary:
+    href: https://www.mcsweeneys.net/articles/i-dont-hate-women-candidates-i-just-hated-hillary-and-coincidentally-im-starting-to-hate-elizabeth-warren
+    title: I Don't Hate Women Candidates&mdash;I Just Hated Hillary and Coincidentally I'm Starting to Hate Elizabeth Warren
+    author: Devorah Blachor
 ---
 
 There are times[^1] that I really have nothing to say about the things that I post.
 It's sometimes that I think the piece speaks for itself and/or it aligns with my own views so well that anything I would say would be redundant.
 In other instances, the lack of a satisfying onomatopoeia for screaming makes it impossible for me to say anything.
 
-{% include objlink.html obj=page.links.cruelty %}
+{% include_cached objlink.html obj=page.links.cruelty %}
 I feel somewhat confident saying that this piece will be viewed by posterity as one of the definitive deconstructions of the Trump era[^2].
 Adam Serwer does a great job of breaking down the irrationality that underpins a lot of Trump's support.
 Like, showing these people pictures of kids in cages and families being torn apart isn't exactly an effective rhetorical strategy in this instance.
@@ -33,6 +37,9 @@ They know that they're supporting policies that do this kind of inhumane shit to
 This is one of the screaming ones.
 
 {% include objlink.html obj=page.links.dawkins %}
+
+{% include objlink.html obj=page.links.hillary %}
+Uh, disclaimer: this title does not reflect the way that I feel.
 
 
 <hr class="footsep" />

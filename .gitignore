@@ -1,9 +1,11 @@
 *.sublime-workspace
-
+# Webpack outputs service worker to root
+*.js
+*.js.*
+.netlify
 _layouts/default_out.html
 _netlify.toml
 ._headers
-# report folder generatred by webhint
 hint-report/
 
 _site/
@@ -121,7 +123,4 @@ build-iPhoneSimulator/
 # .ruby-version
 # .ruby-gemset
 
-# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
-sw.js
-.netlify

@@ -1,3 +1,4 @@
+---
 name: Michael Van Wickle
 markdown: kramdown
 url: "https://wherewasigoing.com"
@@ -25,7 +26,9 @@ exclude:
   - Makefile
   - "*.py"
   - src/
+  - bin/
   - README.md
+  - ".git*"
   - "*.sublime-*"
   - .cache/
   - yarn.lock

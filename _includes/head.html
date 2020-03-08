@@ -8,6 +8,7 @@
   {%- capture href -%}/img/apple-touch-icon-{{ size }}.png{%- endcapture -%}
   <link rel="{{ rel }}" type="{{ type }}" sizes="{{ sizes }}" href="{{ href }}"/>
 {% endfor -%}
+<link type="text/plain" rel="author" href="/humans.txt">
 {%- seo -%}
 <script>
   if ("serviceWorker" in navigator) {
