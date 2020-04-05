@@ -1,7 +1,5 @@
-@import "~bourbon/core/bourbon";
-
 $font-dir: "./themes/fonts/";
-$file-types: ("eot", "woff", "woff2", "ttf", "svg");
+$file-types: ("woff", "woff2");
 $font-display: fallback;
 
 @mixin make-font-face($name, $file-name, $style, $weight) {

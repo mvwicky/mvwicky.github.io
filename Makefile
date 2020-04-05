@@ -22,13 +22,13 @@ WATCHEXEC=watchexec
 WATCH_OPTS=-w src -w $(WEBPACK_CFG_FILE) -p -d 1000
 
 WEBPACK_INPUT=$(shell find src -type f) $(WEBPACK_CFG_FILE) package.json yarn.lock
-# JEKYLL_INPUT=$(shell find dist -type f) $(shell find _data -type f) $(shell find dist -type f)
-JEKYLL_INPUT=$(shell git ls-files | grep -v -e 'src\|Makefile')
+JEKYLL_INPUT=$(shell git ls-files | grep -v -e 'src\|Makefile') $(shell find _sass -type f)
 
 JEKYLL_CACHE=$(CACHE_DIR)/.build.jekyll
 WEBPACK_CACHE=$(CACHE_DIR)/.build.webpack
 WEBPACK_DEV_CACHE=$(WEBPACK_CACHE).dev
 WEBPACK_PROD_CACHE=$(WEBPACK_CACHE).prod
+SERVICE_WORKERS=$(shell find . -type f -depth 1 \( -name 'sw.js*' -o -name 'workbox*' \))
 
 VERIFY_SCRIPT=bin/verify.ts
 VERIFY_DEPS=_data/reading.yml assets/reading-schema.json $(VERIFY_SCRIPT)
@@ -48,6 +48,7 @@ clean:
 	$(BUNDLE) clean
 	$(JEKYLL) clean
 	-rm -rf $(WEBPACK_OUTPUT_DIR)/*
+	rm $(SERVICE_WORKERS)
 
 build-webpack: $(WEBPACK_PROD_CACHE)
 build-jekyll: $(JEKYLL_CACHE)
@@ -68,8 +69,10 @@ $(WEBPACK_PROD_CACHE): $(WEBPACK_INPUT) $(CACHE_DIR)
 
 $(JEKYLL_CACHE): export JEKYLL_ENV=production
 $(JEKYLL_CACHE): $(JEKYLL_INPUT) $(CACHE_DIR)
+$(JEKYLL_CACHE): JEKYLL_ARGS=build
+$(JEKYLL_CACHE): jekyll
 	@touch $@
-	$(JEKYLL) build
+	rm -rf _site/node_modules
 
 $(WEBPACK_DEV_CACHE): export NODE_ENV=development
 $(WEBPACK_DEV_CACHE): $(WEBPACK_INPUT) $(CACHE_DIR)
@@ -82,21 +85,26 @@ update:
 	$(BUNDLE) update
 
 prod: export JEKYLL_ENV=production
-prod:
-	$(JEKYLL) serve $(SERVEOPTS)
+prod: JEKYLL_ARGS=serve $(SERVEOPTS)
+prod: jekyll
 
 serve: export JEKYLL_ENV=development
-serve:
-	$(JEKYLL) serve $(SERVEOPTS)
+serve: JEKYLL_ARGS=serve $(SERVEOPTS)
 
 profile:
 	$(JEKYLL) clean
 	$(JEKYLL) build --profile --verbose
 
-doctor:
-	$(JEKYLL) doctor
+doctor: JEKYLL_ARGS=doctor
+doctor: jekyll
+
+jekyll:
+	@$(JEKYLL) $(JEKYLL_ARGS)
 
 verify: $(VERIFY_CACHE)
+
+clean_sw:
+	-rm $(SERVICE_WORKERS)
 
 $(VERIFY_CACHE): $(VERIFY_DEPS) $(CACHE_DIR)
 	@touch $@

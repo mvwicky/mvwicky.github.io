@@ -23,5 +23,19 @@
   },
   "yaml.schemas": {
     "./assets/reading-schema.json": "_data/reading.yml"
+  },
+  "spellright.language": [
+    "en"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext",
+    "jinja-md"
+  ],
+  "spellright.parserByClass": {
+    "jinja-md": {
+      "parser": "markdown"
+    }
   }
 }

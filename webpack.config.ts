@@ -5,7 +5,7 @@ import { GenerateSW } from "workbox-webpack-plugin";
 import webpack, { RuleSetLoader } from "webpack";
 import {
   CleanWebpackPlugin,
-  Options as CleanOptions
+  Options as CleanOptions,
 } from "clean-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
@@ -32,7 +32,7 @@ function ifProd<T>(obj: T): T | undefined {
 const cleanOpts: CleanOptions = {
   verbose: false,
   dry: false,
-  cleanOnceBeforeBuildPatterns: ["**/*", "!fonts", "!fonts/**/*"]
+  cleanOnceBeforeBuildPatterns: ["**/*", "!fonts", "!fonts/**/*"],
 };
 
 const hashFn = prodOr("sha256", "md5");
@@ -47,6 +47,7 @@ const publicPath = "/dist/";
 function configureServiceWorker() {
   const maxEntries = 30;
   const maxAgeSeconds = 43200;
+  const expiration = { maxEntries, maxAgeSeconds };
   return new GenerateSW({
     swDest: path.resolve(__dirname, "sw.js"),
     cacheId: "wwigwt",
@@ -58,10 +59,10 @@ function configureServiceWorker() {
         options: {
           cacheName: "home",
           cacheableResponse: {
-            statuses: [200]
+            statuses: [200],
           },
-          expiration: { maxEntries: 5, maxAgeSeconds: 3600 }
-        }
+          expiration,
+        },
       },
       {
         urlPattern: /\/blog\//,
@@ -69,12 +70,12 @@ function configureServiceWorker() {
         options: {
           cacheName: "blog-posts",
           cacheableResponse: {
-            statuses: [200]
+            statuses: [200],
           },
-          expiration: { maxEntries, maxAgeSeconds }
-        }
-      }
-    ]
+          expiration,
+        },
+      },
+    ],
   });
 }
 
@@ -92,19 +93,19 @@ const babelLoader: RuleSetLoader = {
           corejs: { version: 3, proposals: true },
           modules: false,
           debug: false,
-          useBuiltIns: "usage"
-        }
+          useBuiltIns: "usage",
+        },
       ],
-      ["@babel/preset-typescript"]
+      ["@babel/preset-typescript"],
     ],
     plugins: [
       "@babel/plugin-proposal-optional-chaining",
-      "@babel/proposal-object-rest-spread"
+      "@babel/proposal-object-rest-spread",
     ],
     parserOpts: {
-      strictMode: true
-    }
-  }
+      strictMode: true,
+    },
+  },
 };
 
 const config: webpack.Configuration = {
@@ -115,42 +116,42 @@ const config: webpack.Configuration = {
     hashFunction: "sha256",
     hashDigestLength: 64,
     publicPath,
-    pathinfo: false
+    pathinfo: false,
   },
   devtool: prodOr("source-map", false),
   mode: prodOr("production", "development"),
   plugins: [
-    // new CleanWebpackPlugin(cleanOpts),
+    new CleanWebpackPlugin(cleanOpts),
     new MiniCssExtractPlugin({
-      filename: `style.[contenthash:${hashlength}].css`
+      filename: `style.[contenthash:${hashlength}].css`,
     }),
     new HtmlWebpackPlugin({
       template: path.join(layoutDir, "default_tpl.html"),
       filename: path.resolve(layoutDir, "default_out.html"),
       minify: false,
-      inject: true
+      inject: true,
     }),
-    configureServiceWorker()
+    configureServiceWorker(),
   ],
   module: {
     rules: [
       {
         test: /\.(ts)$/,
         use: [babelLoader],
-        include: path.join(srcDir, "js")
+        include: path.join(srcDir, "js"),
       },
       {
         test: /\.(s?css)$/,
         use: compact([
           {
-            loader: prodOr(MiniCssExtractPlugin.loader, "style-loader")
+            loader: prodOr(MiniCssExtractPlugin.loader, "style-loader"),
           },
           {
             loader: "css-loader",
             options: {
               importLoaders: prodOr(2, 1),
-              sourceMap: prod
-            }
+              sourceMap: prod,
+            },
           },
           ifProd({
             loader: "postcss-loader",
@@ -158,19 +159,19 @@ const config: webpack.Configuration = {
               sourceMap: true,
               plugins: () => {
                 return [require("autoprefixer")];
-              }
-            }
+              },
+            },
           }),
           {
             loader: "sass-loader",
             options: {
               implementation: require("sass"),
               sassOptions: {
-                outputStyle: "expanded"
-              }
-            }
-          }
-        ])
+                outputStyle: "expanded",
+              },
+            },
+          },
+        ]),
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
@@ -181,13 +182,13 @@ const config: webpack.Configuration = {
               name: fontName,
               outputPath: "fonts",
               esModule: false,
-              emitFile: true
-            }
-          }
+              emitFile: true,
+            },
+          },
         ],
-        include: path.resolve("src", "scss")
-      }
-    ]
+        include: path.resolve("src", "scss"),
+      },
+    ],
   },
   optimization: {
     splitChunks: false,
@@ -196,28 +197,28 @@ const config: webpack.Configuration = {
         new TerserPlugin({
           cache: true,
           parallel: true,
-          sourceMap: true
+          sourceMap: true,
         })
       ),
       ifProd(
         new OptimizeCSSPlugin({
           cssProcessor: require("cssnano"),
           cssProcessorOptions: { preset: ["default"], map: true },
-          canPrint: false
+          canPrint: false,
         })
-      )
-    ])
+      ),
+    ]),
   },
   resolve: {
     extensions: [".js"],
-    symlinks: false
+    symlinks: false,
   },
   node: false,
   stats: {
     modules: false,
     children: false,
-    excludeAssets: [/^fonts\//]
-  }
+    excludeAssets: [/^fonts\//],
+  },
 };
 
 export default config;

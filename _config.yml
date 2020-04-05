@@ -14,25 +14,23 @@ defaults:
     values:
       layout: default
 exclude:
+  - .cache/
+  - ".git*"
+  - "*.json"
+  - "*.log"
+  - "*.py"
+  - "*.sublime-*"
+  - bin/
   - Gemfile.lock
-  - node_modules
+  - Makefile
+  - README.md
+  - src/
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - package.json
   - webpack.config.ts
-  - tsconfig.json
-  - Makefile
-  - "*.py"
-  - src/
-  - bin/
-  - README.md
-  - ".git*"
-  - "*.sublime-*"
-  - .cache/
   - yarn.lock
-  - yarn-error.log
 include:
   - _headers
 plugins:
@@ -47,3 +45,8 @@ sass:
 kramdown:
   math_engine: mathjax
   show_warnings: true
+jekyll_compose:
+  default_front_matter:
+    drafts:
+      layout: somelinks
+      tags: [links]

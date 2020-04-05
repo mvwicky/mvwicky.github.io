@@ -28,5 +28,8 @@
     "rulers": [110],
     "draw_centered": false,
     "wrap_width": 150
+  },
+  "syntax_override": {
+    "\\.html$": ["Liquid", "Syntaxes", "Liquid-HTML"]
   }
 }
