@@ -1,6 +1,7 @@
 import * as path from "path";
 import process from "process";
 
+import autoprefixer from "autoprefixer";
 import { GenerateSW } from "workbox-webpack-plugin";
 import webpack, { RuleSetLoader } from "webpack";
 import {
@@ -29,12 +30,6 @@ function ifProd<T>(obj: T): T | undefined {
   return prodOr(obj, undefined);
 }
 
-const cleanOpts: CleanOptions = {
-  verbose: false,
-  dry: false,
-  cleanOnceBeforeBuildPatterns: ["**/*", "!fonts", "!fonts/**/*"],
-};
-
 const hashFn = prodOr("sha256", "md5");
 const hashlength = prodOr(32, 10);
 const fontHash = `${hashFn}:hash:hex:${hashlength}`;
@@ -49,7 +44,7 @@ function configureServiceWorker() {
   const maxAgeSeconds = 43200;
   const expiration = { maxEntries, maxAgeSeconds };
   return new GenerateSW({
-    swDest: path.resolve(__dirname, "sw.js"),
+    swDest: path.join(outPath, "sw", "sw.js"),
     cacheId: "wwigwt",
     exclude: [/default_out\.html/],
     runtimeCaching: [
@@ -108,6 +103,27 @@ const babelLoader: RuleSetLoader = {
   },
 };
 
+function configureHTMLPlugin() {
+  return new HtmlWebpackPlugin({
+    filename: path.resolve(layoutDir, "default_out.html"),
+    minify: false,
+    inject: true,
+    meta: false,
+    scriptLoading: "defer",
+  });
+}
+
+function configureCleanPlugin() {
+  const patterns = ["**/*"].concat(prod ? [] : ["!fonts", "!fonts/**/*"]);
+  const opts: CleanOptions = {
+    verbose: false,
+    dry: false,
+    cleanOnceBeforeBuildPatterns: patterns,
+  };
+
+  return new CleanWebpackPlugin(opts);
+}
+
 const config: webpack.Configuration = {
   entry: pkg.entry,
   output: {
@@ -121,16 +137,11 @@ const config: webpack.Configuration = {
   devtool: prodOr("source-map", false),
   mode: prodOr("production", "development"),
   plugins: [
-    new CleanWebpackPlugin(cleanOpts),
+    configureCleanPlugin(),
     new MiniCssExtractPlugin({
       filename: `style.[contenthash:${hashlength}].css`,
     }),
-    new HtmlWebpackPlugin({
-      template: path.join(layoutDir, "default_tpl.html"),
-      filename: path.resolve(layoutDir, "default_out.html"),
-      minify: false,
-      inject: true,
-    }),
+    configureHTMLPlugin(),
     configureServiceWorker(),
   ],
   module: {
@@ -157,9 +168,10 @@ const config: webpack.Configuration = {
             loader: "postcss-loader",
             options: {
               sourceMap: true,
-              plugins: () => {
-                return [require("autoprefixer")];
-              },
+              plugins: [
+                require("postcss-flexbugs-fixes"),
+                autoprefixer({ flexbox: "no-2009" }),
+              ],
             },
           }),
           {

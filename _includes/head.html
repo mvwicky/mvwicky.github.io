@@ -10,6 +10,7 @@
 {% endfor -%}
 <link type="text/plain" rel="author" href="/humans.txt">
 {%- seo -%}
+{% if jekyll.environment == "production"  %}
 <script>
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
@@ -24,3 +25,4 @@
     });
   }
 </script>
+{% endif %}
