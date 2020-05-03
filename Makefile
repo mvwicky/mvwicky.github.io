@@ -21,7 +21,7 @@ WATCHEXEC=watchexec
 WATCH_OPTS=-w src -w $(WEBPACK_CFG_FILE) -p -d 1000
 
 WEBPACK_INPUT=$(shell find src -type f) $(WEBPACK_CFG_FILE) package.json yarn.lock
-JEKYLL_DIRS=$(shell find . -type d -depth 1 -not -name '_site' -name '_*')
+JEKYLL_DIRS=$(shell find . -maxdepth 1 -type d -not -name '_site' -name '_*')
 JEKYLL_INPUT=$(shell find $(JEKYLL_DIRS) -type f) _config.yml Gemfile Gemfile.lock
 JEKYLL_OUTPUT_DIR=_site
 SW_OUTPUT_DIR=$(JEKYLL_OUTPUT_DIR)/dist/sw
@@ -31,7 +31,7 @@ JEKYLL_CACHE=$(CACHE_DIR)/.build.jekyll
 WEBPACK_CACHE=$(CACHE_DIR)/.build.webpack
 WEBPACK_DEV_CACHE=$(WEBPACK_CACHE).dev
 WEBPACK_PROD_CACHE=$(WEBPACK_CACHE).prod
-SERVICE_WORKERS=$(shell find . -type f -depth 1 \( -name 'sw.js*' -o -name 'workbox*' \))
+SERVICE_WORKERS=$(shell find . -maxdepth 1 -type f \( -name 'sw.js*' -o -name 'workbox*' \))
 
 VERIFY_SCRIPT=bin/verify.ts
 VERIFY_DEPS=_data/reading.yml assets/reading-schema.json $(VERIFY_SCRIPT)
@@ -90,9 +90,9 @@ serve: export JEKYLL_ENV=development
 serve: JEKYLL_ARGS=serve $(SERVEOPTS)
 serve: jekyll
 
-profile:
-	$(JEKYLL) clean
-	$(JEKYLL) build --profile --verbose
+# profile: clean-jekyll
+profile: JEKYLL_ARGS=build --profile --verbose
+profile: jekyll
 
 doctor: JEKYLL_ARGS=doctor
 doctor: jekyll

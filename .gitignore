@@ -124,3 +124,4 @@ build-iPhoneSimulator/
 # .ruby-gemset
 
 .rvmrc
+.envrc

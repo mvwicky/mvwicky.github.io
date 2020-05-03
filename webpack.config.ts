@@ -4,6 +4,7 @@ import process from "process";
 import autoprefixer from "autoprefixer";
 import { GenerateSW } from "workbox-webpack-plugin";
 import webpack, { RuleSetLoader } from "webpack";
+import ManifestPlugin from "webpack-manifest-plugin";
 import {
   CleanWebpackPlugin,
   Options as CleanOptions,
@@ -137,6 +138,7 @@ const config: webpack.Configuration = {
   devtool: prodOr("source-map", false),
   mode: prodOr("production", "development"),
   plugins: [
+    new ManifestPlugin({ publicPath }),
     configureCleanPlugin(),
     new MiniCssExtractPlugin({
       filename: `style.[contenthash:${hashlength}].css`,
@@ -155,7 +157,7 @@ const config: webpack.Configuration = {
         test: /\.(s?css)$/,
         use: compact([
           {
-            loader: prodOr(MiniCssExtractPlugin.loader, "style-loader"),
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: "css-loader",
