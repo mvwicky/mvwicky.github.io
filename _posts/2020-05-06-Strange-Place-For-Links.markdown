@@ -24,10 +24,16 @@ links:
     coincidentally-im-starting-to-hate-elizabeth-warren'
     title: I Don't Hate Women Candidates&mdash;I Just Hated Hillary and Coincidentally I'm Starting to Hate Elizabeth Warren
     author: Devorah Blachor
+  tampa:
+    href: 'https://www.tampabay.com/news/health/2020/05/06/senior-year-derailed-a-high-school-journalist-pushes-toward-one-last-deadline/'
+    title: Senior year derailed, a high school journalist pushes toward one last deadline.
+    author: Claire McNeil
 # cSpell:enable
 ---
 
-This is going to be a four-linker.
+<del>This is going to be a four-linker.</del>
+
+I lied, added that last one after all the others.
 
 There are times[^1] that I really have nothing to say about the things that I post.
 It's sometimes that I think the piece speaks for itself and/or it aligns with my own views so well that anything I would say would be redundant.
@@ -52,6 +58,8 @@ Uh, disclaimer: this title does not reflect the way that I feel; the piece is sa
 This is pretty irrelevant at this point, but I thought the title was funny.
 And perfectly descriptive of an attitude that I have definitely seen online.
 (It also reminds me of the attitude that a **ton** of racists have.)[^4]
+
+{% include objlink.html obj=page.links.tampa %}
 
 <hr class="footsep" />
 
