@@ -6,7 +6,7 @@ overrides:
       parser: "html"
       requirePragma: true
       printWidth: 120
-  - files: "*.html"
+  - files: ["*.html", "*.md"]
     options:
       requirePragma: true
       printWidth: 120

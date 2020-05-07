@@ -16,9 +16,7 @@ TS_NODE=$(NODE_BIN)/ts-node
 WEBPACK=$(NODE_BIN)/webpack
 WEBPACK_CFG_FILE=webpack.config.ts
 WEBPACK_OUTPUT_DIR=dist
-
-WATCHEXEC=watchexec
-WATCH_OPTS=-w src -w $(WEBPACK_CFG_FILE) -p -d 1000
+TRASH=$(NODE_BIN)/trash
 
 WEBPACK_INPUT=$(shell find src -type f) $(WEBPACK_CFG_FILE) package.json yarn.lock
 JEKYLL_DIRS=$(shell find . -maxdepth 1 -type d -not -name '_site' -name '_*')
@@ -37,8 +35,8 @@ VERIFY_SCRIPT=bin/verify.ts
 VERIFY_DEPS=_data/reading.yml assets/reading-schema.json $(VERIFY_SCRIPT)
 VERIFY_CACHE=$(CACHE_DIR)/.verify
 
-.PHONY: build build-webpack build-jekyll all webpack-dev webpack-prod webpack-watch verify \
-	jekyll prod serve profile doctor clean-jekyll clean-bundle clean-webpack clean-sw copy-sw
+.PHONY: build build-webpack build-jekyll all webpack-dev webpack-prod verify jekyll prod \
+	serve profile doctor clean-jekyll clean-bundle clean-webpack copy-sw
 
 
 build: build-webpack build-jekyll copy-sw
@@ -47,7 +45,7 @@ all: webpack-dev
 all: SERVEOPTS := $(SERVEOPTS) $(ALLOPTS)
 all: serve
 
-clean: clean-bundle clean-jekyll clean-webpack clean-sw
+clean: clean-bundle clean-jekyll clean-webpack
 
 build-webpack: $(WEBPACK_PROD_CACHE)
 
@@ -55,10 +53,7 @@ build-jekyll: $(JEKYLL_CACHE)
 
 webpack-prod: build-webpack
 
-webpack-dev: clean-sw $(WEBPACK_DEV_CACHE)
-
-webpack-watch:
-	$(WATCHEXEC) $(WATCH_OPTS) make webpack-dev
+webpack-dev: $(WEBPACK_DEV_CACHE)
 
 $(WEBPACK_PROD_CACHE): export NODE_ENV=production
 $(WEBPACK_PROD_CACHE): $(WEBPACK_INPUT) $(CACHE_DIR)
@@ -79,8 +74,8 @@ $(WEBPACK_DEV_CACHE): $(WEBPACK_INPUT) $(CACHE_DIR)
 	@touch $(WEBPACK_PROD_CACHE)
 	@rm $(WEBPACK_PROD_CACHE)
 
-update:
-	$(BUNDLE) update
+update: BUNDLE_ARGS=update
+update: bundle
 
 prod: export JEKYLL_ENV=production
 prod: JEKYLL_ARGS=serve $(SERVEOPTS)
@@ -90,7 +85,6 @@ serve: export JEKYLL_ENV=development
 serve: JEKYLL_ARGS=serve $(SERVEOPTS)
 serve: jekyll
 
-# profile: clean-jekyll
 profile: JEKYLL_ARGS=build --profile --verbose
 profile: jekyll
 
@@ -100,8 +94,11 @@ doctor: jekyll
 clean-jekyll: JEKYLL_ARGS=clean
 clean-jekyll: jekyll
 
-clean-bundle:
-	$(BUNDLE) clean
+clean-bundle: BUNDLE_ARGS=clean
+clean-bundle: bundle
+
+bundle:
+	@$(BUNDLE) $(BUNDLE_ARGS)
 
 jekyll:
 	@$(JEKYLL) $(JEKYLL_ARGS)
@@ -109,13 +106,8 @@ jekyll:
 verify: $(VERIFY_CACHE)
 
 clean-webpack:
-	@rm -rf $(WEBPACK_OUTPUT_DIR)
+	@$(TRASH) $(WEBPACK_OUTPUT_DIR)
 	@mkdir $(WEBPACK_OUTPUT_DIR)
-
-clean-sw:
-	@for f in $(SERVICE_WORKERS); do \
-		rm $$f; \
-	done
 
 copy-sw:
 	@find $(SW_OUTPUT_DIR) -type f -not -name '.*' -print0 | \

@@ -1,6 +1,6 @@
-import Ajv from "ajv";
+import Ajv, { ValidateFunction } from "ajv";
 import chalk from "chalk";
-import * as fs from "fs";
+import { promises as fsp } from "fs";
 import * as path from "path";
 import yaml from "js-yaml";
 
@@ -20,52 +20,62 @@ interface ReadingData {
 
 const theme = {
   err: chalk.redBright,
-  success: chalk.green
+  success: chalk.green,
+  notice: chalk.blue,
 };
 
-const err = console.error;
-const log = console.log;
+const err = (...msg: any[]) => console.error(theme.err(msg));
+const success = (...msg: any[]) => console.log(theme.success(msg));
+const notice = (...msg: any[]) => console.log(theme.notice(msg));
 
-const root = path.dirname(path.dirname(__filename));
+const root = path.dirname(__dirname);
 
-function getReadingData() {
+async function getReadingData(): Promise<object> {
   const dataDir = path.join(root, "_data");
   const dataFile = path.join(dataDir, "reading.yml");
-  const contents = fs.readFileSync(dataFile, "utf-8");
+  notice(`Loading data (${dataFile})`);
+  const contents = await fsp.readFile(dataFile, { encoding: "utf-8" });
   return yaml.safeLoad(contents, { json: true });
 }
 
 function validateData(
-  validator: Ajv.ValidateFunction,
+  validator: ValidateFunction,
   data: any
 ): data is ReadingData {
+  notice("Running Validation");
   const valid = validator(data);
-  if (!valid) {
-  } else {
-  }
   return valid as boolean;
 }
 
-function main() {
+async function main() {
   const schemaDir = path.join(root, "assets");
   const schemaFile = path.join(schemaDir, "reading-schema.json");
-  const schemaObj = JSON.parse(fs.readFileSync(schemaFile, "utf-8"));
+  notice(`Loading schema file (${schemaFile})`);
+  const schemaContents = await fsp.readFile(schemaFile, {
+    encoding: "utf-8",
+  });
+  const schemaObj = JSON.parse(schemaContents);
   const ajv = new Ajv();
+  notice("Compiling schema.");
   const validate = ajv.compile(schemaObj);
   if (ajv.errors) {
-    err(theme.err("Schema validation errors."));
+    err("Schema validation errors.");
     err(ajv.errors);
     return;
   }
 
-  const dataObj = getReadingData();
+  const dataObj = await getReadingData();
   if (!validateData(validate, dataObj)) {
-    err(theme.err("Validation Errors."));
+    err("Validation Errors.");
     err(validate.errors);
   } else {
-    log(theme.success("Data is valid"));
+    success("Data is valid");
+    dataObj.books.forEach((book) => {
+      success(` - ${book.title} - ${book.author} (${book.year})`);
+    });
   }
-  // log(dataObj.books);
+  const uptime = process.uptime().toFixed(3);
+  notice(`Uptime: ${uptime}`);
 }
 
 main();

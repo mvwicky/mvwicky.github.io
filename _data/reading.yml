@@ -18,5 +18,24 @@ books:
     year: 2010
     pages: 528
     started: "2020-02-02"
+    finished: "2020-02-16"
     comments: |
       Just another entry in my list of reasons why monarchy and the hereditary succession of power generally is dumb.
+  - title: The Good News Club
+    author: Katherine Stewart
+    year: 2012
+    pages: 306
+    started: "2020-04-06"
+    finished: "2020-04-12"
+  - title: Nixonland
+    author: Rick Perlstein
+    year: 2008
+    pages: 881
+    started: "2020-04-27"
+    comments: |
+      It's striking how obvious historical parallels can be.
+      In 1968, there was a contingent on the left that was all in on Gene McCarthy.
+      They were drawn to his liberalism; the fact that he didn't act like a "normal" polictican only deepened their devotion.
+
+      <!-- &hellip;
+      `New Politics, Anti-LBJ -> Bernie + Anti-Hillary` -->

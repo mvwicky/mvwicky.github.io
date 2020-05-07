@@ -6,7 +6,9 @@
     <div class="post-attr post-date" id="post{{ forloop.index0 }}-date"  data-post="{{ forloop.index0 }}">{{ post.date | date_to_string }}</div>
     <div class="post-attr post-sep" id="post{{ forloop.index0 }}-sep"  data-post="{{ forloop.index0 }}">{{ postsep }}</div>
     <div class="post-attr post-title" id="post{{ forloop.index0 }}-title" data-tags="{{ tags }}" data-post="{{ forloop.index0 }}">
-      <a title="{{ post.description }}" class="post-link" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+      <a title="{{ post.description }}" class="post-link" href="{{ post.url }}" title="{{ post.title }}">
+        {{ post.title }}
+      </a>
     </div>
     {% endfor %}
 </div>

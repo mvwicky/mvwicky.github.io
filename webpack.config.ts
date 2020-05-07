@@ -1,5 +1,4 @@
 import * as path from "path";
-import process from "process";
 
 import autoprefixer from "autoprefixer";
 import { GenerateSW } from "workbox-webpack-plugin";
@@ -137,15 +136,15 @@ const config: webpack.Configuration = {
   },
   devtool: prodOr("source-map", false),
   mode: prodOr("production", "development"),
-  plugins: [
+  plugins: compact([
     new ManifestPlugin({ publicPath }),
     configureCleanPlugin(),
     new MiniCssExtractPlugin({
       filename: `style.[contenthash:${hashlength}].css`,
     }),
     configureHTMLPlugin(),
-    configureServiceWorker(),
-  ],
+    ifProd(configureServiceWorker()),
+  ]),
   module: {
     rules: [
       {

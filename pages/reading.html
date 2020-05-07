@@ -3,11 +3,13 @@ layout: miscpages
 title: "What I'm Reading"
 ---
 
-{%- for book in site.data.reading.books -%}
+{% assign books = site.data.reading.books | reverse%}
+{%- for book in books  -%}
 <div class="reading-book">
-  <h3 class="book-title">{{ book.title }} ({{ book.year }})</h3>
+  <h3 class="book-title"><em>{{ book.title }}</em> ({{ book.year }})</h3>
   <h4 class="book-author">{{ book.author }}</h4>
   {%- if book.comments -%}{{ book.comments | markdownify }}{%- endif -%}
+  <hr>
 </div>
 {%- else -%}
 <h3>Nothing I Guess</h3>

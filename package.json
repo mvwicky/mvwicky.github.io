@@ -6,11 +6,11 @@
   "license": "MIT",
   "author": "Michael Van Wickle <mvanwickle@gmail.com>",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.js",
-    "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js --progress",
-    "prod": "cross-env NODE_ENV=production webpack -p --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.ts",
+    "dev": "cross-env NODE_ENV=development webpack --config webpack.config.ts --progress",
+    "prod": "cross-env NODE_ENV=production webpack -p --config webpack.config.ts",
     "verify": "ts-node bin/verify.ts",
-    "watch": "cross-env NODE_ENV=development webpack --config webpack.config.js --progress --watch"
+    "watch": "cross-env NODE_ENV=development webpack --config webpack.config.ts --progress --watch"
   },
   "browserslist": [
     "> 0.2%",
@@ -132,6 +132,7 @@
     "stylelint-order": "^4.0.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-scss": "^3.13.0",
+    "trash-cli": "^3.0.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.4",
     "webpack": "^4.19.0",

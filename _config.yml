@@ -1,6 +1,5 @@
 ---
 name: Michael Van Wickle
-markdown: kramdown
 url: "https://wherewasigoing.com"
 repository: mvwicky/mvwicky.github.io
 title: "Where Was I Going With That?"
@@ -8,11 +7,13 @@ description: "A blog, which generally consists of posts that are lists of links,
 permalink: /blog/:year/:month/:day/:title
 future: false
 strict_front_matter: true
+lsi: true
 defaults:
   - scope:
       path: ""
     values:
       layout: default
+      excerpt_separator: <!--excerpt-->
 exclude:
   - .cache/
   - ".git*"
@@ -31,15 +32,20 @@ exclude:
   - vendor/ruby/
   - webpack.config.ts
   - yarn.lock
+  - requirements-dev.txt
 include:
   - _headers
 plugins:
   - jekyll-sitemap
   - jekyll-include-cache
   - jekyll-seo-tag
+  - classifier-reborn
 author:
   name: Michael Van Wickle
-  twitter: mvwicky
+twitter:
+  username: mvwicky
+  card: summary
+
 sass:
   style: compressed
 kramdown:

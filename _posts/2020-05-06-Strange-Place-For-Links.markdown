@@ -1,9 +1,9 @@
 ---
+# cSpell:disable
 layout: somelinks
-title: "A NEW LINKS POST."
-date: 2020-01-02
-description: 'This is a post with links.
-  And it''s my first one in quite a while.'
+title: What is this Strange Place?
+date: 2020-05-06
+description: This is a post with links. And it's my first one in quite a while.
 tags: [links]
 links:
   cruelty:
@@ -24,7 +24,10 @@ links:
     coincidentally-im-starting-to-hate-elizabeth-warren'
     title: I Don't Hate Women Candidates&mdash;I Just Hated Hillary and Coincidentally I'm Starting to Hate Elizabeth Warren
     author: Devorah Blachor
+# cSpell:enable
 ---
+
+This is going to be a four-linker.
 
 There are times[^1] that I really have nothing to say about the things that I post.
 It's sometimes that I think the piece speaks for itself and/or it aligns with my own views so well that anything I would say would be redundant.
@@ -40,16 +43,19 @@ They know that they're supporting policies that do this kind of inhumane shit to
 This is one of the screaming ones.
 
 {% include objlink.html obj=page.links.dawkins %}
-As a non-believer
+Richard Dawkins is a cultural figure with whom I _should_ generally find myself in alignment.
+It would seem odd that I harbor an intense dislike for him and his ilk.
+It's how strident he is; he has a level of certainty that I find rather disgusting.
 
 {% include objlink.html obj=page.links.hillary %}
-Uh, disclaimer: this title does not reflect the way that I feel.
-
-
-
+Uh, disclaimer: this title does not reflect the way that I feel; the piece is satire.
+This is pretty irrelevant at this point, but I thought the title was funny.
+And perfectly descriptive of an attitude that I have definitely seen online.
+(It also reminds me of the attitude that a **ton** of racists have.)[^4]
 
 <hr class="footsep" />
 
+<!-- prettier-ignore-start -->
 [^1]: It's most of the time to be honest.
 [^2]: Somewhat confident feels like overstatement.
 [^3]: But what do I really know.
@@ -57,3 +63,7 @@ Uh, disclaimer: this title does not reflect the way that I feel.
       So, like something completely random and overlooked from this time period could turn out to be the more definitive or the definitive piece hasn't been written yet or life on earth will have ended.
 
       I guess somewhat confident may indeed have been a bit of an overstatement.
+
+[^4]: After more than a year without one of these, I imagine this feels like a bit of a let down.
+      And yeah, it feels that way to me as well.
+<!-- prettier-ignore-end -->

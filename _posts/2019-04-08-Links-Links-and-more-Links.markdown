@@ -31,7 +31,6 @@ links:
     author: "Adam Entous and Ronan Farrow"
 ---
 
-
 I've been thinking about something I head Pete Buttigieg say.[^6]
 It was in an interview on _Pod Save America_ and he was talking about how Democrats could regain the midwest/white working class vote.
 This topic is litigated with some frequency and is pretty problematic seeing as there are a ton of non-white working class people that are constantly overlooked, but he made what I see as a broader point.

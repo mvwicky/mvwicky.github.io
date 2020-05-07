@@ -7,7 +7,7 @@ title: Home
 
 {% endif %}
 <div class="post-tags-container">
-  <label for="post-tags">Select A Category</label>
+  <label for="post-tags">Select a Category</label>
   <select class="post-tags-select" id="post-tags" name="post-select">
       <option value="{% increment post_counter %}" label="all" selected>All</option>
       {% for elem in site.tags -%}
